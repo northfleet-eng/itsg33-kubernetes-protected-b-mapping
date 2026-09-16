@@ -1,53 +1,66 @@
 # Canonical sources
 
-The following Canadian Centre for Cyber Security (CCCS) pages are the authoritative texts behind the controls in this repository.
+The Canadian Centre for Cyber Security (CCCS) pages and PDFs below are the authoritative texts behind the controls in this repository. The ITSP.10.033 series is current. The ITSG-33 annexes are superseded but still published, and still referenced by accreditation packages written before spring 2026.
 
-## CCCS — ITSG-33 master and annexes
+## CCCS: ITSP.10.033 series (current)
 
-- **Master document — IT security risk management: A lifecycle approach (ITSG-33):** <https://www.cyber.gc.ca/en/guidance/it-security-risk-management-lifecycle-approach-itsg-33>
-- **Annex 1 — Departmental IT security risk management activities:** <https://www.cyber.gc.ca/en/guidance/annex-1-departmental-it-security-risk-management-activities-itsg-33>
-- **Annex 3A — Security Control Catalogue:** <https://www.cyber.gc.ca/en/guidance/annex-3a-security-control-catalogue-itsg-33>
-- **Annex 4A Profile 1 (Protected B / Medium Integrity / Medium Availability):** <https://www.cyber.gc.ca/en/guidance/annex-4a-profile-1-protected-b-medium-integrity-medium-availability-itsg-33>
-- **Annex 4A Profile 1 PDF (1.73 MB):** <https://www.cyber.gc.ca/sites/default/files/cyber/publications/itsg33-ann4a-1-eng.pdf>
+- **Cyber security and privacy risk management: A lifecycle approach (series landing page):** <https://www.cyber.gc.ca/en/guidance/cyber-security-privacy-risk-management>
+- **Security and privacy controls and assurance activities catalogue (ITSP.10.033), foreword, overview, and introduction:** <https://www.cyber.gc.ca/en/guidance/cyber-security-privacy-risk-management/itsp10033/foreword-overview-introduction>. Supersedes ITSG-33 Annex 3A. Effective March 31, 2026. Aligned to NIST SP 800-53 Rev. 5.
+- **Suggested organizational security and privacy control and activity profile, Medium impact (ITSP.10.033-01):** <https://www.cyber.gc.ca/en/guidance/cyber-security-privacy-risk-management/suggested-organizational-security-privacy-control-activity-profile-medium-impact-itsp10033-01>. Supersedes Annex 4A Profile 1. Effective April 2026.
+- **ITSP.10.033-01 PDF (catalogue number D97-3/10-033-01-2026E-PDF):** <https://www.cyber.gc.ca/sites/default/files/itsp.10.033-01-e.pdf>
+- **Organizational cyber security and privacy risk management activities (ITSP.10.036):** <https://www.cyber.gc.ca/en/guidance/cyber-security-privacy-risk-management/organizational-cyber-security-privacy-risk-management-activities-itsp10036>. Supersedes ITSG-33 Annex 1. Effective September 14, 2026. Covers the assessment and authorization framework, control profiles, and continuous authorization, with commercial service providers named in its audience.
+
+CCCS distributes a spreadsheet of the ITSP.10.033-01 selections on request from <contact@cyber.gc.ca>. It is the authoritative cross-check for any machine-readable list, including the CSV in this repository.
+
+## CCCS: ITSG-33 (superseded, still published)
+
+- **IT security risk management: A lifecycle approach (ITSG-33), master document:** <https://www.cyber.gc.ca/en/guidance/it-security-risk-management-lifecycle-approach-itsg-33>
+- **Annex 1, Departmental IT security risk management activities** (superseded by ITSP.10.036 on September 14, 2026): <https://www.cyber.gc.ca/en/guidance/annex-1-departmental-it-security-risk-management-activities-itsg-33>
+- **Annex 3A, Security control catalogue** (superseded by ITSP.10.033 on March 31, 2026): <https://www.cyber.gc.ca/en/guidance/annex-3a-security-control-catalogue-itsg-33>
+- **Annex 4A Profile 1, Protected B / Medium Integrity / Medium Availability** (superseded by ITSP.10.033-01): <https://www.cyber.gc.ca/en/guidance/annex-4a-profile-1-protected-b-medium-integrity-medium-availability-itsg-33>
+- **Annex 4A Profile 1 PDF:** <https://www.cyber.gc.ca/sites/default/files/cyber/publications/itsg33-ann4a-1-eng.pdf>
 - **Suggested security controls and control enhancements:** <https://www.cyber.gc.ca/en/guidance/suggested-security-controls-and-control-enhancements-itsg-33>
 
-CCCS distributes an Excel version of the Profile 1 selections on request via `itsclientservices@cse-cst.gc.ca`. The Excel is useful as an authoritative cross-check against the machine-readable baseline noted below.
+The legacy Annex 4A page still directs spreadsheet requests to the former CSE IT Security Client Services address. Use <contact@cyber.gc.ca> for the current series.
 
-## CCCS — cryptographic and algorithm guidance
+## CCCS: cryptographic and protocol guidance
 
-- **ITSP.40.111 (cryptographic algorithms):** <https://www.cyber.gc.ca/en/guidance/cryptographic-algorithms-unclassified-protected-information-itsp40111>
-- **ITSP.40.062 (guidance on securely configuring network protocols):** <https://www.cyber.gc.ca/en/guidance/guidance-securely-configuring-network-protocols-itsp40062>
+- **Cryptographic algorithms for UNCLASSIFIED, PROTECTED A, and PROTECTED B information (ITSP.40.111):** <https://www.cyber.gc.ca/en/guidance/cryptographic-algorithms-unclassified-protected-protected-b-information-itsp40111>. Current revision effective May 29, 2026.
+- **Guidance on securely configuring network protocols (ITSP.40.062):** <https://www.cyber.gc.ca/en/guidance/guidance-securely-configuring-network-protocols-itsp40062>
 
-## Government of Canada — cloud-specific overlay
+## Government of Canada: cloud-specific overlay
 
 - **Government of Canada Security Control Profile for Cloud-based IT Services:** <https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/government-canada-security-control-profile-cloud-based-it-services.html>
 
 ## Community machine-readable baseline
 
-- **cds-snc/ITSG-33-baselines `PBMM.yaml`** (Canadian Digital Service maintains, sourced from CCCS): <https://github.com/cds-snc/ITSG-33-baselines/blob/master/PBMM.yaml>
+- **cds-snc/ITSG-33-baselines `PBMM.yaml`:** <https://github.com/cds-snc/ITSG-33-baselines/blob/master/PBMM.yaml>
 
-This repository's mapping uses the community baseline as the machine-readable enumeration of Profile 1 controls. Where the community baseline diverges from the CCCS-authored Excel, the CCCS version is authoritative.
+The community baseline was last updated in 2018. It predates ITSP.10.033 and does not match the Annex 4A Profile 1 PDF row for row. This repository references it for convenience only; the CCCS PDFs are authoritative.
 
 ## Cross-references and adjacent mappings
 
-These external publications cover similar mapping work. Use them as cross-checks, not source-of-truth.
+These external publications cover similar mapping work. Use them as cross-checks, not source of truth.
 
-- **NSA / CISA Kubernetes Hardening Guidance v1.2 (August 2022):** <https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/0/CTR_KUBERNETES_HARDENING_GUIDANCE_1.2_20220829.PDF>
+- **2026 Minimum Elements for a Software Bill of Materials (SBOM), joint guidance co-sealed by CCCS (July 2026):** <https://www.cyber.gc.ca/en/news-events/joint-guidance-minimum-elements-software-bill-materials>. Replaces the 2021 NTIA minimum elements; the reference for what an SBOM under CM-8 and CM-8(3) should contain.
+- **NSA / CISA Kubernetes Hardening Guidance v1.2 (August 2022):** <https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/0/CTR_KUBERNETES_HARDENING_GUIDANCE_1.2_20220829.PDF> (the host refuses automated fetches; open in a browser)
 - **CIS Kubernetes Benchmark:** <https://www.cisecurity.org/benchmark/kubernetes>
-- **CIS Controls v8.1 mapping to NIST SP 800-53 Rev 5:** <https://www.cisecurity.org/insights/white-papers/cis-controls-v8-1-mapping-to-nist-sp-800-53-rev-5>
-- **Google Kubernetes Engine Policy Controller — NIST SP 800-53 Rev 5 constraints:** <https://cloud.google.com/kubernetes-engine/enterprise/policy-controller/docs/how-to/using-nist-sp-800-53-r5>
+- **CIS Controls v8.1 mapping to NIST SP 800-53 Rev. 5:** <https://www.cisecurity.org/insights/white-papers/cis-controls-v8-1-mapping-to-nist-sp-800-53-rev-5>
+- **Google Kubernetes Engine Policy Controller, NIST SP 800-53 Rev. 5 constraints:** <https://cloud.google.com/kubernetes-engine/enterprise/policy-controller/docs/how-to/using-nist-sp-800-53-r5>
 - **Kubernetes SIG-Security policy management paper:** <https://github.com/kubernetes/sig-security/blob/main/sig-security-docs/papers/policy/kubernetes-policy-management.md>
 
 ## NIST SP 800-53 relationship
 
-ITSG-33 Annex 3A is structurally derived from NIST SP 800-53 (Rev 4 lineage with Rev 5 alignment underway). Same 17 families, same two-letter family codes, same numbering convention.
+ITSP.10.033 is an adapted version of NIST SP 800-53 Rev. 5, reflecting Canadian business and legislative requirements. Its predecessor, ITSG-33 Annex 3A, was derived from NIST SP 800-53 Rev. 4. Base control identifiers are unchanged across the transition. Some Rev. 4 enhancements were withdrawn or moved in Rev. 5, and ITSP.10.033-01 records those (for example, SI-7(14) moved to CM-7(8)).
 
-Canadian-tailored additions are identifiable by enhancement number 100 or higher (for example `AC-17(100)`, `AC-19(100)`, `IA-8(100)`, `PE-2(100)`). These have no NIST SP 800-53 equivalent and require Canadian-specific implementation guidance.
+Canadian-specific controls and enhancements are numbered from 400 in ITSP.10.033. Examples selected in the Medium profile include SA-400 (Sovereignty and jurisdiction), SI-400 (Dedicated administration workstation), AC-17(400), and PE-400. Under Annex 3A the same convention started at 100 (AC-17(100), AC-19(100), AC-21(100), IA-8(100), PE-2(100)). These have no NIST SP 800-53 equivalent and require Canadian-specific implementation guidance.
 
-Profile 1 (PBMM) approximates the NIST SP 800-53 Moderate baseline in selection density, though it is not identical. A vendor with a FedRAMP Moderate authorization has done a significant portion of the work; gaps remain in Canadian-tailored enhancements and in CSE-approved cryptography requirements.
+Annex 3A carried 17 families. ITSP.10.033 adds PM (Program management), PT (Personal information and transparency), and SR (Supply chain risk management), the last of which is directly relevant to any software delivery chain.
+
+ITSP.10.033-01 is comparable to the NIST SP 800-53 Moderate baseline in selection density, though not identical. A vendor with a FedRAMP Moderate authorization has done a significant portion of the work; gaps remain in the 400-series controls and in the CSE-approved cryptography requirements of ITSP.40.111.
 
 ## What this repository is not
 
-This mapping is not a CCCS-endorsed assessment instrument. It is a community starting point for engineering teams and procurement officers reasoning about the gap between upstream Kubernetes and the Protected B control catalogue.
+This mapping is not a CCCS-endorsed assessment instrument. It is a community starting point for engineering teams and procurement officers reasoning about the gap between upstream Kubernetes and the Protected B control profile.
 
-A formal security control assessment for a Protected B accreditation must be performed by a qualified Canadian accreditor against the customer's specific deployment. The output of that assessment is the authoritative document.
+A formal security control assessment for a Protected B authorization must be performed by a qualified Canadian assessor against the customer's specific deployment. The output of that assessment is the authoritative document.

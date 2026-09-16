@@ -1,54 +1,69 @@
-Control,Family,Title,Category,K8s Mechanism,Notes
-AC-2,Access Control,Account management,Admin,"ServiceAccounts; OIDC to corporate IdP; RBAC RoleBindings",
-AC-3,Access Control,Access enforcement,Admin,"RBAC (Roles, ClusterRoles); --authorization-mode=RBAC,Node",
-AC-4,Access Control,Information flow enforcement,Admin,"NetworkPolicy; Gateway API; namespace boundaries",
-AC-5,Access Control,Separation of duties,Admin,"Namespace partitioning + RBAC scoping",
-AC-6,Access Control,Least privilege,Admin,"Fine-grained RBAC verbs; no wildcards; controlled system:masters",
-AC-11,Access Control,Session lock,Admin,"kubectl OIDC session timeouts; dashboard idle timeout",
-AC-17,Access Control,Remote access,Admin,"kube-apiserver behind VPN/jump host; bastion patterns",
-AU-2,Audit and Accountability,Audit events,Admin,"kube-apiserver audit policy",
-AU-3,Audit and Accountability,Audit content,Admin,"audit policy stage=RequestResponse",
-AU-4,Audit and Accountability,Audit storage capacity,Admin,"Log forwarding to external store; PV sizing",
-AU-9,Audit and Accountability,Audit protection,Admin,"Read-only audit forwarding; separate audit credentials",
-AU-12,Audit and Accountability,Audit generation,Admin,"Audit policy stage RequestResponse",
-CM-2,Configuration Management,Baseline configuration,Admin,"Declarative manifests under GitOps (Argo CD, Flux)",
-CM-3,Configuration Management,Configuration change control,Admin,"PR review on infra repo; admission webhooks",
-CM-6,Configuration Management,Configuration settings,Admin,"Pod Security Admission restricted profile; OPA Gatekeeper or Kyverno",
-CM-7,Configuration Management,Least functionality,Admin,"Pod Security restricted; anonymous auth off; insecure ports off",
-CM-8,Configuration Management,System component inventory,Admin,"kubectl inventory; inventory CRDs; SBOM at admission",
-IA-2,Identification and Authentication,User identification and authentication,Admin,"OIDC to IdP enforcing MFA; short-lived tokens",
-IA-3,Identification and Authentication,Device identification and authentication,Admin,"kubelet TLS bootstrap; CSR approval workflow",
-IA-5,Identification and Authentication,Authenticator management,Admin,"ServiceAccount token rotation; BoundServiceAccountTokenVolume",
-SC-2,System and Communications Protection,Application partitioning,Admin,"Namespaces; control-plane/data-plane separation",
-SC-5,System and Communications Protection,Denial-of-service protection,Admin,"ResourceQuotas; LimitRanges; PodDisruptionBudgets",
-SC-7,System and Communications Protection,Boundary protection,Admin,"NetworkPolicy default-deny; Ingress; egress gateway",
-SC-8,System and Communications Protection,Transmission confidentiality,Admin,"TLS on kube-apiserver; etcd peer TLS; service-mesh mTLS",
-SC-12,System and Communications Protection,Cryptographic key establishment,Admin,"KMS provider plugin for etcd encryption-at-rest",
-SC-13,System and Communications Protection,Cryptographic protection,Admin,"FIPS-validated modules; CSE-approved crypto per ITSP.40.111",
-SC-23,System and Communications Protection,Session authenticity,Admin,"TLS everywhere; mTLS via mesh; anonymous endpoints disabled",
-SC-28,System and Communications Protection,Protection of information at rest,Admin,"etcd encryption-at-rest; CSI encrypted volumes",
-SI-2,System and Information Integrity,Flaw remediation,Admin,"Patch cadence policy; managed control plane; node image rotation",
-SI-4,System and Information Integrity,Information system monitoring (partial),Admin,"kube-apiserver audit logs; metrics-server",
-AC-3,Access Control,Workload-level access enforcement,Workload,"App-level RBAC inside the workload",
-AU-3,Audit and Accountability,Workload audit content,Workload,"Structured app logging to stdout",
-IA-2,Identification and Authentication,End-user authentication,Workload,"App-level OIDC or SAML for end users",
-SC-8,System and Communications Protection,In-app TLS,Workload,"App-level TLS termination when no mesh",
-SC-13,System and Communications Protection,In-app crypto,Workload,"App-level field encryption or envelope encryption",
-SI-10,System and Information Integrity,Input validation,Workload,"In-app input validation",
-SI-11,System and Information Integrity,Error handling,Workload,"Sanitized error handling in app code",
-CM-5,Configuration Management,Access restrictions for change,External,"Image-signing verification at admission (sigstore policy-controller, Connaisseur, Kyverno verify-images)",
-CM-8(3),Configuration Management,Unauthorized component detection,External,"SBOM generation and verification (Syft, Grype) plus admission checks",
-SA-10(1),System and Services Acquisition,Software integrity verification,External,"Build-attestation framework (in-toto, SLSA provenance, Rekor)",
-SA-11,System and Services Acquisition,Developer security testing,External,"Vulnerability scanner (Trivy, Grype, commercial alternatives)",
-SA-15,System and Services Acquisition,Development process,External,"CI/CD pipeline with signed builds and recorded provenance",
-SI-3,System and Information Integrity,Malicious code protection,External,"Runtime detection (Falco, Tetragon, commercial alternatives)",
-SI-4,System and Information Integrity,Runtime monitoring,External,"Runtime observability (Falco, Cilium Hubble, eBPF-based tooling)",
-SI-7,System and Information Integrity,Software and information integrity,External,"Runtime integrity monitoring; immutable rootfs patterns",
-AU-6,Audit and Accountability,Audit review and analysis,External,"SIEM ingestion",
-AU-9(2),Audit and Accountability,Audit backup to separate system,External,"Forwarder to immutable WORM storage",
-IR-4,Incident Response,Incident handling,External,"SOAR tooling",
-CA-7,Security Assessment and Authorization,Continuous monitoring,External,"Continuous compliance scanner (Kubescape, Trivy, Compliance Operator)",
-CP-9,Contingency Planning,Information system backup,External,"Workload backup (Velero, Kasten K10) with offsite or air-gapped retention",
-CP-10,Contingency Planning,Information system recovery,External,"Replicated storage; database clustering",
-SC-12(1),System and Communications Protection,Key establishment availability,External,"KMS or HSM (Vault, cloud KMS, on-premise HSM)",
-SC-17,System and Communications Protection,Public key infrastructure certificates,External,"cert-manager integrated with corporate or private PKI",
+Control,Family,Title,Category,K8s Mechanism,ITSP.10.033-01 status,Notes
+AC-2,Access Control,Account management,Admin,"ServiceAccounts; OIDC to corporate IdP; RBAC RoleBindings",Selected,
+AC-3,Access Control,Access enforcement,Admin,"RBAC (Roles, ClusterRoles); --authorization-mode=Node,RBAC",Selected,
+AC-4,Access Control,Information flow enforcement,Admin,"NetworkPolicy; Gateway API; namespace boundaries",Selected,
+AC-5,Access Control,Separation of duties,Admin,"Namespace partitioning + RBAC scoping",Selected,
+AC-6,Access Control,Least privilege,Admin,"Fine-grained RBAC verbs; no wildcards; controlled system:masters",Selected,
+AC-11,Access Control,Device lock,Admin,"Short OIDC token lifetimes via IdP; dashboard idle timeout",Selected,Titled Session lock under Annex 3A
+AC-17,Access Control,Remote access,Admin,"kube-apiserver behind VPN or bastion; pair with SI-400 and AC-17(400)",Selected,
+AU-2,Audit and Accountability,Event logging,Admin,"kube-apiserver audit policy file",Selected,
+AU-3,Audit and Accountability,Content of audit records,Admin,"Audit policy; log or webhook backend",Selected,
+AU-4,Audit and Accountability,Audit log storage capacity,Admin,"Log forwarding to external store; PV sizing",Selected,
+AU-9,Audit and Accountability,Protection of audit information,Admin,"Read-only audit forwarding; separate audit credentials",Selected,
+AU-12,Audit and Accountability,Audit record generation,Admin,"Audit policy rules with level RequestResponse for security-relevant resources; Metadata elsewhere",Selected,
+CM-2,Configuration Management,Baseline configuration,Admin,"Declarative manifests under GitOps (Argo CD, Flux)",Selected,
+CM-3,Configuration Management,Configuration change control,Admin,"PR review on infra repo; admission webhooks",Selected,
+CM-6,Configuration Management,Configuration settings,Admin,"Pod Security Admission restricted profile; OPA Gatekeeper or Kyverno",Selected,
+CM-7,Configuration Management,Least functionality,Admin,"Pod Security restricted; anonymous auth off; insecure ports off",Selected,
+CM-8,Configuration Management,System component inventory,Admin,"API inventory; inventory CRDs; SBOMs attached to images and checked at admission",Selected,
+IA-2,Identification and Authentication,Identification and authentication (organizational users),Admin,"OIDC to IdP enforcing MFA; short-lived tokens",Selected,
+IA-3,Identification and Authentication,Device identification and authentication,Admin,"kubelet TLS bootstrap; CSR approval workflow",Selected,
+IA-5,Identification and Authentication,Authenticator management,Admin,"Projected service-account tokens with audience and expiry; token rotation",Selected,
+SC-2,System and Communications Protection,Separation of system and user functionality,Admin,"Namespaces; control-plane/data-plane separation",Selected,
+SC-5,System and Communications Protection,Denial-of-service protection,Admin,"ResourceQuotas; LimitRanges; API Priority and Fairness",Selected,
+SC-7,System and Communications Protection,Boundary protection,Admin,"NetworkPolicy default-deny; Ingress; egress gateway",Selected,
+SC-8,System and Communications Protection,Transmission confidentiality and integrity,Admin,"TLS on kube-apiserver; etcd peer TLS; service-mesh mTLS",Selected,
+SC-12,System and Communications Protection,Cryptographic key establishment and management,Admin,"KMS provider plugin for etcd encryption at rest",Selected,
+SC-13,System and Communications Protection,Cryptographic protection,Admin,"FIPS-validated modules; CSE-approved crypto per ITSP.40.111",Selected,
+SC-23,System and Communications Protection,Session authenticity,Admin,"TLS everywhere; mTLS via mesh; anonymous endpoints disabled",Selected,
+SC-28,System and Communications Protection,Protection of information at rest,Admin,"etcd encryption at rest; CSI encrypted volumes",Selected,
+SI-2,System and Information Integrity,Flaw remediation,Admin,"Patch cadence policy; managed control plane; node image rotation",Selected,
+SI-4,System and Information Integrity,System monitoring (partial),Admin,"kube-apiserver audit logs; metrics-server",Selected,
+AC-3,Access Control,Workload-level access enforcement,Workload,"App-level RBAC inside the workload",Selected,
+AU-3,Audit and Accountability,Workload audit content,Workload,"Structured app logging to stdout",Selected,
+IA-2,Identification and Authentication,End-user authentication,Workload,"App-level OIDC or SAML for end users",Selected,
+SC-8,System and Communications Protection,In-app TLS,Workload,"App-level TLS termination when no mesh",Selected,
+SC-13,System and Communications Protection,In-app crypto,Workload,"App-level field encryption or envelope encryption",Selected,
+SI-10,System and Information Integrity,Information input validation,Workload,"In-app input validation",Selected,
+SI-11,System and Information Integrity,Error handling,Workload,"Sanitized error handling in app code",Selected,
+CM-5,Configuration Management,Access restrictions for change,External,"Image-signing verification at admission (sigstore policy-controller, Connaisseur, Kyverno verify-images)",Selected,No built-in signature verification; ValidatingAdmissionPolicy can pin digests only
+CM-8(3),Configuration Management,Automated unauthorized component detection,External,"SBOM generation at build and verification at admission (Syft, Grype)",Selected,
+SA-10(1),System and Services Acquisition,Software and firmware integrity verification,External,"Build-attestation framework (in-toto, SLSA provenance, Rekor)",Selected,Activity in ITSP.10.033
+SA-11,System and Services Acquisition,Developer testing and evaluation,External,"Vulnerability scanner (Trivy, Grype, commercial alternatives)",Selected,Activity in ITSP.10.033
+SA-15,System and Services Acquisition,"Development process, standards, and tools",External,"CI/CD pipeline with signed builds and recorded provenance",Selected,Activity in ITSP.10.033
+SI-3,System and Information Integrity,Malicious code protection,External,"Runtime detection (Falco, Tetragon, commercial alternatives)",Selected,Suggested parameters: updates at least every 30 days; quarantine on detection
+SI-4,System and Information Integrity,System monitoring (runtime),External,"Runtime observability (Falco, Cilium Hubble, eBPF-based tooling)",Selected,
+SI-7,System and Information Integrity,"Software, firmware, and information integrity",External,"Runtime integrity monitoring; immutable rootfs patterns",Selected,
+AU-6,Audit and Accountability,"Audit record review, analysis, and reporting",External,"SIEM ingestion",Selected,
+AU-9(2),Audit and Accountability,Store on separate physical systems or components,External,"Forwarder to immutable WORM storage on a separate system",Selected,
+IR-4,Incident Response,Incident handling,External,"SOAR tooling",Selected,
+CA-7,Assessment Authorization and Monitoring,Continuous monitoring,External,"Continuous compliance scanner (Kubescape, Trivy, Compliance Operator)",Selected,
+CP-9,Contingency Planning,System backup,External,"Workload backup (Velero, Kasten K10) with offsite or air-gapped retention",Selected,
+CP-10,Contingency Planning,System recovery and reconstitution,External,"Replicated storage; database clustering",Selected,
+SC-12(1),System and Communications Protection,Cryptographic key establishment and management: Availability,External,"KMS or HSM (Vault, cloud KMS, on-premise HSM)",Selected,
+SC-17,System and Communications Protection,Public key infrastructure certificates,External,"cert-manager integrated with corporate or private PKI",Selected,
+SA-400,System and Services Acquisition,Sovereignty and jurisdiction,External,"Organizational TRA on legal compulsion; needs written evidence of where images are built, signed, hosted, and where KMS and registry sit",Selected,New in ITSP.10.033-01; Canadian-specific
+SA-400(1),System and Services Acquisition,Sovereignty and jurisdiction: Threat and risk assessment,External,"Jurisdiction-specific TRA",Not selected,New in ITSP.10.033-01; likely tailoring addition
+SA-400(4),System and Services Acquisition,Sovereignty and jurisdiction: Protection of data at rest,External,"Registry, KMS, and backup destinations constrained to jurisdiction",Not selected,New in ITSP.10.033-01; likely tailoring addition
+SI-400,System and Information Integrity,Dedicated administration workstation,Admin,"Cluster-admin kubectl, GitOps writes, and KMS admin only from a dedicated isolated workstation",Selected,New in ITSP.10.033-01; Canadian-specific
+AC-17(400),Access Control,Remote access: Privileged accounts remote access,Admin,"Restrict system:masters and cluster-admin bindings to identities originating from the SI-400 workstation",Selected,New in ITSP.10.033-01; Canadian-specific
+SI-7(1),System and Information Integrity,"Software, firmware, and information integrity: Integrity checks",External,"Digest pinning; signature verification at admission; periodic re-verification of running images",Selected,Suggested frequency no longer than 30 days
+SR-3,Supply Chain Risk Management,Supply chain controls and processes,External,"SBOM, provenance, and signature verification as the evidence base",Selected,New family in ITSP.10.033
+SR-5,Supply Chain Risk Management,"Acquisition strategies, tools, and methods",External,"Procurement terms requiring provenance and offline verification",Selected,New family in ITSP.10.033
+SR-6,Supply Chain Risk Management,Supplier assessments and reviews,External,"Periodic supplier review against delivered evidence",Selected,New family in ITSP.10.033
+SR-8,Supply Chain Risk Management,Notification agreements,External,"Written compromise-notification agreement with every supplier in the chain",Selected,New family in ITSP.10.033
+SR-10,Supply Chain Risk Management,Inspection of systems or components,External,"Tamper inspection of delivered bundles and images against signed manifests",Selected,New family in ITSP.10.033
+SR-11,Supply Chain Risk Management,Component authenticity,External,"Signature and provenance verification before admission",Selected,New family in ITSP.10.033
+SR-11(2),Supply Chain Risk Management,Component authenticity: Configuration control for component service and repair,External,"Configuration control over components awaiting or returning from service",Selected,New family in ITSP.10.033
+SR-4,Supply Chain Risk Management,Provenance,External,"Build provenance and attestation (SLSA-style)",Not selected,Rev. 5 home for provenance; likely tailoring addition
+CM-14,Configuration Management,Signed components,External,"Admission-time signature enforcement",Not selected,Rev. 5 home for image signing; mapping keeps CM-5 as the selected control
