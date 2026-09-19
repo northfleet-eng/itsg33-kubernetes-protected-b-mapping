@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-09-18
+
+- Corrected the "New in ITSP.10.033-01" section: SI-7(1) at 30 days is carried over from Annex 4A Profile 1, not new; AC-17(400) is AC-17(100) renumbered. Noted that Profile 1 selected no supply chain control (SA-12, SA-19, and all enhancements Not Selected).
+
 ## 2026-09-16
 
 - Re-baselined against CCCS ITSP.10.033-01 (Medium impact profile, effective April 2026), which supersedes ITSG-33 Annex 4A Profile 1. Every control previously cited remains selected; the CSV now carries an ITSP.10.033-01 status column.

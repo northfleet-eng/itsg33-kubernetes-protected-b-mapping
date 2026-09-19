@@ -25,7 +25,7 @@ ITSG-33 is the Canadian IT security risk management framework published by the C
 - **September 14, 2026:** ITSP.10.036, *Organizational cyber security and privacy risk management activities*, superseded ITSG-33 Annex 1. The ITSG-33 master document and its remaining annexes are being replaced piece by piece under the same series.
 - **Canadian-specific controls were renumbered.** Enhancements that previously started at 100 now start at 400. AC-17(100) is now AC-17(400).
 - **Base control identifiers did not change.** Every control in this mapping keeps its ID, and every one of them is selected in ITSP.10.033-01. The CSV carries the status column.
-- **New selected controls that touch a Kubernetes platform** (SA-400, SI-400, AC-17(400), SI-7(1), and the SR family) are covered in the mapping's [New in ITSP.10.033-01](itsg33-kubernetes-mapping.md#new-in-itsp10033-01) section.
+- **New or changed selected controls that touch a Kubernetes platform** (SA-400 and SI-400, new; AC-17(400), renumbered; SI-7(1), carried over at 30 days; and the SR family, where Profile 1 selected nothing) are covered in the mapping's [New in ITSP.10.033-01](itsg33-kubernetes-mapping.md#new-in-itsp10033-01) section.
 
 ## Files in this repository
 
