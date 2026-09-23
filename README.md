@@ -27,17 +27,22 @@ ITSG-33 is the Canadian IT security risk management framework published by the C
 - **Base control identifiers did not change.** Every control in this mapping keeps its ID, and every one of them is selected in ITSP.10.033-01. The CSV carries the status column.
 - **New or changed selected controls that touch a Kubernetes platform** (SA-400 and SI-400, new; AC-17(400), renumbered; SI-7(1), carried over at 30 days; and the SR family, where Profile 1 selected nothing) are covered in the mapping's [New in ITSP.10.033-01](itsg33-kubernetes-mapping.md#new-in-itsp10033-01) section.
 
+## Machine-readable: OSCAL
+
+The [`oscal/`](oscal/) directory renders the ITSP.10.033 catalogue and the ITSP.10.033-01 Medium profile in [OSCAL](https://pages.nist.gov/OSCAL/), the NIST format that compliance tooling reads, and expresses this mapping as an OSCAL component definition. CCCS publishes both documents as PDF only. The rendering is rebuilt and validated in CI on every change, and a weekly job flags any revision of the CCCS PDFs. Start with [`oscal/README.md`](oscal/README.md).
+
 ## Files in this repository
 
 - [`itsg33-kubernetes-mapping.md`](itsg33-kubernetes-mapping.md): the main mapping. Controls bucketed by admin / workload / external, with the Kubernetes mechanism for each, plus the ITSP.10.033-01 additions.
 - [`itsg33-kubernetes-mapping.csv`](itsg33-kubernetes-mapping.csv): same content as CSV, one row per control and category, with an ITSP.10.033-01 status column.
+- [`oscal/`](oscal/): the catalogue, the Medium profile, and this mapping in OSCAL, with the build and report scripts.
 - [`SOURCES.md`](SOURCES.md): canonical CCCS source URLs for the current ITSP.10.033 series and the superseded ITSG-33 annexes, cross-reference mappings, and the NIST SP 800-53 relationship.
 - [`CHANGELOG.md`](CHANGELOG.md): what changed between releases of this mapping.
-- [`LICENSE`](LICENSE): Apache License 2.0.
+- [`LICENSE`](LICENSE): Apache License 2.0. [`NOTICE`](NOTICE) carries the Open Government Licence – Canada attribution for the CCCS text in `oscal/`.
 
 ## Scope
 
-This repository covers the procurement-relevant subset of the profile: roughly 50 controls where the Kubernetes side of the mapping is non-obvious or carries a material gap. ITSP.10.033-01 selects approximately 385 controls and enhancements in total (this repository's count from the published PDF tables; Annex 4A Profile 1 selected a similar number). The full enumeration is in the canonical sources linked in [`SOURCES.md`](SOURCES.md).
+This repository covers the procurement-relevant subset of the profile: roughly 50 controls where the Kubernetes side of the mapping is non-obvious or carries a material gap. ITSP.10.033-01 selects 384 controls, activities and enhancements, one of which (AC-2(10)) is withdrawn; Annex 4A Profile 1 selected a similar number. The full enumeration, machine-readable, is [`oscal/resolved/itsp.10.033-01-medium.csv`](oscal/resolved/itsp.10.033-01-medium.csv).
 
 ITSP.10.033-01 is a *suggested organizational* profile. Departments and agencies tailor it, and a tailored profile can select controls this one does not. SR-4 (Provenance) and CM-14 (Signed components) are the two most likely additions for a software supply chain. Confirm against the customer's tailored profile before relying on any selection status here.
 
@@ -54,7 +59,7 @@ This repository is a starting point, not a substitute for a formal security cont
 ## Methodology
 
 - **Source of truth:** the CCCS-published PDFs. ITSP.10.033-01 for current selection status; Annex 4A Profile 1 for the original selection this mapping was built from. Where any secondary source diverges, the CCCS PDF is authoritative.
-- **Community baseline:** the `cds-snc/ITSG-33-baselines/PBMM.yaml` file is a convenient machine-readable list, but it was last updated in 2018, predates ITSP.10.033, and does not match the Annex 4A PDF row for row. It is referenced for convenience only.
+- **Machine-readable selection:** [`oscal/`](oscal/) transcribes Table 4 of ITSP.10.033-01 in full and is the machine-readable list this mapping is checked against. The community `cds-snc/ITSG-33-baselines/PBMM.yaml` file was last updated in 2018, predates ITSP.10.033, and does not match the Annex 4A PDF row for row; it is referenced for history only.
 - **Selection of priority controls:** bias toward controls where upstream Kubernetes alone does not satisfy the requirement, or where the Kubernetes mechanism is non-obvious to engineering teams.
 - **External-component examples:** listed for orientation, not endorsement. The choice of specific component (which signing infrastructure, which runtime-security tool, which SIEM) is left to the implementing organization.
 - **Control titles** follow ITSP.10.033 (Rev. 5 wording), so AC-11 reads "Device lock" rather than the Annex 3A "Session lock".

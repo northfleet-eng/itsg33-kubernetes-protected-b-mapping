@@ -32,11 +32,17 @@ The legacy Annex 4A page still directs spreadsheet requests to the former CSE IT
 
 - **Government of Canada Security Control Profile for Cloud-based IT Services:** <https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/government-canada-security-control-profile-cloud-based-it-services.html>
 
-## Community machine-readable baseline
+## Machine-readable renderings
 
-- **cds-snc/ITSG-33-baselines `PBMM.yaml`:** <https://github.com/cds-snc/ITSG-33-baselines/blob/master/PBMM.yaml>
+CCCS publishes ITSP.10.033 and ITSP.10.033-01 as PDF only. The Open Government Portal lists both under the Open Government Licence – Canada: [ITSP.10.033](https://open.canada.ca/data/en/dataset/ddad8760-bf9b-47aa-890d-67da202aca6a), [ITSP.10.033-01](https://open.canada.ca/data/en/dataset/06179c95-a0e0-446f-8f53-9208f8b41eb9).
 
-The community baseline was last updated in 2018. It predates ITSP.10.033 and does not match the Annex 4A Profile 1 PDF row for row. This repository references it for convenience only; the CCCS PDFs are authoritative.
+- **This repository, [`oscal/`](oscal/):** the catalogue and the Medium profile in OSCAL 1.1.3, transcribed from the April 2026 PDFs, pinned by SHA-256.
+- **NIST SP 800-53 Rev. 5.2.0 in OSCAL:** <https://github.com/usnistgov/oscal-content>. The base the rendering here imports.
+- **aws-samples/cccs-oscal-samples:** <https://github.com/aws-samples/cccs-oscal-samples>. Unofficial, maintained by AWS; its ITSP.10.033-01 profile is dated April 28, 2025. The differences from the rendering here are in [`oscal/reports/diff-aws-cccs-oscal-samples.md`](oscal/reports/diff-aws-cccs-oscal-samples.md).
+- **cds-snc/ITSG-33-baselines `PBMM.yaml`:** <https://github.com/cds-snc/ITSG-33-baselines/blob/master/PBMM.yaml>. Last updated in 2018; predates ITSP.10.033 and does not match the Annex 4A Profile 1 PDF row for row. Historical reference only.
+- **For comparison, an official OSCAL publication:** the Australian Signals Directorate publishes the Information Security Manual in OSCAL with each release, <https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/ism/ism-oscal-releases>.
+
+The CCCS PDFs are authoritative over every rendering listed here, including this repository's.
 
 ## Cross-references and adjacent mappings
 

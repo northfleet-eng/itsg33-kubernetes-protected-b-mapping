@@ -1,0 +1,3214 @@
+{
+  "catalog": {
+    "uuid": "a7a4f621-294a-58a9-b8b8-29815f2e76a8",
+    "metadata": {
+      "title": "ITSP.10.033: Canada-specific controls and enhancements",
+      "last-modified": "2026-09-23T00:00:00-04:00",
+      "version": "2026.09.23",
+      "oscal-version": "1.1.3",
+      "props": [
+        {
+          "name": "marking",
+          "value": "UNCLASSIFIED"
+        }
+      ],
+      "links": [
+        {
+          "href": "#d7c2eb69-177a-5ad3-bc44-49a3e8d1c0c7",
+          "rel": "source"
+        }
+      ],
+      "roles": [
+        {
+          "id": "creator",
+          "title": "Document Creator"
+        },
+        {
+          "id": "maintainer",
+          "title": "Maintainer"
+        }
+      ],
+      "parties": [
+        {
+          "uuid": "db270b77-cf47-5a91-9af2-91865ee1b00c",
+          "type": "organization",
+          "name": "Canadian Centre for Cyber Security",
+          "short-name": "CCCS"
+        },
+        {
+          "uuid": "96ec3f73-0984-5a06-be49-d1c6a7d89e4d",
+          "type": "organization",
+          "name": "Northfleet Security Ltd.",
+          "short-name": "Northfleet"
+        }
+      ],
+      "responsible-parties": [
+        {
+          "role-id": "creator",
+          "party-uuids": [
+            "db270b77-cf47-5a91-9af2-91865ee1b00c"
+          ]
+        },
+        {
+          "role-id": "maintainer",
+          "party-uuids": [
+            "96ec3f73-0984-5a06-be49-d1c6a7d89e4d"
+          ]
+        }
+      ],
+      "remarks": "Unofficial transcription of the controls and enhancements that ITSP.10.033 defines and NIST SP 800-53 Rev. 5.2.0 does not: the 400-series controls and enhancements, and SC-19, which NIST withdrew and CCCS kept. Not reviewed or endorsed by CCCS; the PDF is authoritative. Contains information licensed under the Open Government Licence – Canada (https://open.canada.ca/en/open-government-licence-canada)."
+    },
+    "groups": [
+      {
+        "id": "ac",
+        "class": "family",
+        "title": "Access control",
+        "controls": [
+          {
+            "id": "ac-17.400",
+            "class": "cccs-enhancement",
+            "title": "Privileged accounts remote access",
+            "props": [
+              {
+                "name": "label",
+                "value": "AC-17(400)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "AC-17(400)"
+              },
+              {
+                "name": "sort-id",
+                "value": "ac-17.400"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "ac-17"
+              }
+            ],
+            "links": [
+              {
+                "href": "#si-400",
+                "rel": "related"
+              }
+            ],
+            "parts": [
+              {
+                "id": "ac-17.400_smt",
+                "name": "statement",
+                "prose": "Remote access to privileged accounts is done from dedicated management consoles only."
+              },
+              {
+                "id": "ac-17.400_gdn",
+                "name": "guidance",
+                "prose": "Remote access to privileged accounts is performed on dedicated management consoles governed entirely by the system’s security policies and used exclusively for this purpose (e.g., Internet access not allowed). In the context of this control, remote access means anything not local to the host."
+              }
+            ]
+          },
+          {
+            "id": "ac-19.400",
+            "class": "cccs-enhancement",
+            "title": "Wireless devices",
+            "props": [
+              {
+                "name": "label",
+                "value": "AC-19(400)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "AC-19(400)"
+              },
+              {
+                "name": "sort-id",
+                "value": "ac-19.400"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "ac-19"
+              },
+              {
+                "name": "status",
+                "value": "withdrawn"
+              }
+            ],
+            "links": [
+              {
+                "href": "#sc-42.400",
+                "rel": "moved-to"
+              }
+            ],
+            "parts": [
+              {
+                "id": "ac-19.400_wdn",
+                "name": "cccs-withdrawal",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "prose": "Moved to SC-42(400)."
+              }
+            ]
+          },
+          {
+            "id": "ac-21.400",
+            "class": "cccs-enhancement",
+            "title": "Information sharing agreement",
+            "props": [
+              {
+                "name": "label",
+                "value": "AC-21(400)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "AC-21(400)"
+              },
+              {
+                "name": "sort-id",
+                "value": "ac-21.400"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "ac-21"
+              }
+            ],
+            "links": [
+              {
+                "href": "#pt-8",
+                "rel": "related"
+              }
+            ],
+            "parts": [
+              {
+                "id": "ac-21.400_smt",
+                "name": "statement",
+                "prose": "Ensure through written agreements the appropriate safeguarding of sensitive information shared with external public-sector entities and organizations."
+              },
+              {
+                "id": "ac-21.400_gdn",
+                "name": "guidance",
+                "prose": "An agreement outlines the terms and conditions under which personal information is disclosed between parties and may or may not be legally binding. Ensure that the agreement documents the legislative authorities, permissible uses, and retention standards for the recipient organization."
+              }
+            ]
+          },
+          {
+            "id": "ac-21.401",
+            "class": "cccs-enhancement",
+            "title": "Information sharing arrangement",
+            "props": [
+              {
+                "name": "label",
+                "value": "AC-21(401)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "AC-21(401)"
+              },
+              {
+                "name": "sort-id",
+                "value": "ac-21.401"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "ac-21"
+              }
+            ],
+            "links": [
+              {
+                "href": "#pt-8",
+                "rel": "related"
+              }
+            ],
+            "parts": [
+              {
+                "id": "ac-21.401_smt",
+                "name": "statement",
+                "prose": "Ensure through written arrangements the appropriate safeguarding of sensitive information shared between and within federal institutions."
+              },
+              {
+                "id": "ac-21.401_gcgdn",
+                "name": "gc-guidance",
+                "prose": "An arrangement outlines the terms and conditions under which personal information is disclosed between parties and is not legally binding. Ensure that the arrangement documents the legislative authorities, permissible uses, and retention standards for the recipient organization.",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ia",
+        "class": "family",
+        "title": "Identification and authentication",
+        "controls": [
+          {
+            "id": "ia-2.400",
+            "class": "cccs-enhancement",
+            "title": "MFA for remote access to privileged accounts",
+            "props": [
+              {
+                "name": "label",
+                "value": "IA-02(400)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "IA-2(400)"
+              },
+              {
+                "name": "sort-id",
+                "value": "ia-02.400"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "ia-2"
+              },
+              {
+                "name": "status",
+                "value": "withdrawn"
+              }
+            ],
+            "links": [
+              {
+                "href": "#ia-2.1",
+                "rel": "incorporated-into"
+              },
+              {
+                "href": "#ia-2.6",
+                "rel": "incorporated-into"
+              }
+            ],
+            "parts": [
+              {
+                "id": "ia-2.400_wdn",
+                "name": "cccs-withdrawal",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "prose": "Incorporated into IA-02(01) and IA-02(06)."
+              }
+            ]
+          },
+          {
+            "id": "ia-4.400",
+            "class": "cccs-enhancement",
+            "title": "Biometrics protection",
+            "props": [
+              {
+                "name": "label",
+                "value": "IA-04(400)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "IA-4(400)"
+              },
+              {
+                "name": "sort-id",
+                "value": "ia-04.400"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "ia-4"
+              }
+            ],
+            "parts": [
+              {
+                "id": "ia-4.400_smt",
+                "name": "statement",
+                "prose": "Maintain adequate protection for biometrics in accordance with privacy regulations."
+              },
+              {
+                "id": "ia-4.400_gdn",
+                "name": "guidance",
+                "prose": "Information collected about the individual for authentication purposes may constitute personal information and should be safeguarded appropriately. In cases where the biometrics are kept in their personally identifiable forms and are not hashed, it is important that they be protected in accordance with privacy regulations. It is not recommended to keep biometrics data in personally identifiable form for identification purposes."
+              }
+            ]
+          },
+          {
+            "id": "ia-4.401",
+            "class": "cccs-enhancement",
+            "title": "Biometrics integrity",
+            "props": [
+              {
+                "name": "label",
+                "value": "IA-04(401)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "IA-4(401)"
+              },
+              {
+                "name": "sort-id",
+                "value": "ia-04.401"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "ia-4"
+              }
+            ],
+            "parts": [
+              {
+                "id": "ia-4.401_smt",
+                "name": "statement",
+                "prose": "Ensure the integrity of collected biometrics."
+              },
+              {
+                "id": "ia-4.401_gcgdn",
+                "name": "gc-guidance",
+                "prose": "The federal Privacy Act requires that organizations take all reasonable steps to ensure that personal information used for an administrative purpose by the institution is as accurate, up-to-date, and complete as possible.",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs"
+              }
+            ]
+          },
+          {
+            "id": "ia-8.400",
+            "class": "cccs-enhancement",
+            "title": "Identity and credential assurance",
+            "props": [
+              {
+                "name": "label",
+                "value": "IA-08(400)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "IA-8(400)"
+              },
+              {
+                "name": "sort-id",
+                "value": "ia-08.400"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "ia-8"
+              },
+              {
+                "name": "status",
+                "value": "withdrawn"
+              }
+            ],
+            "links": [
+              {
+                "href": "#ia-5.15",
+                "rel": "incorporated-into"
+              }
+            ],
+            "parts": [
+              {
+                "id": "ia-8.400_wdn",
+                "name": "cccs-withdrawal",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "prose": "Incorporated into IA-05(15)."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pe",
+        "class": "family",
+        "title": "Physical and environmental protection",
+        "controls": [
+          {
+            "id": "pe-2.400",
+            "class": "cccs-enhancement",
+            "title": "Identification card requirements",
+            "props": [
+              {
+                "name": "label",
+                "value": "PE-02(400)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "PE-2(400)"
+              },
+              {
+                "name": "sort-id",
+                "value": "pe-02.400"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "pe-2"
+              }
+            ],
+            "parts": [
+              {
+                "id": "pe-2.400_smt",
+                "name": "statement",
+                "prose": "Ensure identification cards meet requirements prior to issuance."
+              },
+              {
+                "id": "pe-2.400_gcgdn",
+                "name": "gc-guidance",
+                "prose": "The organization issues an identification card to all personnel, which as a minimum includes the name of the organization, the bearer’s name and photo, a unique card number, and an expiry date. Identification cards may contain personal information and should be protected accordingly.",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs"
+              }
+            ]
+          },
+          {
+            "id": "pe-3.400",
+            "class": "cccs-enhancement",
+            "title": "Security inspections",
+            "props": [
+              {
+                "name": "label",
+                "value": "PE-03(400)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "PE-3(400)"
+              },
+              {
+                "name": "sort-id",
+                "value": "pe-03.400"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "pe-3"
+              }
+            ],
+            "parts": [
+              {
+                "id": "pe-3.400_smt",
+                "name": "statement",
+                "prose": "Conduct security inspections in facilities where sensitive or valuable information or assets are handled or stored, or in facilities supporting critical services or activities."
+              },
+              {
+                "id": "pe-3.400_gcgdn",
+                "name": "gc-guidance",
+                "prose": "Security inspections are conducted to verify compliance with departmental security practices. They must be conducted by authorized personnel and in accordance with defined processes and timelines. In emergency or heightened threat situations, the frequency or depth of security inspections is increased to achieve a higher readiness level. Non-compliance shall be reported in accordance with defined processes to enable the implementation of corrective actions and, when applicable, to report to the responsible authorities.",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs"
+              }
+            ]
+          },
+          {
+            "id": "pe-13.400",
+            "class": "cccs-enhancement",
+            "title": "Emergency services",
+            "props": [
+              {
+                "name": "label",
+                "value": "PE-13(400)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "PE-13(400)"
+              },
+              {
+                "name": "sort-id",
+                "value": "pe-13.400"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "pe-13"
+              }
+            ],
+            "parts": [
+              {
+                "id": "pe-13.400_smt",
+                "name": "statement",
+                "prose": "Ensure that firefighting water capacity and effective response times of emergency services are considered when developing safeguarding strategies."
+              },
+              {
+                "id": "pe-13.400_gdn",
+                "name": "guidance",
+                "prose": "Firefighting water capacity and the effective response times of firefighters and police need to be considered during the development of safeguarding strategies, based on the principles of protection, detection, and response. It applies to site selection, facilities, and assets. If emergency response times are inadequate, alternative or additional measures for life safety and asset protection may be required."
+              }
+            ]
+          },
+          {
+            "id": "pe-400",
+            "class": "cccs-control",
+            "title": "Remote and telework environments",
+            "props": [
+              {
+                "name": "label",
+                "value": "PE-400",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "PE-400"
+              },
+              {
+                "name": "sort-id",
+                "value": "pe-400"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              }
+            ],
+            "links": [
+              {
+                "href": "#at-2",
+                "rel": "related"
+              },
+              {
+                "href": "#pe-17",
+                "rel": "related"
+              },
+              {
+                "href": "#pe-23",
+                "rel": "related"
+              },
+              {
+                "href": "#ra-2",
+                "rel": "related"
+              },
+              {
+                "href": "#ra-3",
+                "rel": "related"
+              },
+              {
+                "href": "#f001b5c3-be42-5aad-bde3-0b4257bc76ed",
+                "rel": "reference"
+              },
+              {
+                "href": "#24d65386-1b4e-563a-80ff-5d93fc7e9f17",
+                "rel": "reference"
+              },
+              {
+                "href": "#69d2bc3c-6ad9-5cb5-997f-3275aeecaac8",
+                "rel": "reference"
+              },
+              {
+                "href": "#ff6279ae-75d3-5a97-b1f5-0d4a949a1b8f",
+                "rel": "reference"
+              },
+              {
+                "href": "#a900afee-dcec-503a-b70a-2a75dcb193df",
+                "rel": "reference"
+              },
+              {
+                "href": "#7b931203-98f5-5fae-a52a-4f74a1627dbc",
+                "rel": "reference"
+              },
+              {
+                "href": "#e187e13f-7255-5565-af0f-722464772699",
+                "rel": "reference"
+              }
+            ],
+            "parts": [
+              {
+                "id": "pe-400_smt",
+                "name": "statement",
+                "parts": [
+                  {
+                    "id": "pe-400_smt.a",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "A."
+                      }
+                    ],
+                    "prose": "Assess physical security of remote or telework environments"
+                  },
+                  {
+                    "id": "pe-400_smt.b",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "B."
+                      }
+                    ],
+                    "prose": "Apply appropriate protection and storage requirements for information and assets"
+                  },
+                  {
+                    "id": "pe-400_smt.c",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "C."
+                      }
+                    ],
+                    "prose": "Use approved security equipment and electronic devices in accordance with the categorization of material"
+                  }
+                ]
+              },
+              {
+                "id": "pe-400_gcgdn",
+                "name": "gc-guidance",
+                "prose": "Security considerations should be addressed in remote or telework locations for GC departments, agencies and employees. Remote/telework can increase the likelihood of compromise of an organization’s sensitive information. Information can be targeted by threat actors through different methods such as physical access to information and devices, theft of information or devices, eavesdropping during meetings and telephone conversations, and overviewing of information and devices.\n\nWhen working in a location other than the designated work site, employees should assess physical security and apply appropriate protection and storage requirements for GC information and assets. A risk assessment needs to be completed for all remote and telework situations and associated work solutions.\n\nProtected A and B material may be processed and stored at remote and telework locations outside a designated GC workplace when physical protections are employed. The processing of Secret and Top Secret (TS) information originating from allies is only permitted in the appropriate zone of a designated GC security zone. TS Sensitive compartmented information (SCI) cannot be processed, stored, or discussed in a telework environment. It is recommended to prevent or limit the use of hard-copy material as much as practicable.\n\nEmployees should be provided equipment that supports and promotes secure processing, storage, and transport of GC information. Employees should complete appropriate security awareness training as a condition to being granted their remote/telework request. Appropriate security controls need to be available and in place.\n\nTracking data for employees on remote/telework agreements should be maintained and should include the names, locations, issued equipment, and assets, as well as registries of information taken to the remote/telework location, when appropriate. Employees are responsible for understanding and implementing all remote/telework security control measures that contribute to the secure processing of GC information at their location.",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs"
+              }
+            ],
+            "controls": [
+              {
+                "id": "pe-400.1",
+                "class": "cccs-enhancement",
+                "title": "Physical information and assets storage",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "PE-400(01)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "PE-400(1)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "pe-400.01"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#ra-2",
+                    "rel": "related"
+                  },
+                  {
+                    "href": "#ra-3",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "pe-400.1_smt",
+                    "name": "statement",
+                    "prose": "Store physical information and assets in accordance with RCMP guidance and departmentally established security practices."
+                  },
+                  {
+                    "id": "pe-400.1_gcgdn",
+                    "name": "gc-guidance",
+                    "prose": "Effort should be made to limit the need to process or store hard-copy documents of any categorization in locations outside a GC controlled facility. The RCMP does not recommend that Confidential and Secret information or assets be processed in remote/telework environments, but in cases where it cannot be avoided, requirements set out in the RCMP G1-001 Security Equipment Guide should be followed.\n\nThe processing and storage of Protected C or Top Secret information outside approved GC facilities is considered an extremely high risk and is not recommended by the RCMP. If unavoidable, departmental physical security shall perform a full site security assessment, including a complete Threat and Risk Assessment (TRA). All security controls required for High Secure Zones in GC facilities should be used as a minimum standard for location fit-up.",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs"
+                  }
+                ]
+              },
+              {
+                "id": "pe-400.2",
+                "class": "cccs-enhancement",
+                "title": "International remote/telework",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "PE-400(02)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "PE-400(2)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "pe-400.02"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#ra-3",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "pe-400.2_smt",
+                    "name": "statement",
+                    "prose": "Allow requests for remote/telework from international locations only under exceptional circumstances."
+                  },
+                  {
+                    "id": "pe-400.2_gcgdn",
+                    "name": "gc-guidance",
+                    "prose": "This enhancement does not apply to already assigned positions of employees working abroad as part of their regular operational duties, such as those attached to Canadian Embassies and High Commissions or military deployments. The RCMP does not recommend allowing remote/telework from international locations. Departments that may allow international remote/telework should develop a process with considerations given for all security controls, risk assessments, approvals, and briefings.\n\nRequests for international remote/telework should only be considered under exceptional circumstances; be limited to a specific defined period of time; require a complete TRA for the employee, country, and city of work; and require additional approval from Deputy Head, department Chief Security Officer (CSO), Chief Human Resources Officer (CHRO) and Chief Information Officer (CIO) as well as Shared Services Canada (SSC).\n\nInternational remote/telework carries increased security risks for the individual and the GC, since the Vienna Convention on Diplomatic Relations (1963) would not apply to those GC employees. As such, these employees are subject to all local and state laws and are not afforded diplomatic protections for information, assets, or property, including GC information and assets. Additionally, it carries increased physical security risks, and, in some countries, physical security controls may be cost prohibitive or difficult to maintain without a departmental security presence.",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "pe-401",
+            "class": "cccs-control",
+            "title": "Security operations centre",
+            "props": [
+              {
+                "name": "label",
+                "value": "PE-401",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "PE-401"
+              },
+              {
+                "name": "sort-id",
+                "value": "pe-401"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              }
+            ],
+            "links": [
+              {
+                "href": "#ir-4",
+                "rel": "related"
+              },
+              {
+                "href": "#9d24544d-b234-593a-98cb-19a9f91c2bf1",
+                "rel": "reference"
+              },
+              {
+                "href": "#0fab9f76-d721-5754-b8e6-7410c9cf55cf",
+                "rel": "reference"
+              },
+              {
+                "href": "#9676dab7-c534-57cc-aca8-ea9584e417af",
+                "rel": "reference"
+              }
+            ],
+            "parts": [
+              {
+                "id": "pe-401_smt",
+                "name": "statement",
+                "prose": "Establish and maintain a Security Operations Centre (SOC) to protect the organization’s people, property, assets, and information, through physical and technical surveillance and monitoring."
+              },
+              {
+                "id": "pe-401_gdn",
+                "name": "guidance",
+                "prose": "A SOC combines people, processes, and technology to deliver operational and other security services to organizations, including the protection of people, property, assets, and information. The SOC usually provides the facilities to support security personnel in the monitoring, surveillance, display, control, and management of security-related events, including insider threats. The SOC enables system operators to collect the information related to the physical or cyber environment, to analyze it, to detect and assess alerts notifications, and to dispatch the appropriate personnel to properly respond to events. A SOC increases situational awareness of the organization’s environment, enabling effective decision-making and response during an event.\n\nThe SOC can assist multidisciplinary teams, including physical security, IT and operational technology (OT) security, analysts, engineers, architects, and other service providers. Indeed, the convergence of IT and OT instigates new requirements to assess the risk posed by both information and physical security. For example, the proper functioning of control systems, such as those seen in building automation that can control temperature, lightning, access, etc., could be impacted if the software/application was compromised.\n\nIR-04(14) provides information on a SOC meant to protect an organization’s technical infrastructure, which is comprised of systems and networks."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ps",
+        "class": "family",
+        "title": "Personnel security",
+        "controls": [
+          {
+            "id": "ps-4.400",
+            "class": "cccs-enhancement",
+            "title": "Permanently bound to secrecy",
+            "props": [
+              {
+                "name": "label",
+                "value": "PS-04(400)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "PS-4(400)"
+              },
+              {
+                "name": "sort-id",
+                "value": "ps-04.400"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "ps-4"
+              }
+            ],
+            "parts": [
+              {
+                "id": "ps-4.400_smt",
+                "name": "statement",
+                "prose": "Forward data on the form Record of a Person in a Scheduled Department or Agency Under the Security of Information Act (SOIA) to the Canadian Security Intelligence Service (CSIS)."
+              },
+              {
+                "id": "ps-4.400_gcgdn",
+                "name": "gc-guidance",
+                "prose": "As part of the departmental security exit process, if the departing member or employee has not already been entered into the CSIS central registry, the scheduled department should proceed by forwarding the data to CSIS. A departing person who was not previously designated as a person permanently bound to secrecy during the course of their employment can be designated as such upon termination, if it is assessed that it is in the interest of national security. If a decision is made to recommend to the deputy head that a former member or employee be designated, procedures for designation by notice shall be followed.",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs"
+              }
+            ]
+          },
+          {
+            "id": "ps-5.400",
+            "class": "cccs-enhancement",
+            "title": "Security clearance",
+            "props": [
+              {
+                "name": "label",
+                "value": "PS-05(400)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "PS-5(400)"
+              },
+              {
+                "name": "sort-id",
+                "value": "ps-05.400"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "ps-5"
+              }
+            ],
+            "links": [
+              {
+                "href": "#ps-3",
+                "rel": "related"
+              }
+            ],
+            "parts": [
+              {
+                "id": "ps-5.400_smt",
+                "name": "statement",
+                "parts": [
+                  {
+                    "id": "ps-5.400_smt.a",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "a."
+                      }
+                    ],
+                    "prose": "Accept the security status or clearance of the individual when the required one is at the same or lesser level previously granted"
+                  },
+                  {
+                    "id": "ps-5.400_smt.b",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "b."
+                      }
+                    ],
+                    "prose": "Redo the security screening when",
+                    "parts": [
+                      {
+                        "id": "ps-5.400_smt.b.1",
+                        "name": "item",
+                        "props": [
+                          {
+                            "name": "label",
+                            "value": "1)"
+                          }
+                        ],
+                        "prose": "the results are over 5 years old"
+                      },
+                      {
+                        "id": "ps-5.400_smt.b.2",
+                        "name": "item",
+                        "props": [
+                          {
+                            "name": "label",
+                            "value": "2)"
+                          }
+                        ],
+                        "prose": "there is evidence to suggest that the security screening was not done in accordance with the TBS Standard on Security Screening"
+                      },
+                      {
+                        "id": "ps-5.400_smt.b.3",
+                        "name": "item",
+                        "props": [
+                          {
+                            "name": "label",
+                            "value": "3)"
+                          }
+                        ],
+                        "prose": "there is a security waiver attached to the status or clearance"
+                      },
+                      {
+                        "id": "ps-5.400_smt.b.4",
+                        "name": "item",
+                        "props": [
+                          {
+                            "name": "label",
+                            "value": "4)"
+                          }
+                        ],
+                        "prose": "law enforcement inquiries or security assessments results have been removed from the individual’s file"
+                      },
+                      {
+                        "id": "ps-5.400_smt.b.5",
+                        "name": "item",
+                        "props": [
+                          {
+                            "name": "label",
+                            "value": "5)"
+                          }
+                        ],
+                        "prose": "there is adverse information in the individual’s file that may pose a security risk to the receiving department or agency"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "ps-5.400_gcgdn",
+                "name": "gc-guidance",
+                "prose": "When enhanced screening is required for the new position, security screening will be reviewed accordingly. There may be a need to conduct additional inquiries, verification, or assessments to comply with the status or clearance requirements.",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pt",
+        "class": "family",
+        "title": "Personal information handling and transparency",
+        "controls": [
+          {
+            "id": "pt-4.400",
+            "class": "cccs-enhancement",
+            "title": "Tailored consent private sector",
+            "params": [
+              {
+                "id": "pt-04.400_odp.01",
+                "label": "organization-defined mechanisms"
+              }
+            ],
+            "props": [
+              {
+                "name": "label",
+                "value": "PT-04(400)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "PT-4(400)"
+              },
+              {
+                "name": "sort-id",
+                "value": "pt-04.400"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "pt-4"
+              }
+            ],
+            "links": [
+              {
+                "href": "#pt-2",
+                "rel": "related"
+              }
+            ],
+            "parts": [
+              {
+                "id": "pt-4.400_smt",
+                "name": "statement",
+                "prose": "Provide {{ insert: param, pt-04.400_odp.01 }} to allow individuals to tailor handling permissions to selected elements of personal information."
+              },
+              {
+                "id": "pt-4.400_gdn",
+                "name": "guidance",
+                "prose": "While some handling of personal information may be necessary for the basic functionality of the product or service, other handling may not be necessary. In such cases, tailored consent should be considered. Organizations should inform individuals of their personal information that will be used for the secondary use. Tailored consent allows individuals to select how personal information elements may be handled. More tailored consent may help reduce privacy risk, increase individual satisfaction, and avoid adverse behaviours, such as abandonment of the product or service."
+              }
+            ]
+          },
+          {
+            "id": "pt-7.400",
+            "class": "cccs-enhancement",
+            "title": "Private sector",
+            "params": [
+              {
+                "id": "pt-07.400_odp.01",
+                "label": "organization-defined tools or mechanisms"
+              }
+            ],
+            "props": [
+              {
+                "name": "label",
+                "value": "PT-07(400)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "PT-7(400)"
+              },
+              {
+                "name": "sort-id",
+                "value": "pt-07.400"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "pt-7"
+              }
+            ],
+            "links": [
+              {
+                "href": "#ia-4",
+                "rel": "related"
+              },
+              {
+                "href": "#pt-4",
+                "rel": "related"
+              }
+            ],
+            "parts": [
+              {
+                "id": "pt-7.400_smt",
+                "name": "statement",
+                "prose": "When collecting, using, or disclosing particularly sensitive personal information, private sector organizations should:",
+                "parts": [
+                  {
+                    "id": "pt-7.400_smt.a",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "a."
+                      }
+                    ],
+                    "prose": "determine the form of consent to use, considering the sensitivity of information"
+                  },
+                  {
+                    "id": "pt-7.400_smt.b",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "b."
+                      }
+                    ],
+                    "prose": "protect personal information with {{ insert: param, pt-07.400_odp.01 }} appropriate to the sensitivity of information"
+                  }
+                ]
+              },
+              {
+                "id": "pt-7.400_gdn",
+                "name": "guidance",
+                "prose": "Under PIPEDA, any personal information can be sensitive depending on the context. However, certain types of personal information will generally be considered sensitive because of the specific risks to individuals associated with the collection, use, or disclosure of these categories of information. Information that will generally be considered sensitive and require a higher degree of protection includes health and financial data, ethnic and racial origin, political opinions, genetic and biometric data, information about an individual’s sex life or sexual orientation, and religious or philosophical beliefs.\n\nWhether personal information is considered sensitive under PIPEDA will vary depending on the facts of each case. Context is important when determining whether personal information would be considered sensitive."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ra",
+        "class": "family",
+        "title": "Risk assessment",
+        "controls": [
+          {
+            "id": "ra-1.400",
+            "class": "cccs-enhancement",
+            "title": "Privacy impact assessments",
+            "props": [
+              {
+                "name": "label",
+                "value": "RA-01(400)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "RA-1(400)"
+              },
+              {
+                "name": "sort-id",
+                "value": "ra-01.400"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "activity"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "ra-1"
+              }
+            ],
+            "links": [
+              {
+                "href": "#ra-8",
+                "rel": "related"
+              }
+            ],
+            "parts": [
+              {
+                "id": "ra-1.400_smt",
+                "name": "statement",
+                "prose": "Develop a PIA process and associated procedures that:",
+                "parts": [
+                  {
+                    "id": "ra-1.400_smt.a",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "a."
+                      }
+                    ],
+                    "prose": "is established by Heads of GC institutions"
+                  },
+                  {
+                    "id": "ra-1.400_smt.b",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "b."
+                      }
+                    ],
+                    "prose": "considers the responsibility within the institution for establishing PIBs"
+                  },
+                  {
+                    "id": "ra-1.400_smt.c",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "c."
+                      }
+                    ],
+                    "prose": "is commensurate with the severity of potential injuries related to the privacy invasiveness of the institution's programs or activities"
+                  },
+                  {
+                    "id": "ra-1.400_smt.d",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "d."
+                      }
+                    ],
+                    "prose": "ensures the PIA is completed by the appropriate privacy senior official or executive holding responsibility within the institution for new or substantially modified programs or activities"
+                  }
+                ]
+              },
+              {
+                "id": "ra-1.400_gcgdn",
+                "name": "gc-guidance",
+                "prose": "Following the establishment of the PIA by the Head of the institution, the appropriate privacy senior officials or executives are responsible for adhering to the process in RA-08 for the completion of the PIA.",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sa",
+        "class": "family",
+        "title": "System and services acquisition",
+        "controls": [
+          {
+            "id": "sa-8.400",
+            "class": "cccs-enhancement",
+            "title": "Licensed and certified engineers",
+            "props": [
+              {
+                "name": "label",
+                "value": "SA-08(400)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "SA-8(400)"
+              },
+              {
+                "name": "sort-id",
+                "value": "sa-08.400"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "sa-8"
+              }
+            ],
+            "parts": [
+              {
+                "id": "sa-8.400_smt",
+                "name": "statement",
+                "prose": "Employ licensed and certified security engineers that assume responsibility for the specification, design, development, and implementation of information system security and privacy solutions."
+              }
+            ]
+          },
+          {
+            "id": "sa-400",
+            "class": "cccs-control",
+            "title": "Sovereignty and jurisdiction",
+            "params": [
+              {
+                "id": "sa-400_odp.01",
+                "select": {
+                  "how-many": "one-or-more",
+                  "choice": [
+                    "organization-level",
+                    "mission/business-level",
+                    "system-level"
+                  ]
+                }
+              }
+            ],
+            "props": [
+              {
+                "name": "label",
+                "value": "SA-400",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "SA-400"
+              },
+              {
+                "name": "sort-id",
+                "value": "sa-400"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              }
+            ],
+            "links": [
+              {
+                "href": "#at-2",
+                "rel": "related"
+              },
+              {
+                "href": "#ca-2",
+                "rel": "related"
+              },
+              {
+                "href": "#ra-1",
+                "rel": "related"
+              },
+              {
+                "href": "#ra-2",
+                "rel": "related"
+              },
+              {
+                "href": "#e89633d7-4eec-58eb-afa3-2ef22708e20f",
+                "rel": "reference"
+              },
+              {
+                "href": "#69d2bc3c-6ad9-5cb5-997f-3275aeecaac8",
+                "rel": "reference"
+              },
+              {
+                "href": "#170988a9-652b-5710-b072-659bb1f0dd0a",
+                "rel": "reference"
+              },
+              {
+                "href": "#4dec1d94-aec6-5bcc-bc4f-8501e18d5f65",
+                "rel": "reference"
+              }
+            ],
+            "parts": [
+              {
+                "id": "sa-400_smt",
+                "name": "statement",
+                "prose": "Require the organizational business function to conduct a sovereignty and jurisdiction threat and risk assessment process at the {{ insert: param, sa-400_odp.01 }} that:",
+                "parts": [
+                  {
+                    "id": "sa-400_smt.a",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "A."
+                      }
+                    ],
+                    "prose": "conducts an injury assessment to determine the maximum potential injuries that may be suffered due to external legal compulsion of the business functions or information assets by",
+                    "parts": [
+                      {
+                        "id": "sa-400_smt.a.1",
+                        "name": "item",
+                        "props": [
+                          {
+                            "name": "label",
+                            "value": "1."
+                          }
+                        ],
+                        "prose": "considering the business needs for security including any laws or regulations which require that data not be disclosed or compromised"
+                      },
+                      {
+                        "id": "sa-400_smt.a.2",
+                        "name": "item",
+                        "props": [
+                          {
+                            "name": "label",
+                            "value": "2."
+                          }
+                        ],
+                        "prose": "updating the security categorization of the business functions or information assets"
+                      },
+                      {
+                        "id": "sa-400_smt.a.3",
+                        "name": "item",
+                        "props": [
+                          {
+                            "name": "label",
+                            "value": "3."
+                          }
+                        ],
+                        "prose": "documenting the negative consequences of legal compulsion"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "sa-400_smt.b",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "B."
+                      }
+                    ],
+                    "prose": "performs jurisdiction-specific threat assessment that establishes a likelihood of being targeted"
+                  },
+                  {
+                    "id": "sa-400_smt.c",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "C."
+                      }
+                    ],
+                    "prose": "undertakes a vulnerability assessment to evaluate the potential means by which the external jurisdiction could exploit the business functions or information assets"
+                  },
+                  {
+                    "id": "sa-400_smt.d",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "D."
+                      }
+                    ],
+                    "prose": "completes a jurisdiction-specific risk assessment"
+                  }
+                ]
+              },
+              {
+                "id": "sa-400_gdn",
+                "name": "guidance",
+                "prose": "Data sovereignty refers to Canada’s right to control access to and disclosure of digital information that is subject to its legislation. Data residency refers to the physical or geographical location of an organization’s data while at rest. Jurisdiction refers to a realm of authority, which in this context, references the ability to compel compliance from entities within that realm as the key threat.\n\nA concern with having data hosted in a foreign jurisdiction is that data could be observed, modified, or denied through legal compulsion, which should not happen if an organization had sovereignty over its data. Exposure of a business function to a different legal jurisdiction can effectively remove sovereign legal barriers to compromise within the original jurisdiction. For example, the protection of citizen privacy often is not afforded to non-citizens, and service providers may be legally compelled to provide access to data or services that would have been legally protected in the original jurisdiction. In the case of business functions, consider as an example OT that controls critical infrastructures hosted in the cloud being modified or rendered unavailable by a hostile foreign jurisdiction.\n\nThe techniques employed may be very sophisticated and will generally be executed with full insider administrative privilege. Legal compulsion by sophisticated jurisdictions is exceedingly effective at bypassing other controls. Multiple jurisdictions may apply e.g., municipality, city, county, reservation, district, region, province, state, canton, territory, or nation. All levels must be identified to assess capabilities for compulsion.\n\nOther jurisdictions may compel the compromise of business functions in confidentiality, integrity or availability. An injury assessment must document the negative consequences of legal compulsion, including any specific business needs for security (e.g., laws or regulations which require that data not be compromised).\n\nAn organization simply may not be at liberty to take a risk management approach (e.g., due to legislative mandate or indigenous data sovereignty) and must avoid risk scenarios outright."
+              },
+              {
+                "id": "sa-400_gcgdn",
+                "name": "gc-guidance",
+                "prose": "The TBS Directive on Service and Digital, section 4.4.3.14 requires that sensitive information or data that is classified or categorized as Protected B or Protected C be located within Canadian jurisdiction as the principal delivery option. Canadian jurisdiction refers to the geographic boundaries of Canada or within the boundary of a diplomatic or consular mission of the GC abroad. The Cyber Centre recommends that all data and business functions of significant sensitivity be retained within Canadian jurisdictions.",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs"
+              }
+            ],
+            "controls": [
+              {
+                "id": "sa-400.1",
+                "class": "cccs-enhancement",
+                "title": "Threat and risk assessment",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SA-400(01)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SA-400(1)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "sa-400.01"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#ca-2",
+                    "rel": "related"
+                  },
+                  {
+                    "href": "#ra-3",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "sa-400.1_smt",
+                    "name": "statement",
+                    "prose": "Require the organization to perform threat and risk assessments in relation to data sovereignty, considering its jurisdiction and by which surfaces legal compulsion may be effective."
+                  },
+                  {
+                    "id": "sa-400.1_gdn",
+                    "name": "guidance",
+                    "prose": "The organization establishes the injury value of business functions proposed to occupy other jurisdictions. Each of the 4 surfaces (logical, physical, personnel, and lifecycle) discussed in System lifecycle cyber security and privacy risk management activities (ITSP.10.037) may be vulnerable."
+                  }
+                ]
+              },
+              {
+                "id": "sa-400.2",
+                "class": "cccs-enhancement",
+                "title": "Legal and contractual assessment",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SA-400(02)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SA-400(2)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "sa-400.02"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#ca-2",
+                    "rel": "related"
+                  },
+                  {
+                    "href": "#sa-9",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "sa-400.2_smt",
+                    "name": "statement",
+                    "prose": "Evaluate security assurance for business processes via legal or contractual mechanisms."
+                  },
+                  {
+                    "id": "sa-400.2_gdn",
+                    "name": "guidance",
+                    "prose": "Many jurisdictions will have different opportunities for protecting business functions from legal compulsion, at different assurance levels. International/multilateral agreements may help improve protection. Contract terms may be available from suppliers that can assist with reducing exposure or reporting on compulsion (note that some forms of compulsion may additionally compel non-disclosure in any form). Where service delivery involves third-party vendors, ensure contractual documents reflect data sovereignty and jurisdiction obligations. If organizations choose to address sovereignty and jurisdiction obligations at the organization or project level, this obligation should be included in associated contractual obligations.\n\nOrganizations should seek specialist advice from the target jurisdiction if legal or contractual mechanisms are relied upon to prevent foreign legal compulsion, since any compulsive legislation is likely to take precedence overprotective contracts or legislation. What constitutes due process in other jurisdictions may not be satisfactory from a Canadian perspective."
+                  }
+                ]
+              },
+              {
+                "id": "sa-400.3",
+                "class": "cccs-enhancement",
+                "title": "Business process attribute marking",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SA-400(03)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SA-400(3)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "sa-400.03"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#ac-16",
+                    "rel": "related"
+                  },
+                  {
+                    "href": "#mp-3",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "sa-400.3_smt",
+                    "name": "statement",
+                    "prose": "Ensure business processes receive the intended handling with respect to legal jurisdiction."
+                  },
+                  {
+                    "id": "sa-400.3_gdn",
+                    "name": "guidance",
+                    "prose": "Metadata attributes can be defined and attached to business processes or data to assist management processes in correctly handling the intended legal jurisdiction. For example, documents may be marked with “Canadian Jurisdiction Only” or “Sovereign Indigenous” as an attribute. The automated handling of metadata attributes can be of great assistance for shared-infrastructure providers who may have multiple differing jurisdictional requirements."
+                  }
+                ]
+              },
+              {
+                "id": "sa-400.4",
+                "class": "cccs-enhancement",
+                "title": "Protection of data at rest",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SA-400(04)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SA-400(4)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "sa-400.04"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#cp-6",
+                    "rel": "related"
+                  },
+                  {
+                    "href": "#cp-9",
+                    "rel": "related"
+                  },
+                  {
+                    "href": "#mp-6",
+                    "rel": "related"
+                  },
+                  {
+                    "href": "#mp-8",
+                    "rel": "related"
+                  },
+                  {
+                    "href": "#sa-3",
+                    "rel": "related"
+                  },
+                  {
+                    "href": "#sa-4",
+                    "rel": "related"
+                  },
+                  {
+                    "href": "#sa-22",
+                    "rel": "related"
+                  },
+                  {
+                    "href": "#sc-28",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "sa-400.4_smt",
+                    "name": "statement",
+                    "prose": "Prevent data from residing in any other legal jurisdiction."
+                  },
+                  {
+                    "id": "sa-400.4_gdn",
+                    "name": "guidance",
+                    "prose": "Permitting data at rest to remain in other jurisdictions provides the greatest opportunity for compulsion of the data at any time. Hosting data at rest within Canadian jurisdictions will increase the work factor and may eliminate some capabilities. Encryption of data at rest is of limited value but may be somewhat effective in preventing physical retrieval of the data.\n\nThere is no minimum time with respect to the data being “at rest”. If the data could, even momentarily, be written to non-volatile media, it must be considered at rest. This can particularly affect emergency/unexpected situations such as core dumps, memory caching/swapping and disaster recovery operations.\n\nConsideration of data at rest must also include how the stored data will eventually be decommissioned and disposed of, to ensure that the data will remain outside foreign compulsion at the end of the system lifespan."
+                  }
+                ]
+              },
+              {
+                "id": "sa-400.5",
+                "class": "cccs-enhancement",
+                "title": "Protection of data in transit",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SA-400(05)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SA-400(5)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "sa-400.05"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#cp-8",
+                    "rel": "related"
+                  },
+                  {
+                    "href": "#sc-8",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "sa-400.5_smt",
+                    "name": "statement",
+                    "prose": "Prevent data from transiting through any other legal jurisdiction."
+                  },
+                  {
+                    "id": "sa-400.5_gdn",
+                    "name": "guidance",
+                    "prose": "Permitting data in transit to pass through other jurisdictions provides numerous opportunities for compulsion of the data. Routing data strictly within Canadian jurisdictions eliminates many capabilities for compulsion. Encrypting data in transit may also have value."
+                  }
+                ]
+              },
+              {
+                "id": "sa-400.6",
+                "class": "cccs-enhancement",
+                "title": "Protection of data in use",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SA-400(06)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SA-400(6)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "sa-400.06"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#cp-7",
+                    "rel": "related"
+                  },
+                  {
+                    "href": "#sc-13",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "sa-400.6_smt",
+                    "name": "statement",
+                    "prose": "Prevent data from being used in any other legal jurisdiction."
+                  },
+                  {
+                    "id": "sa-400.6_gdn",
+                    "name": "guidance",
+                    "prose": "Permitting data in use to exist in other jurisdictions provides opportunity for compulsion of the data. Processing data strictly within trusted jurisdictions eliminates many capabilities for compulsion.\n\nThere is currently no approved method of encryption to protect data in use. In principle, a form of encryption referred to as homomorphic encryption could permit certain kinds of processing while the data remains encrypted, but the Cyber Centre does not currently assess homomorphic encryption to be sufficient for cryptographic use as per the Cyber Centre’s Cryptographic algorithms for UNCLASSIFIED, PROTECTED A, and PROTECTED B information (ITSP.40.111). Therefore, if homomorphic encryption is employed to protect data in use, it must currently be assessed as cleartext (i.e., not providing cryptographic protection as per SC-13).\n\nThere is no minimum time with respect to data being in use. Presence in a system for a single CPU cycle would be sufficient for compulsion."
+                  }
+                ]
+              },
+              {
+                "id": "sa-400.7",
+                "class": "cccs-enhancement",
+                "title": "Protection against extraterritorial compulsion",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SA-400(07)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SA-400(7)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "sa-400.07"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#ma-5",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "sa-400.7_smt",
+                    "name": "statement",
+                    "prose": "Prevent business functions from being compromised by individuals or corporations that are being compelled by a different legal jurisdiction."
+                  },
+                  {
+                    "id": "sa-400.7_gdn",
+                    "name": "guidance",
+                    "prose": "Adversaries may have means to compel individuals and/or corporations to compromise business functions even while those functions are kept entirely outside the adversary’s jurisdiction. Consider the loyalty of individuals or corporations, direct ties between entities (e.g., affiliated corporations, family members, foreign assets) and indirect ties (e.g., partnerships and relationships).\n\nIndividuals residing in Canada who hold both Canadian and foreign citizenships may find themselves compelled by their other nationalities, despite also being bound to Canadian law, and could then be forced to choose between legal consequences in either jurisdiction."
+                  }
+                ]
+              },
+              {
+                "id": "sa-400.8",
+                "class": "cccs-enhancement",
+                "title": "Protection of business lifecycle",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SA-400(08)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SA-400(8)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "sa-400.08"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#sa-3",
+                    "rel": "related"
+                  },
+                  {
+                    "href": "#sa-4",
+                    "rel": "related"
+                  },
+                  {
+                    "href": "#sc-7",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "sa-400.8_smt",
+                    "name": "statement",
+                    "prose": "Prevent business functions from being compromised by lifecycle attacks embedded via legal compulsion in or from a different legal jurisdiction."
+                  },
+                  {
+                    "id": "sa-400.8_gdn",
+                    "name": "guidance",
+                    "prose": "Employing products or services (e.g., software, firmware, hardware, design services, consultancy, etc.) that have previously been within the scope of compulsion may expose business functions to embedded compromises in those products or services. Most current systems contain elements from multiple legal jurisdictions, and a risk-based approach will be required to select solutions that address identified threats, according to the business needs for security.\n\nStrong network isolation is recommended as a compensating control for any embedded compromises."
+                  }
+                ]
+              },
+              {
+                "id": "sa-400.9",
+                "class": "cccs-enhancement",
+                "title": "Public ownership",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SA-400(09)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SA-400(9)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "sa-400.09"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#sa-3",
+                    "rel": "related"
+                  },
+                  {
+                    "href": "#sa-4",
+                    "rel": "related"
+                  },
+                  {
+                    "href": "#sa-22",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "sa-400.9_smt",
+                    "name": "statement",
+                    "prose": "Prevent business functions from being compromised by ownership transfer of lifecycle functions to a different legal jurisdiction."
+                  },
+                  {
+                    "id": "sa-400.9_gdn",
+                    "name": "guidance",
+                    "prose": "While system dependencies might be secured against foreign compulsion at the outset of implementation, if a transfer of ownership occurs during the system lifespan, the system could become subject to lifecycle attacks from foreign compulsion. To prevent this possibility, organizations select lifecycle support and supply arrangements that will be under Canadian public ownership for the entire lifespan of the system."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sc",
+        "class": "family",
+        "title": "System and communications protection",
+        "controls": [
+          {
+            "id": "sc-13.400",
+            "class": "cccs-enhancement",
+            "title": "PROTECTED A data in transit",
+            "props": [
+              {
+                "name": "label",
+                "value": "SC-13(400)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "SC-13(400)"
+              },
+              {
+                "name": "sort-id",
+                "value": "sc-13.400"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "sc-13"
+              },
+              {
+                "name": "status",
+                "value": "withdrawn"
+              }
+            ],
+            "links": [
+              {
+                "href": "#sc-13",
+                "rel": "incorporated-into"
+              }
+            ],
+            "parts": [
+              {
+                "id": "sc-13.400_wdn",
+                "name": "cccs-withdrawal",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "prose": "Incorporated into SC-13."
+              }
+            ]
+          },
+          {
+            "id": "sc-13.401",
+            "class": "cccs-enhancement",
+            "title": "PROTECTED B data in transit",
+            "props": [
+              {
+                "name": "label",
+                "value": "SC-13(401)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "SC-13(401)"
+              },
+              {
+                "name": "sort-id",
+                "value": "sc-13.401"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "sc-13"
+              },
+              {
+                "name": "status",
+                "value": "withdrawn"
+              }
+            ],
+            "links": [
+              {
+                "href": "#sc-13",
+                "rel": "incorporated-into"
+              }
+            ],
+            "parts": [
+              {
+                "id": "sc-13.401_wdn",
+                "name": "cccs-withdrawal",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "prose": "Incorporated into SC-13."
+              }
+            ]
+          },
+          {
+            "id": "sc-13.402",
+            "class": "cccs-enhancement",
+            "title": "PROTECTED C data in transit",
+            "props": [
+              {
+                "name": "label",
+                "value": "SC-13(402)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "SC-13(402)"
+              },
+              {
+                "name": "sort-id",
+                "value": "sc-13.402"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "sc-13"
+              },
+              {
+                "name": "status",
+                "value": "withdrawn"
+              }
+            ],
+            "links": [
+              {
+                "href": "#sc-13",
+                "rel": "incorporated-into"
+              }
+            ],
+            "parts": [
+              {
+                "id": "sc-13.402_wdn",
+                "name": "cccs-withdrawal",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "prose": "Incorporated into SC-13."
+              }
+            ]
+          },
+          {
+            "id": "sc-13.403",
+            "class": "cccs-enhancement",
+            "title": "PROTECTED data at rest",
+            "props": [
+              {
+                "name": "label",
+                "value": "SC-13(403)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "SC-13(403)"
+              },
+              {
+                "name": "sort-id",
+                "value": "sc-13.403"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "sc-13"
+              },
+              {
+                "name": "status",
+                "value": "withdrawn"
+              }
+            ],
+            "links": [
+              {
+                "href": "#sc-13",
+                "rel": "incorporated-into"
+              }
+            ],
+            "parts": [
+              {
+                "id": "sc-13.403_wdn",
+                "name": "cccs-withdrawal",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "prose": "Incorporated into SC-13."
+              }
+            ]
+          },
+          {
+            "id": "sc-13.404",
+            "class": "cccs-enhancement",
+            "title": "National security systems",
+            "props": [
+              {
+                "name": "label",
+                "value": "SC-13(404)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "SC-13(404)"
+              },
+              {
+                "name": "sort-id",
+                "value": "sc-13.404"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "sc-13"
+              },
+              {
+                "name": "status",
+                "value": "withdrawn"
+              }
+            ],
+            "links": [
+              {
+                "href": "#sc-13",
+                "rel": "incorporated-into"
+              }
+            ],
+            "parts": [
+              {
+                "id": "sc-13.404_wdn",
+                "name": "cccs-withdrawal",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "prose": "Incorporated into SC-13."
+              }
+            ]
+          },
+          {
+            "id": "sc-19",
+            "class": "cccs-reinstated",
+            "title": "Voice over Internet Protocol",
+            "props": [
+              {
+                "name": "label",
+                "value": "SC-19",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "SC-19"
+              },
+              {
+                "name": "sort-id",
+                "value": "sc-19"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              }
+            ],
+            "links": [
+              {
+                "href": "#2ffb23d5-dbb7-5c8b-bfcb-5fafb3026da5",
+                "rel": "reference"
+              }
+            ],
+            "parts": [
+              {
+                "id": "sc-19_smt",
+                "name": "statement",
+                "parts": [
+                  {
+                    "id": "sc-19_smt.a",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "A."
+                      }
+                    ],
+                    "prose": "The organization establishes usage restrictions and implementation guidance for Voice over Internet Protocol (VoIP) technologies based on the potential to cause damage to the information system if used maliciously"
+                  },
+                  {
+                    "id": "sc-19_smt.b",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "B."
+                      }
+                    ],
+                    "prose": "The organization authorizes, monitors, and controls the use of VoIP within the information system"
+                  }
+                ]
+              },
+              {
+                "id": "sc-19_gcgdn",
+                "name": "gc-guidance",
+                "prose": "This control is used in any physical security zone that contains a National Security System (NSS) at the Secret or Top Secret level.",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs"
+              }
+            ],
+            "controls": [
+              {
+                "id": "sc-19.400",
+                "class": "cccs-enhancement",
+                "title": "Protocol conversion",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SC-19(400)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SC-19(400)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "sc-19.400"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "sc-19.400_smt",
+                    "name": "statement",
+                    "prose": "Unclassified VoIP is not permitted within classified facilities unless the VoIP is converted to plain old telephone systems (POTS) before exiting the facility boundary."
+                  },
+                  {
+                    "id": "sc-19.400_gcgdn",
+                    "name": "gc-guidance",
+                    "prose": "VoIP in classified facilities should comply with the US Committee on National Security Systems Instruction (CNSSI) No. 5000. Some authorizers may require CNSSI-5000 compliance.",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs"
+                  }
+                ]
+              },
+              {
+                "id": "sc-19.401",
+                "class": "cccs-enhancement",
+                "title": "No public network access",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SC-19(401)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SC-19(401)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "sc-19.401"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "sc-19.401_smt",
+                    "name": "statement",
+                    "prose": "Unclassified VoIP over a Local Area Network (LAN) with access to a public data network is not permitted within classified facilities."
+                  },
+                  {
+                    "id": "sc-19.401_gcgdn",
+                    "name": "gc-guidance",
+                    "prose": "VoIP in classified facilities should comply with CNSSI-5000. Some authorizers may require CNSSI-5000 compliance.",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "sc-400",
+            "class": "cccs-control",
+            "title": "Entity source authentication",
+            "props": [
+              {
+                "name": "label",
+                "value": "SC-400",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "SC-400"
+              },
+              {
+                "name": "sort-id",
+                "value": "sc-400"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              }
+            ],
+            "links": [
+              {
+                "href": "#ia-1",
+                "rel": "related"
+              },
+              {
+                "href": "#ia-2",
+                "rel": "related"
+              },
+              {
+                "href": "#ia-3",
+                "rel": "related"
+              },
+              {
+                "href": "#ia-4",
+                "rel": "related"
+              },
+              {
+                "href": "#ia-5",
+                "rel": "related"
+              },
+              {
+                "href": "#sc-8",
+                "rel": "related"
+              },
+              {
+                "href": "#sc-13",
+                "rel": "related"
+              },
+              {
+                "href": "#4dec1d94-aec6-5bcc-bc4f-8501e18d5f65",
+                "rel": "reference"
+              },
+              {
+                "href": "#5b2635a5-d97c-5556-bb99-ba9e3be90d76",
+                "rel": "reference"
+              },
+              {
+                "href": "#51e39b1e-c1b8-5c37-ae24-94fde48a3539",
+                "rel": "reference"
+              }
+            ],
+            "parts": [
+              {
+                "id": "sc-400_smt",
+                "name": "statement",
+                "prose": "The information system allows a message recipient to verify the claimed source identifier in a message."
+              },
+              {
+                "id": "sc-400_gdn",
+                "name": "guidance",
+                "prose": "Source authentication prevents an unauthorized entity from sending a message impersonating another entity. This control applies to non-session-based communications and can be implemented in protocols at any layer, from IP packets to electronic mail. A message is any communication between 2 entities."
+              }
+            ],
+            "controls": [
+              {
+                "id": "sc-400.1",
+                "class": "cccs-enhancement",
+                "title": "Claimed identifier authentication",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SC-400(01)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SC-400(1)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "sc-400.01"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "sc-400.1_smt",
+                    "name": "statement",
+                    "prose": "Authentication of the claimed identifier in the message is cryptographically based."
+                  }
+                ]
+              },
+              {
+                "id": "sc-400.2",
+                "class": "cccs-enhancement",
+                "title": "Digital signature",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SC-400(02)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SC-400(2)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "sc-400.02"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#sc-13",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "sc-400.2_smt",
+                    "name": "statement",
+                    "prose": "The organization employs CMVP-certified cryptography for digital signature generation and verification."
+                  }
+                ]
+              },
+              {
+                "id": "sc-400.3",
+                "class": "cccs-enhancement",
+                "title": "Authentication implementation",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SC-400(03)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SC-400(3)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "sc-400.03"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#sc-13",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "sc-400.3_smt",
+                    "name": "statement",
+                    "prose": "The organization employs Cyber Centre-approved cryptography and protocols to implement the authentication."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "sc-401",
+            "class": "cccs-control",
+            "title": "Unclassified telecommunications in secure facilities",
+            "props": [
+              {
+                "name": "label",
+                "value": "SC-401",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "SC-401"
+              },
+              {
+                "name": "sort-id",
+                "value": "sc-401"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              }
+            ],
+            "links": [
+              {
+                "href": "#2ffb23d5-dbb7-5c8b-bfcb-5fafb3026da5",
+                "rel": "reference"
+              },
+              {
+                "href": "#6e58d902-8a65-52b6-9902-938a3fb771d7",
+                "rel": "reference"
+              },
+              {
+                "href": "#52641366-2d36-5bcc-8bd2-23451dede690",
+                "rel": "reference"
+              }
+            ],
+            "parts": [
+              {
+                "id": "sc-401_smt",
+                "name": "statement",
+                "parts": [
+                  {
+                    "id": "sc-401_smt.a",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "A."
+                      }
+                    ],
+                    "prose": "Unclassified telecommunications systems in secure facilities must not pass/transmit sensitive audio discussions when they are idle and not in use. Additionally, these telecommunications systems must be configured to prevent external control or activation. The concepts of on-hook audio protection outlined in CNSSI 5002 and 5006 must be incorporated into secure facilities’ telecommunications systems"
+                  },
+                  {
+                    "id": "sc-401_smt.b",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "B."
+                      }
+                    ],
+                    "prose": "Unclassified telephone systems and services must be configured to prevent technical exploitation or penetration. In addition, these systems must incorporate physical and software access controls to prevent disclosure or manipulation of system programming and stored data"
+                  },
+                  {
+                    "id": "sc-401_smt.c",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "C."
+                      }
+                    ],
+                    "prose": "The organization must ensure that the following specific requirements are applied to unclassified telecommunications systems",
+                    "parts": [
+                      {
+                        "id": "sc-401_smt.c.1",
+                        "name": "item",
+                        "props": [
+                          {
+                            "name": "label",
+                            "value": "1."
+                          }
+                        ],
+                        "prose": "provide on-hook audio protection by the use of CNSSI 5006 equipment, CNSSI 5006-approved disconnect devices, or equivalent CNSSI 5002 system configuration"
+                      },
+                      {
+                        "id": "sc-401_smt.c.2",
+                        "name": "item",
+                        "props": [
+                          {
+                            "name": "label",
+                            "value": "2."
+                          }
+                        ],
+                        "prose": "provide isolation by using a computerized telephone system (CTS) with control of software and hardware configuration control and of audit reports (such as station message detail reporting, call detail reporting, etc.). System programming will not include the ability to place, or keep, a handset off-hook. Configuration of the system must ensure that all on-hook and off-hook vulnerabilities are identified and mitigated"
+                      },
+                      {
+                        "id": "sc-401_smt.c.3",
+                        "name": "item",
+                        "props": [
+                          {
+                            "name": "label",
+                            "value": "3."
+                          }
+                        ],
+                        "prose": "ensure that equipment used for the administration of telephone systems is installed inside an area where access is limited to authorized personnel. When local administration terminals (for a CTS) are not or cannot be contained within the controlled area or safeguarded against unauthorized manipulation, then the use of CNSSI 5006-approved telephone equipment must be required, regardless of the CTS configuration"
+                      },
+                      {
+                        "id": "sc-401_smt.c.4",
+                        "name": "item",
+                        "props": [
+                          {
+                            "name": "label",
+                            "value": "4."
+                          }
+                        ],
+                        "prose": "ensure that remote maintenance is not used outside the secure facility"
+                      },
+                      {
+                        "id": "sc-401_smt.c.5",
+                        "name": "item",
+                        "props": [
+                          {
+                            "name": "label",
+                            "value": "5."
+                          }
+                        ],
+                        "prose": "ensure that speakerphones and audio-conferencing systems are not used on unclassified telecommunications systems in secure facilities. CSE may approve exceptions to this requirement when these systems have sufficient audio isolation from other classified discussion areas in the secure facility, and when there are established procedures to prevent inadvertent transmission of classified information"
+                      },
+                      {
+                        "id": "sc-401_smt.c.6",
+                        "name": "item",
+                        "props": [
+                          {
+                            "name": "label",
+                            "value": "6."
+                          }
+                        ],
+                        "prose": "ensure that features used for voicemail or unified messaging services are configured to prevent unauthorized access to remote diagnostic ports or internal dial tone"
+                      },
+                      {
+                        "id": "sc-401_smt.c.7",
+                        "name": "item",
+                        "props": [
+                          {
+                            "name": "label",
+                            "value": "7."
+                          }
+                        ],
+                        "prose": "ensure that telephone answering devices (TAD) and facsimile machines do not contain features that introduce security vulnerabilities, for example, remote room monitoring, remote programming, or other similar features that may permit off-premises access to room audio. Prior CSE approval is required before installation or use"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "sc-401_smt.d",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "D."
+                      }
+                    ],
+                    "prose": "All unclassified telecommunications systems and associated infrastructure must be electrically and physically isolated from any classified information/telecommunications systems in accordance with CNSS requirements or any other separation standards applied to the classified information system on site"
+                  },
+                  {
+                    "id": "sc-401_smt.e",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "E."
+                      }
+                    ],
+                    "prose": "The security requirements and installation guidelines contained in the CNSSI 5000 shall be followed for VoIP systems installed in any physical security zone processing classified information"
+                  }
+                ]
+              },
+              {
+                "id": "sc-401_gcgdn",
+                "name": "gc-guidance",
+                "prose": "A secure facility is any physical security zone that processes classified information. Secure facility may mean SCIF at the Top Secret level, or any secure facility of lower level (e.g. Secret, Confidential).",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs"
+              }
+            ]
+          },
+          {
+            "id": "sc-42.400",
+            "class": "cccs-enhancement",
+            "title": "Disablement in security/high-security zones",
+            "props": [
+              {
+                "name": "label",
+                "value": "SC-42(400)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "SC-42(400)"
+              },
+              {
+                "name": "sort-id",
+                "value": "sc-42.400"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "sc-42"
+              }
+            ],
+            "parts": [
+              {
+                "id": "sc-42.400_smt",
+                "name": "statement",
+                "prose": "Ensure that the organization disables all sensors on all devices when they are not approved to process information at the highest classification level in the security or high-security zone they are in."
+              },
+              {
+                "id": "sc-42.400_gcgdn",
+                "name": "gc-guidance",
+                "prose": "Organizations must ensure that device sensors are disabled. For example, cameras and microphones on Protected B-approved workstations must be physically disabled if they are not used. If they are used, they must be situated in such ways as to prevent compromise of Protected C or classified information discussed or presented in the security or high-security zones.",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs"
+              }
+            ]
+          },
+          {
+            "id": "sc-46.400",
+            "class": "cccs-enhancement",
+            "title": "Manual data transfer",
+            "props": [
+              {
+                "name": "label",
+                "value": "SC-46(400)",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "SC-46(400)"
+              },
+              {
+                "name": "sort-id",
+                "value": "sc-46.400"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              },
+              {
+                "name": "cccs-parent-control",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "sc-46"
+              }
+            ],
+            "parts": [
+              {
+                "id": "sc-46.400_smt",
+                "name": "statement",
+                "prose": "Limit the use of manual data transfer."
+              },
+              {
+                "id": "sc-46.400_gdn",
+                "name": "guidance",
+                "prose": "A transfer CDS allows information to be transferred securely and automatically between different security domains. The use of manual data transfer should be limited to specific requirements. Circumventing the proper transfer procedures and choosing to transfer information using removable media is generally inappropriate user behaviour.\n\nIf transferring information using removable media becomes an operational necessity, procedures must conform with the Cyber Centre’s ITSB-112. An authorized user may do a manual data transfer using removable media such as a USB memory stick. If available, an offline CDS can be used to scan and sanitize the media. Such a transfer can be used when there is a requirement to transfer a software patch or anti-virus update from a removable media device to an isolated security domain, for example."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "si",
+        "class": "family",
+        "title": "System and information integrity",
+        "controls": [
+          {
+            "id": "si-400",
+            "class": "cccs-control",
+            "title": "Dedicated administration workstation",
+            "props": [
+              {
+                "name": "label",
+                "value": "SI-400",
+                "class": "zero-padded"
+              },
+              {
+                "name": "label",
+                "value": "SI-400"
+              },
+              {
+                "name": "sort-id",
+                "value": "si-400"
+              },
+              {
+                "name": "cccs-type",
+                "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                "value": "control"
+              }
+            ],
+            "links": [
+              {
+                "href": "#ac-4.22",
+                "rel": "related"
+              },
+              {
+                "href": "#ac-17.400",
+                "rel": "related"
+              },
+              {
+                "href": "#cm-7",
+                "rel": "related"
+              },
+              {
+                "href": "#ma-4",
+                "rel": "related"
+              },
+              {
+                "href": "#sa-8",
+                "rel": "related"
+              },
+              {
+                "href": "#sc-2",
+                "rel": "related"
+              },
+              {
+                "href": "#sc-7",
+                "rel": "related"
+              },
+              {
+                "href": "#sc-8",
+                "rel": "related"
+              },
+              {
+                "href": "#sc-32",
+                "rel": "related"
+              }
+            ],
+            "parts": [
+              {
+                "id": "si-400_smt",
+                "name": "statement",
+                "prose": "Require any administrative or superuser actions to be performed from a physical workstation that is dedicated to those specific tasks and isolated from all other functions and networks, and especially from any form of Internet access."
+              },
+              {
+                "id": "si-400_gdn",
+                "name": "guidance",
+                "prose": "A dedicated administration workstation (DAW) is typically comprised of a user terminal with a very small selection of software designed for interfacing with the target system. For the purpose of this control, workstation means the system from which you are performing the administration, as opposed to the target system of administration.\n\nThe DAW must be hardened for the role, to minimize the likelihood that a superuser’s or administrator’s endpoint may be compromised by any threat actor (which would logically lead to the compromise of the target system). Typical office productivity tools are not required on the DAW. All non-essential applications and services are removed. DAWs are not domain-joined, cannot download patches from the Internet, and cannot update documentation in networked applications.\n\nJump servers do not replace the requirement for DAWs. Connections through a jump server must be done from a DAW. Jump servers are used to centralize the logging of administrative activities, simplify the network isolation of critical servers, and provide a common handover point for administrators with separation of duties (e.g., where software patches are staged by one administrator for installation by another administrator).\n\nIf a VPN is being used to provide the network connectivity, the VPN must automatically exclude all other network access excepting the VPN. The DAW must not be able to access networks other than the network it is administrating. The management interface of the target system must be restricted to a management network and must not be accessible to wider networks such as corporate workstation LANs or the Internet. If multiple target networks are administered by the same physical DAW, all networks must have the same security profile (e.g., a single DAW cannot administer both a network for Secret and a network for Protected B).\n\nVirtual terminal software that emulates a simple terminal should also reside on a DAW."
+              }
+            ],
+            "controls": [
+              {
+                "id": "si-400.1",
+                "class": "cccs-enhancement",
+                "title": "Thin client dedicated administration workstation",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SI-400(01)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SI-400(1)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "si-400.01"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#sa-8",
+                    "rel": "related"
+                  },
+                  {
+                    "href": "#sc-25",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "si-400.1_smt",
+                    "name": "statement",
+                    "prose": "Implement virtualized DAW inside network-isolated physical thin client DAW."
+                  },
+                  {
+                    "id": "si-400.1_gdn",
+                    "name": "guidance",
+                    "prose": "Administrators who have numerous infrastructures to manage may choose to have a physical thin client DAW which can run multiple virtualized DAWs for different networks.\n\nThe thin client may be employed in a virtual desktop infrastructure (VDI) fashion, where the physical DAW is the hypervisor host for a virtual DAW, or in a network booted thin client fashion, where the operating system of the thin client is loaded from the network to be administered.\n\nThe physical thin client must not have independent network access."
+                  }
+                ]
+              },
+              {
+                "id": "si-400.2",
+                "class": "cccs-enhancement",
+                "title": "VPN on carrier private network",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SI-400(02)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SI-400(2)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "si-400.02"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#sc-8",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "si-400.2_smt",
+                    "name": "statement",
+                    "prose": "Connect a DAW to a target network using carrier private networks (e.g., virtual private LAN service (VPLS) or multiprotocol label switching (MPLS)) with VPN encryption."
+                  },
+                  {
+                    "id": "si-400.2_gdn",
+                    "name": "guidance",
+                    "prose": "When administering a network from a remote location, Internet-addressable VPN gateways and VPN endpoints are vulnerable to attacks by public network-based threat actors. Moving to a carrier private network will eliminate public Internet vulnerabilities and reduces the number of threat actors of concern. However, the network may still be vulnerable to confidentiality or integrity attacks from inside the carrier network. Hence, a VPN is still required inside the carrier network."
+                  }
+                ]
+              },
+              {
+                "id": "si-400.3",
+                "class": "cccs-enhancement",
+                "title": "Local area network",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SI-400(03)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SI-400(3)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "si-400.03"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#sa-8",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "si-400.3_smt",
+                    "name": "statement",
+                    "prose": "Connect a DAW to a target network using only LAN."
+                  },
+                  {
+                    "id": "si-400.3_gdn",
+                    "name": "guidance",
+                    "prose": "To further decrease the likelihood of a network attack, attach a DAW to the target system using only LAN. The target system can then deny administrative access except on the local segment."
+                  }
+                ]
+              },
+              {
+                "id": "si-400.4",
+                "class": "cccs-enhancement",
+                "title": "Console access only",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SI-400(04)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SI-400(4)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "si-400.04"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#sa-8",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "si-400.4_smt",
+                    "name": "statement",
+                    "prose": "Connect a DAW to the target system using only direct console ports."
+                  },
+                  {
+                    "id": "si-400.4_gdn",
+                    "name": "guidance",
+                    "prose": "To eliminate the likelihood of a network attack, connect a DAW to the target system directly through local serial ports. The system can then deny administrative access to all networks."
+                  }
+                ]
+              },
+              {
+                "id": "si-400.5",
+                "class": "cccs-enhancement",
+                "title": "Dedicated physical workstation",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SI-400(05)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SI-400(5)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "si-400.05"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#sa-8",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "si-400.5_smt",
+                    "name": "statement",
+                    "prose": "Use a single-purpose physical workstation as the DAW."
+                  },
+                  {
+                    "id": "si-400.5_gdn",
+                    "name": "guidance",
+                    "prose": "To reduce the possibility of attacks moving laterally between networks being administered, use a physical workstation for each target network, without sharing DAW resources."
+                  }
+                ]
+              },
+              {
+                "id": "si-400.6",
+                "class": "cccs-enhancement",
+                "title": "Heterogeneous administrative access",
+                "props": [
+                  {
+                    "name": "label",
+                    "value": "SI-400(06)",
+                    "class": "zero-padded"
+                  },
+                  {
+                    "name": "label",
+                    "value": "SI-400(6)"
+                  },
+                  {
+                    "name": "sort-id",
+                    "value": "si-400.06"
+                  },
+                  {
+                    "name": "cccs-type",
+                    "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+                    "value": "control"
+                  }
+                ],
+                "links": [
+                  {
+                    "href": "#sc-29",
+                    "rel": "related"
+                  }
+                ],
+                "parts": [
+                  {
+                    "id": "si-400.6_smt",
+                    "name": "statement",
+                    "prose": "Use a different operating system for the DAW relative to the target system."
+                  },
+                  {
+                    "id": "si-400.6_gdn",
+                    "name": "guidance",
+                    "prose": "A vulnerability in either a DAW or the target system might be shared between the 2, providing a single attack route for both. If the DAW and target systems have different operating systems, it will require additional effort to compromise both."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "back-matter": {
+      "resources": [
+        {
+          "uuid": "d7c2eb69-177a-5ad3-bc44-49a3e8d1c0c7",
+          "title": "Security and privacy controls and assurance activities catalogue (ITSP.10.033)",
+          "props": [
+            {
+              "name": "type",
+              "value": "standard"
+            }
+          ],
+          "citation": {
+            "text": "Canadian Centre for Cyber Security, ITSP.10.033, March 31, 2026. Contains information licensed under the Open Government Licence – Canada."
+          },
+          "rlinks": [
+            {
+              "href": "https://www.cyber.gc.ca/sites/default/files/itsp.10.033-e.pdf",
+              "media-type": "application/pdf",
+              "hashes": [
+                {
+                  "algorithm": "SHA-256",
+                  "value": "a63e79e9d0d072966ef06b6b0b46632d70470ff2dcc6b0e4e750b7584c5c01ab"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "uuid": "0fab9f76-d721-5754-b8e6-7410c9cf55cf",
+          "title": "Best practices for setting up a security operations centre (SOC) (ITSAP.00.500)"
+        },
+        {
+          "uuid": "2ffb23d5-dbb7-5c8b-bfcb-5fafb3026da5",
+          "title": "CNSSI 5000 Voice Over Internet Protocol (VoIP) Telephony"
+        },
+        {
+          "uuid": "6e58d902-8a65-52b6-9902-938a3fb771d7",
+          "title": "CNSSI 5002 Telephony isolation used for unified communications implementations within physically protected spaces"
+        },
+        {
+          "uuid": "52641366-2d36-5bcc-8bd2-23451dede690",
+          "title": "CNSSI 5006 National Instruction for Approved Telephone Equipment"
+        },
+        {
+          "uuid": "7b931203-98f5-5fae-a52a-4f74a1627dbc",
+          "title": "CSE-RCMP Harmonized Threat and Risk Assessment Methodology (TRA-1)"
+        },
+        {
+          "uuid": "51e39b1e-c1b8-5c37-ae24-94fde48a3539",
+          "title": "Cryptographic Module Validation Program (CMVP)"
+        },
+        {
+          "uuid": "4dec1d94-aec6-5bcc-bc4f-8501e18d5f65",
+          "title": "Cryptographic algorithms for UNCLASSIFIED, PROTECTED A, and PROTECTED B information (ITSP.40.111)"
+        },
+        {
+          "uuid": "5b2635a5-d97c-5556-bb99-ba9e3be90d76",
+          "title": "NIST FIPS 140-3 Security Requirements for Cryptographic Modules"
+        },
+        {
+          "uuid": "e187e13f-7255-5565-af0f-722464772699",
+          "title": "RCMP G1-001 Security Equipment Guide (restricted to GC)"
+        },
+        {
+          "uuid": "9d24544d-b234-593a-98cb-19a9f91c2bf1",
+          "title": "RCMP GCPSG-003 Security Operations Centre Design Considerations Guide"
+        },
+        {
+          "uuid": "ff6279ae-75d3-5a97-b1f5-0d4a949a1b8f",
+          "title": "RCMP GCPSG-007 Transport, Transmittal and Storage of Protected and Classified Material (restricted to GC)"
+        },
+        {
+          "uuid": "f001b5c3-be42-5aad-bde3-0b4257bc76ed",
+          "title": "RCMP GCPSG-008 Physical Security Considerations for Remote and Telework Environments"
+        },
+        {
+          "uuid": "9676dab7-c534-57cc-aca8-ea9584e417af",
+          "title": "RCMP GCPSG-019 Protection, Detection, Response, and Recovery Guide (restricted to GC)"
+        },
+        {
+          "uuid": "170988a9-652b-5710-b072-659bb1f0dd0a",
+          "title": "System lifecycle cyber security and privacy risk management activities (ITSP.10.037)"
+        },
+        {
+          "uuid": "69d2bc3c-6ad9-5cb5-997f-3275aeecaac8",
+          "title": "TBS Directive on Security Management, Appendix J: Standard on Security Categorization"
+        },
+        {
+          "uuid": "24d65386-1b4e-563a-80ff-5d93fc7e9f17",
+          "title": "TBS Directive on Security Management: Appendix B: Mandatory Procedures for Information Technology Security Control"
+        },
+        {
+          "uuid": "e89633d7-4eec-58eb-afa3-2ef22708e20f",
+          "title": "TBS Directive on Service and Digital"
+        },
+        {
+          "uuid": "a900afee-dcec-503a-b70a-2a75dcb193df",
+          "title": "TBS Directive on Telework"
+        }
+      ]
+    }
+  }
+}

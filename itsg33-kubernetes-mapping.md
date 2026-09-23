@@ -4,7 +4,7 @@ A working mapping from the Government of Canada Protected B / Medium control pro
 
 ## Scope
 
-ITSP.10.033-01 selects approximately 385 controls and enhancements from the ITSP.10.033 catalogue (this repository's count from the published PDF tables). This mapping does not enumerate all of them. It enumerates the procurement-relevant subset for an engineering team or procurement officer reviewing a Kubernetes-based platform for Protected B workloads: roughly 50 controls where the Kubernetes side of the mapping is non-obvious or carries a material gap.
+ITSP.10.033-01 selects 384 controls, activities and enhancements from the ITSP.10.033 catalogue, one of them withdrawn (the full list is [`oscal/resolved/itsp.10.033-01-medium.csv`](oscal/resolved/itsp.10.033-01-medium.csv)). This mapping does not enumerate all of them. It enumerates the procurement-relevant subset for an engineering team or procurement officer reviewing a Kubernetes-based platform for Protected B workloads: roughly 50 controls where the Kubernetes side of the mapping is non-obvious or carries a material gap.
 
 Every control in the three tables below is selected in ITSP.10.033-01. Controls that are new since Annex 4A Profile 1, or that a tailored profile is likely to add, are in the final section.
 
@@ -127,6 +127,7 @@ These controls did not exist in Annex 4A Profile 1, exist under a new number, or
 ## Companion files
 
 - [`itsg33-kubernetes-mapping.csv`](itsg33-kubernetes-mapping.csv): same content as CSV for spreadsheet import, with an ITSP.10.033-01 status column
+- [`oscal/`](oscal/): this mapping as an OSCAL component definition, with the catalogue and the Medium profile in OSCAL
 - [`SOURCES.md`](SOURCES.md): canonical CCCS source URLs for the current and superseded series
 - [`CHANGELOG.md`](CHANGELOG.md): what changed between releases
 - [`README.md`](README.md): repository overview

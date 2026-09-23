@@ -1,0 +1,2 @@
+# Only the PDF extractors need this; the build does not.
+pdfplumber==0.11.10

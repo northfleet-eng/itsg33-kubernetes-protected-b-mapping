@@ -1,0 +1,1037 @@
+id,label,family,title,source,cccs_type,status,statement,parameter_values,gc_discussion,profile_note
+ac-1,AC-1,AC,Access control policy and procedures,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]
+1. [Selection (1 or more): Organization-level; Mission/business process-level; System-level] access control policy that
+   a. addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance
+   b. is consistent with applicable laws, Orders in Council, jurisprudence, directives, regulations, policies, standards, and guidelines
+2. procedures to facilitate the implementation of the access control policy and the associated access controls
+   B. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the access control policy and procedures
+   C. Review and update the current access control
+3. policy [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+4. procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",ac-01_odp.05 = at a frequency no longer than annually; ac-01_odp.07 = at a frequency no longer than annually,,
+ac-2,AC-2,AC,Account management,NIST SP 800-53 Rev. 5.2.0,control,,"A. Define and document the types of accounts allowed and specifically prohibited for use within the system
+B. Assign account managers and data custodians
+C. Require [Assignment: organization-defined prerequisites and criteria] for group and role membership
+D. Specify
+1. authorized users of the system
+2. group and role membership
+3. access authorizations (i.e., privileges) and [Assignment: organization-defined attributes (as required)] for each account
+   E. Require approvals by [Assignment: organization-defined personnel or roles] for requests to create accounts
+   F. Create, enable, modify, disable, and remove accounts in accordance with [Assignment: organization-defined policy, procedures, prerequisites, and criteria]
+   G. Monitor the use of accounts
+   H. Notify account managers and [Assignment: organization-defined personnel or roles] within
+4. [Assignment: organization-defined time period] when accounts are no longer required or are dormant
+5. [Assignment: organization-defined time period] when users are terminated or transferred
+6. [Assignment: organization-defined time period] when system usage or need-to-know changes for an individual
+   I. Authorize access to the system based on
+7. a valid access authorization
+8. intended system usage
+9. [Assignment: organization-defined attributes (as required)]
+   J. Periodically review accounts for compliance with account management requirements [Assignment: organization-defined frequency]
+   K. Establish and implement a process for changing shared or group account authenticators (if deployed) when individuals are removed from the group
+   L. Align account management processes with personnel termination and transfer processes Discussion: Examples of system account types include individual, shared, group, system, guest, anonymous, emergency, developer, temporary, and service. Identification of authorized system users and the specification of access privileges reflect the requirements in other controls related to security and privacy. Users requiring administrative privileges on system accounts receive additional scrutiny by organizational personnel responsible for approving such accounts and privileged access, including system owner, mission, or business owner, senior official in the department’s security governance, data custodian, or appropriate privacy senior official or executive. Types of accounts that organizations may wish to prohibit due to increased risk include shared, group, emergency, anonymous, temporary, and guest accounts. Where access involves personal information, security and privacy officials collaborate with the data custodian to establish the specific conditions for group and role membership; identify authorized users, group and role membership, and access authorizations for each account; and create, adjust, or remove system accounts in accordance with organizational policies. Policies can include such information as account expiration dates or other factors that trigger the disabling of accounts. Organizations may choose to define access privileges or other attributes by account, type of account, or a combination of the 2. Examples of other attributes required for authorizing access include restrictions on time of day, day of week, and point of origin. In defining other system account attributes, organizations consider system-related requirements and mission/business requirements. Failure to consider these factors could affect system availability. Temporary and emergency accounts are intended for short-term use. Organizations establish temporary accounts as part of normal account activation procedures when there is a need for short-term accounts without the demand for immediacy in account activation. Organizations establish emergency accounts in response to crisis situations and with the need for rapid account activation. Therefore, emergency account activation may bypass normal account authorization processes. Emergency and temporary accounts are not to be confused with infrequently used accounts, including local logon accounts used for special tasks or when network resources are unavailable (may also be known as accounts of last resort). Such accounts remain available and are not subject to automatic disabling or removal dates. Conditions for disabling or deactivating accounts include when shared/group, emergency, or temporary accounts are no longer required and when individuals are transferred or terminated. Changing shared/group authenticators when members leave the group is intended to ensure that former group members do not retain access to the shared or group account. Some types of system accounts may require specialized training.",ac-02_odp.10 = at a frequency no longer than monthly,,
+ac-2.1,AC-2(1),AC,Automated system account management,NIST SP 800-53 Rev. 5.2.0,control,,Support the management of system accounts using [Assignment: organization-defined automated mechanisms].,,,
+ac-2.2,AC-2(2),AC,Automated temporary and emergency accounts management,NIST SP 800-53 Rev. 5.2.0,control,,Automatically [Selection (1): remove; disable] temporary and emergency accounts after [Assignment: organization-defined time period for each type of account].,ac-02.02_odp.02 = not to exceed 48 hours after no longer being required,,
+ac-2.3,AC-2(3),AC,Disable accounts,NIST SP 800-53 Rev. 5.2.0,control,,"Disable accounts within [Assignment: organization-defined time period] when the accounts
+a. have expired
+b. are no longer associated with a user or individual
+c. are in violation of organizational policy
+d. have been inactive for [Assignment: organization-defined time period]",ac-02.03_odp.01 = not to exceed 30 days (items a. and b.) | not to exceed 24 hours (item c.),,
+ac-2.4,AC-2(4),AC,Automated audit actions,NIST SP 800-53 Rev. 5.2.0,control,,"Automatically audit account creation, modification, enabling, disabling, and removal actions.",,,
+ac-2.5,AC-2(5),AC,Inactivity logout,NIST SP 800-53 Rev. 5.2.0,control,,Require that users log out when [Assignment: organization-defined time period of expected inactivity or description of when to log out].,,,
+ac-2.7,AC-2(7),AC,Privileged user accounts,NIST SP 800-53 Rev. 5.2.0,control,,"a. Establish and administer privileged user accounts in accordance with [Selection (1): a role-based access scheme; an attribute-based access scheme]
+b. Monitor privileged role or attribute assignments
+c. Monitor changes to roles or attributes
+d. Revoke access when privileged role or attribute assignments are no longer appropriate",,,
+ac-2.10,AC-2(10),AC,Shared and Group Account Credential Change,NIST SP 800-53 Rev. 5.2.0,,withdrawn,,,,
+ac-2.13,AC-2(13),AC,Disable accounts for high-risk individuals,NIST SP 800-53 Rev. 5.2.0,control,,Disable accounts of individuals within [Assignment: organization-defined time period] of discovery of [Assignment: organization-defined significant risks].,,,
+ac-3,AC-3,AC,Access enforcement,NIST SP 800-53 Rev. 5.2.0,control,,Enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.,,,
+ac-3.2,AC-3(2),AC,Dual authorization,NIST SP 800-53 Rev. 5.2.0,control,,Enforce dual authorization for [Assignment: organization-defined privileged commands and/or other organization-defined actions].,ac-03.02_odp = privileged commands: creation and deletion of PKI officers and administrators accounts | actions: examples are: PKI changes to administrators and security officers; global administrator actions in cloud tenancies; domain administrator actions in single-forest systems,,Organizations must assess which administrative actions are capable of creating the entire available Injury. These actions are candidates for dual authorization.
+ac-3.4,AC-3(4),AC,Discretionary access control,NIST SP 800-53 Rev. 5.2.0,control,,"Enforce [Assignment: organization-defined discretionary access control policy] over the set of covered subjects and objects specified in the policy, and where the policy specifies that a subject that has been granted access to information can do one or more of the following:
+a. pass the information to any other subjects or objects
+b. grant its privileges to other subjects
+c. change security attributes on subjects, objects, the system, or the system’s components
+d. choose the security attributes to be associated with newly created or revised objects
+e. change the rules governing access control",,,"Control enhancement (04) clarifies the Access Enforcement security control by detailing the policy that should be used for access enforcement to Protected B information. That is, while the system may be authorized to process PB, not all information will necessarily be PB. Therefore, DAC will be used to establish and enforce access controls over PB information to “need to know.” Examples of DAC include Windows groups (at the file object level) and document management systems that allow document access permissions to be modified by the owner."
+ac-3.9,AC-3(9),AC,Controlled release,NIST SP 800-53 Rev. 5.2.0,control,,"Release information outside of the system only if:
+a. the receiving [Assignment: organization-defined system or system component] provides [Assignment: organization-defined controls]
+b. [Assignment: organization-defined controls] are used to validate the appropriateness of the information designated for release",,,
+ac-4,AC-4,AC,Information flow enforcement,NIST SP 800-53 Rev. 5.2.0,control,,Enforce approved authorizations for controlling the flow of information within the system and between connected systems based on [Assignment: organization-defined information flow control policies].,,,
+ac-5,AC-5,AC,Separation of duties,NIST SP 800-53 Rev. 5.2.0,control,,"A. Identify and document [Assignment: organization-defined duties of individuals requiring separation]
+B. Define system access authorizations to support separation of duties",,,
+ac-6,AC-6,AC,Least privilege,NIST SP 800-53 Rev. 5.2.0,control,,"Employ the principle of least privilege, allowing only authorized accesses for users (or processes acting on behalf of users) that are necessary to accomplish assigned organizational tasks.",,,
+ac-6.1,AC-6(1),AC,Authorize access to security functions,NIST SP 800-53 Rev. 5.2.0,control,,"Authorize access for [Assignment: organization-defined individuals or roles] to:
+a. [Assignment: organization-defined security functions (deployed in hardware, software, and firmware)]
+b. [Assignment: organization-defined security-relevant information]",,,
+ac-6.2,AC-6(2),AC,Non-privileged access to non-security functions,NIST SP 800-53 Rev. 5.2.0,control,,"Require that users of system accounts (or roles) with access to [Assignment: organization-defined security functions or security-relevant information] use non-privileged accounts or roles, when accessing non-security functions.",,,
+ac-6.5,AC-6(5),AC,Privileged accounts,NIST SP 800-53 Rev. 5.2.0,control,,Restrict privileged accounts on the system to [Assignment: organization-defined personnel or roles].,,,
+ac-6.7,AC-6(7),AC,Review of user privileges,NIST SP 800-53 Rev. 5.2.0,control,,"a. Review [Assignment: organization-defined frequency] the privileges assigned to [Assignment: organization-defined roles or classes of users] to validate the need for such privileges
+b. Reassign or remove privileges, if necessary, to correctly reflect organizational mission and business needs",,,
+ac-6.9,AC-6(9),AC,Log use of privileged functions,NIST SP 800-53 Rev. 5.2.0,control,,Log the execution of privileged functions.,,,
+ac-6.10,AC-6(10),AC,Prohibit non-privileged users from executing privileged functions,NIST SP 800-53 Rev. 5.2.0,control,,Prevent non-privileged users from executing privileged functions.,,,
+ac-7,AC-7,AC,Unsuccessful logon attempts,NIST SP 800-53 Rev. 5.2.0,control,,"A. Enforce a limit of [Assignment: organization-defined number] consecutive invalid logon attempts by a user during a [Assignment: organization-defined time period]
+B. Automatically [Selection (1 or more): lock the account or node for an [Assignment: organization-defined time period]; lock the account or node until released by an administrator; delay next logon prompt per [Assignment: organization-defined delay algorithm]; notify system administrator; take other [Assignment: organization-defined action]] when the maximum number of unsuccessful attempts is exceeded",ac-07_odp.01 = of a maximum of 5; ac-07_odp.02 = period of at least 5 minutes,,
+ac-8,AC-8,AC,System use notification,NIST SP 800-53 Rev. 5.2.0,control,,"A. Display [Assignment: organization-defined system use notification message or banner] to users before granting access to the system that provides privacy and security notices consistent with applicable laws, Orders in Council, directives, regulations, policies, standards, and guidelines and state that
+1. users are accessing a GC system
+2. system usage may be monitored, recorded, and subject to audit
+3. unauthorized use of the system is prohibited and subject to criminal and civil penalties
+4. the relevant personal information bank (PIB) reference, if applicable
+5. legal authority for the collection of personal information
+6. any legal or administrative consequences for refusing to provide the personal information
+7. the rights of access to, correction and protection of personal information
+8. how the information will be used
+9. the right to file a complaint to the Privacy Commissioner of Canada regarding the institution’s handling of the individual’s personal information
+   B. Retain the notification message or banner on the screen until users acknowledge the usage conditions and take explicit actions to log on to or further access the system
+   C. For publicly accessible systems
+10. display system use information [Assignment: organization-defined conditions], before granting further access to the publicly accessible system
+11. display references, if any, to monitoring, recording, or auditing that are consistent with privacy accommodations for such systems that generally prohibit those activities
+12. include a description of the authorized uses of the system",,Organizations consult with the privacy office for input regarding privacy messaging and the TBS or organizational equivalent for legal review and approval of warning banner content. System use notifications may be privacy notice statements (PNS) for systems users.,
+ac-11,AC-11,AC,Device lock,NIST SP 800-53 Rev. 5.2.0,control,,"A. Prevent further access to the system by [Selection (1 or more): initiating a device lock after [Assignment: organization-defined tie period] of inactivity; requiring the user to initiate a device lock before leaving the system unattended]
+B. Retain the device lock until the user re-establishes access using established identification and authentication procedures",,,
+ac-11.1,AC-11(1),AC,Pattern-hiding displays,NIST SP 800-53 Rev. 5.2.0,control,,"Conceal, via the device lock, information previously visible on the display with a publicly viewable image.",,,
+ac-12,AC-12,AC,Session termination,NIST SP 800-53 Rev. 5.2.0,control,,Automatically terminate a user session after [Assignment: organization-defined conditions or trigger events requiring session disconnect].,,,
+ac-14,AC-14,AC,Permitted actions without identification or authentication,NIST SP 800-53 Rev. 5.2.0,control,,"A. Identify [Assignment: organization-defined user actions] that can be performed on the system without identification or authentication consistent with organizational mission and business functions
+B. Document and provide supporting rationale in the security plan for the system, user actions not requiring identification or authentication",,,
+ac-16,AC-16,AC,Security and privacy attributes,NIST SP 800-53 Rev. 5.2.0,control,,"A. Provide the means to associate [Assignment: organization-defined types of security and privacy attributes] with [Assignment: organization-defined security and privacy attribute values] for information in storage, in process, and/or in transmission
+B. Ensure that the attribute associations are made and retained with the information
+C. Establish the following permitted security and privacy attributes from the attributes defined in AC-16A for [Assignment: organization-defined systems]: [Assignment: organization-defined security and privacy attributes]
+D. Determine the following permitted attribute values or ranges for each of the established attributes: [Assignment: organization-defined attribute values or ranges for established attributes]
+E. Audit changes to attributes
+F. Review [Assignment: organization-defined security and privacy attributes] for applicability [Assignment: organization-defined frequency]",,,"In the context of this profile, the objective of this control is to achieve consistent labeling of Protected B material to the maximum extent supported by available, automated mechanisms (for example, email system enforcing classification labels). Since not all information on the system will be sensitive, labeling will help prevent the accidental distribution of Protected B information by providing filter mechanisms with a differentiator."
+ac-16.2,AC-16(2),AC,Attribute value changes by authorized individuals,NIST SP 800-53 Rev. 5.2.0,control,,Provide authorized individuals (or processes acting on behalf of individuals) the capability to define or change the value of associated security and privacy attributes.,,,
+ac-16.5,AC-16(5),AC,Attribute displays on objects to be output,NIST SP 800-53 Rev. 5.2.0,control,,"Display security and privacy attributes in human-readable form on each object that the system transmits to output devices to identify [Assignment: organization-defined special dissemination, handling, or distribution instructions] using [Assignment: organization-defined human-readable, standard naming conventions].",,,
+ac-17,AC-17,AC,Remote access,NIST SP 800-53 Rev. 5.2.0,control,,"A. Establish and document usage restrictions, configuration/connection requirements, and implementation guidance for each type of remote access allowed
+B. Authorize each type of remote access to the system prior to allowing such connections",,"The organization ensures that all employees working off-site safeguard information as per the minimum requirements in accordance with the TBS Directive on Security Management, Appendix C: Mandatory Procedures for Physical Security Control.",
+ac-17.1,AC-17(1),AC,Monitoring and control,NIST SP 800-53 Rev. 5.2.0,control,,Employ automated mechanisms to monitor and control remote access methods.,,,
+ac-17.2,AC-17(2),AC,Protection of confidentiality and integrity using encryption,NIST SP 800-53 Rev. 5.2.0,control,,Implement cryptographic mechanisms to protect the confidentiality and integrity of remote access sessions.,,,
+ac-17.3,AC-17(3),AC,Managed access control points,NIST SP 800-53 Rev. 5.2.0,control,,Route remote accesses through authorized and managed network access control points.,,GC departments and agencies consider the secure remote access infrastructure provided by Shared Services Canada for external network connections.,
+ac-17.4,AC-17(4),AC,Privileged commands and access,NIST SP 800-53 Rev. 5.2.0,control,,"a. Authorize the execution of privileged commands and access to security-relevant information via remote access only in a format that provides trustworthy evidence and for the following needs: [Assignment: organization-defined needs]
+b. Document the rationale for remote access in the security plan for the system",,,
+ac-17.400,AC-17(400),AC,Privileged accounts remote access,CCCS,control,,Remote access to privileged accounts is done from dedicated management consoles only.,,,
+ac-18,AC-18,AC,Wireless access,NIST SP 800-53 Rev. 5.2.0,control,,"A. Establish configuration requirements, connection requirements, and implementation guidance for each type of wireless access
+B. Authorize each type of wireless access to the system prior to allowing such connections",,,
+ac-18.1,AC-18(1),AC,Authentication and encryption,NIST SP 800-53 Rev. 5.2.0,control,,Protect wireless access to the system using authentication of [Selection (1 or more): users; devices] and encryption.,,,
+ac-18.3,AC-18(3),AC,Disable wireless networking,NIST SP 800-53 Rev. 5.2.0,control,,"Disable, when not intended for use, wireless networking capabilities embedded within system components prior to issuance and deployment.",,,
+ac-18.4,AC-18(4),AC,Restrict configurations by users,NIST SP 800-53 Rev. 5.2.0,control,,Identify and explicitly authorize users allowed to independently configure wireless networking capabilities.,,,
+ac-19,AC-19,AC,Access control for mobile devices,NIST SP 800-53 Rev. 5.2.0,control,,"A. Establish configuration requirements, connection requirements, and implementation guidance for organization-controlled mobile devices, to include when such devices are outside of controlled areas
+B. Authorize the connection of mobile devices to organizational systems",,,
+ac-19.5,AC-19(5),AC,Full device or container-based encryption,NIST SP 800-53 Rev. 5.2.0,control,,Employ [Selection: full-device encryption; container-based encryption] to protect the confidentiality and integrity of information on [Assignment: organization-defined mobile devices].,,,
+ac-20,AC-20,AC,Use of external systems,NIST SP 800-53 Rev. 5.2.0,control,,"A. [Selection (1 or more): Establish [Assignment: organization-defined terms and conditions]; Identify [Assignment: organization-defined controls asserted to be implemented on external systems]], consistent with the trust relationships established with other organizations owning, operating, and/or maintaining external systems, allowing authorized individuals to
+1. access the system from external systems
+2. process, store, or transmit organization-controlled information using external systems
+   B. Prohibit the use of [Assignment: organizationally-defined types of external systems]",,,
+ac-20.1,AC-20(1),AC,Limits on authorized use,NIST SP 800-53 Rev. 5.2.0,control,,"Permit authorized individuals to use an external system to access the system or to process, store, or transmit organization-controlled information only after
+a. verification of the implementation of controls on the external system as specified in the organization’s security and privacy policies and security and privacy plans
+b. retention of approved system connection or processing agreements with the organizational entity hosting the external system",,,
+ac-20.2,AC-20(2),AC,Portable storage devices — restricted use,NIST SP 800-53 Rev. 5.2.0,control,,Restrict the use of organization-controlled portable storage devices by authorized individuals on external systems using [Assignment: organization-defined restrictions].,,,
+ac-20.4,AC-20(4),AC,Network accessible storage devices — prohibited use,NIST SP 800-53 Rev. 5.2.0,control,,Prohibit the use of [Assignment: organization-defined network accessible storage devices] in external systems.,,,
+ac-21,AC-21,AC,Information sharing,NIST SP 800-53 Rev. 5.2.0,control,,"A. Enable authorized users to determine whether access authorizations assigned to a sharing partner match the information’s access and use restrictions for [Assignment: organization-defined information sharing circumstances where user discretion is required]
+B. Employ [Assignment: organization-defined automated mechanisms or manual processes] to assist users in making information sharing and collaboration decisions",,,
+ac-21.400,AC-21(400),AC,Information sharing agreement,CCCS,control,,Ensure through written agreements the appropriate safeguarding of sensitive information shared with external public-sector entities and organizations.,,,GC specific
+ac-21.401,AC-21(401),AC,Information sharing arrangement,CCCS,control,,Ensure through written arrangements the appropriate safeguarding of sensitive information shared between and within federal institutions.,,"An arrangement outlines the terms and conditions under which personal information is disclosed between parties and is not legally binding. Ensure that the arrangement documents the legislative authorities, permissible uses, and retention standards for the recipient organization.",GC specific
+ac-22,AC-22,AC,Publicly accessible content,NIST SP 800-53 Rev. 5.2.0,control,,"A. Designate individuals authorized to make information publicly accessible
+B. Train authorized individuals to ensure that publicly accessible information does not contain non-public information
+C. Review the proposed content of information prior to posting onto the publicly accessible system to ensure that non-public information is not included
+D. Review the content on the publicly accessible system for non-public information [Assignment: organization-defined frequency] and remove such information, if discovered",,,
+at-1,AT-1,AT,Awareness and training policy and procedures,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]
+1. [Selection (1 or more): Organization-level; Mission/business process-level; System-level] awareness and training policy that
+   a. addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance
+   b. is consistent with applicable laws, jurisprudence, Orders in Council, directives, regulations, policies, standards, and guidelines
+2. procedures to facilitate the implementation of the awareness and training policy and the associated awareness and training controls
+   B. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the awareness and training policy and procedures
+   C. Review and update the current awareness and training
+3. policy [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+4. procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,,
+at-2,AT-2,AT,Literacy training and awareness,NIST SP 800-53 Rev. 5.2.0,control,,"A. Provide security and privacy literacy training to system users (including managers, senior executives, and contractors)
+1. as part of initial training for new users and [Assignment: organization-defined frequency] thereafter
+2. when required by system changes or following [Assignment: organization-defined events]
+   B. Employ the following techniques to increase the security and privacy awareness of system users [Assignment: organization-defined awareness techniques]
+   C. Update literacy training and awareness content [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+   D. Incorporate lessons learned from internal or external security incidents or breaches into literacy training and awareness techniques",,"Organizations provide privacy content that covers, at minimum, the items addressed in the Mandatory Procedures for Privacy Training of the TBS Directive on Personal Information Requests and Correction of Personal Information.",
+at-2.2,AT-2(2),AT,Insider threat,NIST SP 800-53 Rev. 5.2.0,control,,Provide literacy training on recognizing and reporting potential indicators of insider threat.,,,
+at-2.3,AT-2(3),AT,Social engineering and mining,NIST SP 800-53 Rev. 5.2.0,control,,Provide literacy training on recognizing and reporting potential and actual instances of social engineering and social mining.,,,
+at-3,AT-3,AT,Role-based training,NIST SP 800-53 Rev. 5.2.0,control,,"A. Provide role-based security and privacy training to personnel with the following roles and responsibilities: [Assignment: organization-defined roles and responsibilities]
+1. before authorizing access to the system, information, or performing assigned duties, and [Assignment: organization-defined frequency] thereafter
+2. when required by system changes
+   B. Update role-based training content [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+   C. Incorporate lessons learned from internal or external security incidents or breaches into role-based training.",,Ensure that employees of government institutions receive privacy training as outlined in Appendix B of the TBS Directive on Personal Information Requests and Correction of Personal Information.,
+at-4,AT-4,AT,Training records,NIST SP 800-53 Rev. 5.2.0,control,,"A. Document and monitor information security and privacy training activities, including security and privacy awareness training and specific role-based security and privacy training
+B. Retain individual training records for [Assignment: organization-defined time period]",,Library and Archives Canada provides guidance on records retention for GC departments and agencies.,
+au-1,AU-1,AU,Audit and accountability policy and procedures,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]
+1. [Selection (1 or more): Organization-level; Mission/business process-level; System-level] audit and accountability policy that
+   a. addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance
+   b. is consistent with applicable laws, Orders in Council, directives, regulations, policies, standards, and guidelines
+2. procedures to facilitate the implementation of the audit and accountability policy and the associated audit and accountability controls
+   B. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the audit and accountability policy and procedures
+   C. Review and update the current audit and accountability
+3. policy [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+4. procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,,
+au-2,AU-2,AU,Event logging,NIST SP 800-53 Rev. 5.2.0,control,,"A. Identify the types of events that the system is capable of logging in support of the audit function: [Assignment: organization-defined event types that the system is capable of logging]
+B. Coordinate the event logging function with other organizational entities requiring audit-related information to guide and inform the selection criteria for events to be logged
+C. Specify the following event types for logging within the system: [Assignment: organization-defined event types (subset of the event types defined in AU-02A.) along with the frequency of (or situation requiring) logging for each identified event type]
+D. Provide a rationale for why the event types selected for logging are deemed to be adequate to support after-the-fact investigations of incidents
+E. Review and update the event types selected for logging [Assignment: organization-defined frequency]",,,
+au-3,AU-3,AU,Content of audit records,NIST SP 800-53 Rev. 5.2.0,control,,"Ensure that audit records contain information that establishes the following:
+A. what type of event occurred
+B. when the event occurred
+C. where the event occurred
+D. source of the event
+E. outcome of the event
+F. identity of any individuals, subjects, objects or entities associated with the event",,GC departments and agencies ensure that the content of audit records aligns with the Security Incidents and Privacy Breaches PIBs.,
+au-3.1,AU-3(1),AU,Additional audit information,NIST SP 800-53 Rev. 5.2.0,control,,Generate audit records containing the following additional information: [Assignment: organization-defined additional information].,,,
+au-4,AU-4,AU,Audit log storage capacity,NIST SP 800-53 Rev. 5.2.0,control,,Allocate audit log storage capacity to accommodate [Assignment: organization-defined audit log retention requirements].,,,
+au-4.1,AU-4(1),AU,Transfer to alternate storage,NIST SP 800-53 Rev. 5.2.0,control,,"Transfer audit logs [Assignment: organization-defined frequency] to a different system, system component, or media other than the system or system component conducting the logging.",,,
+au-5,AU-5,AU,Response to audit logging process failures,NIST SP 800-53 Rev. 5.2.0,control,,"A. Alert [Assignment: organization-defined personnel or roles] within [Assignment: organization-defined time period] in the event of an audit logging process failure
+B. Take the following additional actions: [Assignment: organization-defined additional actions]",,,
+au-5.1,AU-5(1),AU,Storage capacity warning,NIST SP 800-53 Rev. 5.2.0,control,,"Provide a warning to [Assignment: organization-defined personnel, roles, and/or locations] within [Assignment: organization-defined time period] when allocated audit log storage volume reaches [Assignment: organization-defined percentage] of repository maximum audit log storage capacity.",,,
+au-6,AU-6,AU,"Audit record review, analysis, and reporting",NIST SP 800-53 Rev. 5.2.0,control,,"A. Review and analyze system audit records [Assignment: organization-defined frequency] for indications of [Assignment: organization-defined inappropriate or unusual activity] and the potential impact of the inappropriate or unusual activity
+B. Report findings to [Assignment: organization-defined personnel or roles]
+C. Adjust the level of audit record review, analysis, and reporting within the system when there is a change in risk based on law enforcement information, intelligence information, or other credible sources of information",,,
+au-6.1,AU-6(1),AU,Automated process integration,NIST SP 800-53 Rev. 5.2.0,control,,"Integrate audit record review, analysis, and reporting processes using [Assignment: organization-defined automated mechanisms].",,,
+au-6.3,AU-6(3),AU,Correlate audit record repositories,NIST SP 800-53 Rev. 5.2.0,control,,Analyze and correlate audit records across different repositories to gain organization-wide situational awareness.,,,
+au-6.4,AU-6(4),AU,Central review and analysis,NIST SP 800-53 Rev. 5.2.0,control,,Provide and implement the capability to centrally review and analyze audit records from multiple components within the system.,,,
+au-7,AU-7,AU,Audit record reduction and report generation,NIST SP 800-53 Rev. 5.2.0,control,,"Provide and implement an audit record reduction and report generation capability that:
+A. supports on-demand audit record review, analysis, and reporting requirements and after-the-fact investigations of incidents
+B. does not alter the original content or time ordering of audit records",,,
+au-7.1,AU-7(1),AU,Automatic processing,NIST SP 800-53 Rev. 5.2.0,control,,"Provide and implement the capability to process, sort, and search audit records for events of interest based on the following content: [Assignment: organization-defined fields within audit records].",,,
+au-8,AU-8,AU,Time stamps,NIST SP 800-53 Rev. 5.2.0,control,,"A. Use internal system clocks to generate time stamps for audit records
+B. Record time stamps for audit records that meet [Assignment: organization-defined granularity of time measurement] and that use Coordinated Universal Time (UTC), have a fixed local time offset from UTC, or that include the local time offset as part of the time stamp",,,
+au-9,AU-9,AU,Protection of audit information,NIST SP 800-53 Rev. 5.2.0,control,,"A. Protect audit information and audit logging tools from unauthorized access, modification, and deletion
+B. Alert [Assignment: organization-defined personnel or roles] upon detection of unauthorized access, modification, or deletion of audit information",,,
+au-9.2,AU-9(2),AU,Store on separate physical systems or components,NIST SP 800-53 Rev. 5.2.0,control,,Store audit records [Assignment: organization-defined frequency] in a repository that is part of a physically different system or system component than the system or component being audited.,,,
+au-9.4,AU-9(4),AU,Access by subset of privileged users,NIST SP 800-53 Rev. 5.2.0,control,,Authorize access to management of audit logging functionality to only [Assignment: organization-defined subset of privileged users or roles].,,,
+au-9.6,AU-9(6),AU,Read-only access,NIST SP 800-53 Rev. 5.2.0,control,,Authorize read-only access to audit information to [Assignment: organization-defined subset of privileged users or roles].,,,
+au-11,AU-11,AU,Audit record retention,NIST SP 800-53 Rev. 5.2.0,control,,Retain audit records for [Assignment: organization-defined time period consistent with records retention policy] to provide support for after-the-fact investigations of incidents and to meet regulatory and organizational information retention requirements.,,"This includes the retention and availability of audit records relative to requests for GC information under the Access to Information Act, requests for personal information under the Privacy Act, subpoenas, and law enforcement actions. When audit records include personal information that is used for administrative decision such as an investigation, they must be retained in accordance with the Privacy Regulations. If audit records contain personal information that is not required for the audit process, that personal information should be removed or redacted prior to retention. If audit records rely on personal information and that information is used to make an administrative decision, the minimum retention standard is at least 2 years following the last time the personal information was used for an administrative purpose unless the individual consents to its disposal. Retention standards for personal information associated with this process should be reflected in the standard PIB for Internal Audit. Library and Archives Canada provides federal policy on records retention.",
+au-12,AU-12,AU,Audit record generation,NIST SP 800-53 Rev. 5.2.0,control,,"A. Provide audit record generation capability for the event types the system is capable of auditing as defined in AU-02A on [Assignment: organization-defined system components]
+B. Allow [Assignment: organization-defined personnel or roles] to select the event types that are to be logged by specific components of the system
+C. Generate audit records for the event types defined in AU-02C that include the audit record content defined in AU-03",,,
+au-12.1,AU-12(1),AU,System-wide and time-correlated audit trail,NIST SP 800-53 Rev. 5.2.0,control,,Compile audit records from [Assignment: organization-defined system components] into a system-wide (logical or physical) audit trail that is time-correlated to within [Assignment: organization-defined level of tolerance for the relationship between time stamps of individual records in the audit trail].,,,
+ca-1,CA-1,CA,"Assessment, authorization and monitoring policy and procedures",NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]
+1. [Selection (1 or more): Organization-level; Mission/business process-level; System-level] assessment, authorization, and monitoring policy that
+   a. addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance
+   b. is consistent with applicable laws, Orders in Council, directives, regulations, jurisprudence, policies, standards, and guidelines
+2. procedures to facilitate the implementation of the assessment, authorization, and monitoring policy and the associated assessment, authorization, and monitoring controls
+   B. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the assessment, authorization, and monitoring policy and procedures
+   C. Review and update the current assessment, authorization, and monitoring
+3. policy [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+4. procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,"Organizations can rely on the TBS Directive on Privacy Practices, Appendix C: Standard on Privacy Impact Assessment (PIA) or develop their own organization-specific obligations for assessment. At a minimum, organizational-level assessment policies should meet the TBS requirements. In accordance with the directive, PIAs must be initiated when personal information is used for or is intended to be used as part of a decision-making process that directly affects the individual; upon substantial modifications to existing programs or activities where personal information is used or intended to be used for an administrative purpose; and when contracting out or transferring a program or activities to another level of government or the private sector results in substantial modifications to the program or activities. Users whose activities are monitored by audit logs should be given notice of the activity.",
+ca-2,CA-2,CA,Control assessments,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Select the appropriate assessor or assessment team for the type of assessment to be conducted
+B. Develop a control assessment plan that describes the scope of the assessment including
+1. controls and control enhancements under assessment
+2. assessment procedures to be used to determine control effectiveness
+3. assessment environment, assessment team, and assessment roles and responsibilities
+   C. Ensure the control assessment plan is reviewed and approved by the authorizing official or designated representative prior to conducting the assessment
+   D. Assess the controls in the system and its environment of operation [Assignment: organization-defined frequency] to determine the extent to which the controls are implemented correctly, operating as intended, and producing the desired outcome with respect to meeting established security and privacy requirements
+   E. Produce a control assessment report that documents the results of the assessment
+   F. Provide the results of the control assessment to [Assignment: organization-defined individuals or roles]",,"If the system will create, collect, or store personal information, consider the completion of a Privacy Protocol or PIA, following the CORE PIA requirements as established in the TBS Directive on Privacy Practices, Appendix C: Standard on Privacy Impact Assessment. When the PIA or Privacy Protocol is approved, a summary must be posted on the institution’s external facing web presence.
+
+TBS requirements for periodic assessments of controls are in the Directive on Security Management: Appendix B: Mandatory Procedures for Information Technology Security Control.",
+ca-2.1,CA-2(1),CA,Independent assessors,NIST SP 800-53 Rev. 5.2.0,activity,,Employ independent assessors or assessment teams to conduct control assessments.,,,
+ca-3,CA-3,CA,Information exchange,NIST SP 800-53 Rev. 5.2.0,control,,"A. Approve and manage the exchange of information between the system and other systems using [Selection (1 or more): interconnection security agreements; information exchange security agreements; memoranda of understanding or agreement; information sharing agreements; information sharing arrangements; service level agreements; user agreements; non-disclosure agreements; [Assignment: organization-defined type of agreement]]
+B. Document, as part of each exchange agreement, the interface characteristics, security and privacy requirements, controls, and responsibilities for each system, and the impact level of the information communicated
+C. Review and update the agreements [Assignment: organization-defined frequency]",,,
+ca-5,CA-5,CA,Plan of action and milestones,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop a plan of action and milestones for the system to document the planned remediation actions of the organization to correct weaknesses or deficiencies noted during the assessment of the controls and to reduce or eliminate known vulnerabilities in the system
+B. Update existing plan of action and milestones [Assignment: organization-defined frequency] based on the findings from control assessments, independent audits or reviews, and continuous monitoring activities",,Plans of action and milestones are required in authorization packages and subject to federal reporting requirements established by TBS.,
+ca-6,CA-6,CA,Authorization,NIST SP 800-53 Rev. 5.2.0,control,,"A. Assign a senior official as the authorizing official or custodian for the system
+B. Assign a senior official as the authorizing official or custodian for common controls available for inheritance by organizational systems
+C. Ensure that the authorizing official or custodian for the system, before commencing operations
+1. accepts the use of common controls inherited by the system
+2. authorizes the system to operate
+   D. Ensure that the authorizing official or custodian for common controls authorizes the use of those controls for inheritance by organizational systems
+   E. Update the authorizations [Assignment: organization-defined frequency]",,"The authorization process is a federal government responsibility, and therefore, authorizing officials must be senior GC employees.",
+ca-7,CA-7,CA,Continuous monitoring,NIST SP 800-53 Rev. 5.2.0,control,,"Develop a system-level continuous monitoring strategy and implement continuous monitoring in accordance with the organization-level continuous monitoring strategy that includes:
+A. establishing the following system-level metrics to be monitored: [Assignment: organization-defined system-level metrics]
+B. establishing [Assignment: organization-defined frequencies] for monitoring and [Assignment: organization-defined frequencies] for assessment of control effectiveness
+C. ongoing control assessments in accordance with the continuous monitoring strategy
+D. ongoing monitoring of system and organization-defined metrics in accordance with the continuous monitoring strategy
+E. correlation and analysis of information generated by control assessments and monitoring
+F. response actions to address results of the analysis of control assessment and monitoring information
+G. reporting the security and privacy status of the system to [Assignment: organization-defined personnel or roles] [Assignment: organization-defined frequency]",,,
+ca-7.1,CA-7(1),CA,Independent assessment,NIST SP 800-53 Rev. 5.2.0,control,,Employ independent assessors or assessment teams to monitor the controls in the system on an ongoing basis.,,,
+ca-7.4,CA-7(4),CA,Risk monitoring,NIST SP 800-53 Rev. 5.2.0,control,,"Ensure risk monitoring is an integral part of the continuous monitoring strategy that includes the following:
+a. effectiveness monitoring
+b. compliance monitoring
+c. change monitoring",,,
+ca-9,CA-9,CA,Internal system connections,NIST SP 800-53 Rev. 5.2.0,control,,"A. Authorize internal connections of [Assignment: organization-defined system components or classes of components] to the system
+B. Document, for each internal connection, the interface characteristics, security and privacy requirements, and the nature of the information communicated
+C. Terminate internal system connections after [Assignment: organization-defined conditions]
+D. Review [Assignment: organization-defined frequency] the continued need for each internal connection",,,
+ca-9.1,CA-9(1),CA,Compliance checks,NIST SP 800-53 Rev. 5.2.0,control,,Perform security and privacy compliance checks on constituent system components prior to the establishment of the internal connection.,,,
+cm-1,CM-1,CM,Configuration management policy and procedures,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]
+1. [Selection (1 or more): Organization-level; Mission/business process-level; System-level] configuration management policy that
+   a. addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance
+   b. is consistent with applicable laws, Orders in Council, directives, regulations, policies, standards, and guidelines
+2. procedures to facilitate the implementation of the configuration management policy and the associated configuration management controls
+   B. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the configuration management policy and procedures
+   C. Review and update the current configuration management
+3. policy [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+4. procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,,
+cm-2,CM-2,CM,Baseline configuration,NIST SP 800-53 Rev. 5.2.0,control,,"A. Develop, document, and maintain under configuration control, a current baseline configuration of the system
+B. Review and update the baseline configuration of the system
+1. [Assignment: organization-defined frequency]
+2. when required due to [Assignment: organization-defined circumstances]
+3. when system components are installed or upgraded",,,
+cm-2.2,CM-2(2),CM,Automation support for accuracy and currency,NIST SP 800-53 Rev. 5.2.0,control,,"Maintain the currency, completeness, accuracy, and availability of the baseline configuration of the system using [Assignment: organization-defined automated mechanisms].",,,
+cm-2.3,CM-2(3),CM,Retention of previous configurations,NIST SP 800-53 Rev. 5.2.0,control,,Retain [Assignment: organization-defined number] of previous versions of baseline configurations of the system to support rollback.,,,
+cm-2.6,CM-2(6),CM,Development and test environments,NIST SP 800-53 Rev. 5.2.0,control,,Maintain a baseline configuration for system development and test environments that is managed separately from the operational baseline configuration.,,,
+cm-2.7,CM-2(7),CM,Configure systems and components for high-risk areas,NIST SP 800-53 Rev. 5.2.0,control,,"a. Issue [Assignment: organization-defined systems or system components] with [Assignment: organization-defined configurations] to individuals traveling to locations that the organization deems to be of significant risk
+b. Apply the following controls to the systems or components when the individuals return from travel: [Assignment: organization-defined controls]",,,
+cm-3,CM-3,CM,Configuration change control,NIST SP 800-53 Rev. 5.2.0,control,,"A. Determine and document the types of changes to the system that are configuration-controlled
+B. Review proposed configuration-controlled changes to the system and approve or disapprove such changes with explicit consideration for security and privacy impact analyses
+C. Document configuration change decisions associated with the system
+D. Implement approved configuration-controlled changes to the system
+E. Retain records of configuration-controlled changes to the system for [Assignment: organization-defined time period]
+F. Monitor and review activities associated with configuration-controlled changes to the system
+G. Coordinate and provide oversight for configuration change control activities through [Assignment: organization-defined configuration change control element] that convenes [Selection (1 or more): [Assignment: organization-defined frequency]; when [Assignment: organization-defined configuration change conditions]]",,"For changes that impact privacy risk, the appropriate privacy senior official or executive updates PIAs and PIBs.",
+cm-3.2,CM-3(2),CM,"Testing, validation, and documentation of changes",NIST SP 800-53 Rev. 5.2.0,control,,"Test, validate, and document changes to the system before finalizing the implementation of the changes.",,,
+cm-3.4,CM-3(4),CM,Security and privacy representatives,NIST SP 800-53 Rev. 5.2.0,control,,Require [Assignment: organization-defined security and privacy representatives] to be members of the [Assignment: organization-defined configuration change control element].,,,
+cm-4,CM-4,CM,Impact analyses,NIST SP 800-53 Rev. 5.2.0,control,,Analyze changes to the system to determine potential security and privacy impacts prior to change implementation.,,"If the system facilitates automated decision-making, it may also be a requirement to complete and release the final results of an algorithmic impact assessment prior to the production of any automated decision system.",
+cm-4.1,CM-4(1),CM,Separate test environments,NIST SP 800-53 Rev. 5.2.0,control,,"Analyze changes to the system in a separate test environment before implementation in an operational environment, looking for security and privacy impacts due to flaws, weaknesses, incompatibility, or intentional malice.",,,
+cm-4.2,CM-4(2),CM,Verification of controls,NIST SP 800-53 Rev. 5.2.0,control,,"After system changes, verify that the impacted controls are implemented correctly, operating as intended, and producing the desired outcome with regard to meeting the security and privacy requirements for the system.",,,
+cm-5,CM-5,CM,Access restrictions for change,NIST SP 800-53 Rev. 5.2.0,control,,"Define, document, approve, and enforce physical and logical access restrictions associated with changes to the system.",,,
+cm-6,CM-6,CM,Configuration Settings,NIST SP 800-53 Rev. 5.2.0,control,,"A. Establish and document configuration settings for components employed within the system that reflect the most restrictive mode consistent with operational requirements using [Assignment: organization-defined common secure configurations]
+B. Implement the configuration settings
+C. Identify, document, and approve any deviations from established configuration settings for [Assignment: organization-defined system components] based on [Assignment: organization-defined operational requirements]
+D. Monitor and control changes to the configuration settings in accordance with organizational policies and procedures",,,
+cm-7,CM-7,CM,Least functionality,NIST SP 800-53 Rev. 5.2.0,control,,"A. Configure the system to provide only [Assignment: organization-defined mission essential capabilities]
+B. Prohibit or restrict the use of the following functions, ports, protocols, software, and/or services: [Assignment: organization-defined prohibited or restricted functions, system ports, protocols, software, and/or services]",,,
+cm-7.1,CM-7(1),CM,Periodic review,NIST SP 800-53 Rev. 5.2.0,control,,"a. Review the system [Assignment: organization-defined frequency] to identify unnecessary and/or nonsecure functions, ports, protocols, software, and services
+b. Disable or remove [Assignment: organization-defined functions, ports, protocols, software, and services within the system deemed to be unnecessary and/or nonsecure]",,,
+cm-7.2,CM-7(2),CM,Prevent program execution,NIST SP 800-53 Rev. 5.2.0,control,,"Prevent program execution in accordance with [Selection (1 or more): [Assignment: organization-defined policies, rules of behaviour, and/or access agreements regarding software program usage and restrictions]; rules authorizing the terms and conditions of software program usage].",,,
+cm-7.5,CM-7(5),CM,Authorized software — Allow-by-exception,NIST SP 800-53 Rev. 5.2.0,control,,"a. Identify [Assignment: organization-defined software programs authorized to execute on the system]
+b. Employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs on the system
+c. Review and update the list of authorized software programs [Assignment: organization-defined frequency]",,,
+cm-8,CM-8,CM,System component inventory,NIST SP 800-53 Rev. 5.2.0,control,,"A. Develop and document an inventory of system components that
+1. accurately reflects the system
+2. includes all components within the system
+3. does not include duplicate accounting of components or components assigned to any other system
+4. is at the level of granularity deemed necessary for tracking and reporting
+5. includes the following information to achieve system component accountability: [Assignment: organization-defined information deemed necessary to achieve effective system component accountability]
+   B. Review and update the system component inventory [Assignment: organization-defined frequency]",,,
+cm-8.1,CM-8(1),CM,Updates during installation and removal,NIST SP 800-53 Rev. 5.2.0,control,,"Update the inventory of system components as part of component installations, removals, and system updates.",,,
+cm-8.3,CM-8(3),CM,Automated unauthorized component detection,NIST SP 800-53 Rev. 5.2.0,control,,"a. Detect the presence of unauthorized hardware, software, and firmware components within the system using [Assignment: organization-defined automated mechanisms] [Assignment: organization-defined frequency]
+b. Take the following actions when unauthorized components are detected: [Selection (1 or more): disable network access by such components; isolate the components; notify [Assignment: organization-defined personnel or roles]]",,,
+cm-8.4,CM-8(4),CM,Accountability information,NIST SP 800-53 Rev. 5.2.0,control,,"Include in the system component inventory information, a means for identifying by [Selection (1 or more): name; position; role], individuals responsible and accountable for administering those components.",,,
+cm-8.6,CM-8(6),CM,Assessed configurations and approved deviations,NIST SP 800-53 Rev. 5.2.0,control,,Include assessed component configurations and any approved deviations to current deployed configurations in the system component inventory.,,,
+cm-9,CM-9,CM,Configuration management plan,NIST SP 800-53 Rev. 5.2.0,control,,"Develop, document, and implement a configuration management plan for the system that
+A. addresses roles, responsibilities, and configuration management processes and procedures
+B. establishes a process for identifying configuration items throughout the system development lifecycle and for managing the configuration of the configuration items
+C. defines the configuration items for the system and places the configuration items under configuration management
+D. is reviewed and approved by [Assignment: organization-defined personnel or roles]
+E. protects the configuration management plan from unauthorized disclosure and modification",,,
+cm-10,CM-10,CM,Software use restrictions,NIST SP 800-53 Rev. 5.2.0,control,,"A. Use software and associated documentation in accordance with contract agreements and copyright laws
+B. Track the use of software and associated documentation protected by quantity licenses to control copying and distribution
+C. Control and document the use of peer-to-peer file sharing technology to ensure that this capability is not used for the unauthorized distribution, display, performance, or reproduction of copyrighted work",,,
+cm-11,CM-11,CM,User-installed software,NIST SP 800-53 Rev. 5.2.0,control,,"A. Establish [Assignment: organization-defined policies] governing the installation of software by users
+B. Enforce software installation policies through the following methods: [Assignment: organization-defined methods]
+C. Monitor policy compliance [Assignment: organization-defined frequency]",,,
+cm-11.2,CM-11(2),CM,Software installation with privileged status,NIST SP 800-53 Rev. 5.2.0,control,,Allow user installation of software only with explicit privileged status.,,,
+cm-12,CM-12,CM,Information location,NIST SP 800-53 Rev. 5.2.0,control,,"A. Identify and document the location of [Assignment: organization-defined information] and the specific system components on which the information is processed and stored
+B. Identify and document the users who have access to the system and system components where the information is processed and stored
+C. Document changes to the location (i.e., system or system components) where the information is processed and stored",,The security category of the information is also a factor in determining the controls necessary to protect the information and the system component where the information resides (see TBS Standard on Security Categorization).,
+cm-12.1,CM-12(1),CM,Automated tools to support information location,NIST SP 800-53 Rev. 5.2.0,control,,Use automated tools to identify [Assignment: organization-defined information by information type] on [Assignment: organization-defined system components] to ensure controls are in place to protect organizational information and individual privacy.,,,
+cp-1,CP-1,CP,Contingency planning policy and procedures,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]
+1. [Selection (1 or more): Organization-level; Mission/business process-level; System-level] contingency planning policy that
+   a. addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance
+   b. is consistent with applicable laws, Orders in Council, directives, regulations, jurisprudence, policies, standards, and guidelines
+2. procedures to facilitate the implementation of the contingency planning policy and the associated contingency planning controls
+   B. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the contingency planning policy and procedures
+   C. Review and update the current contingency planning
+3. policy [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+4. procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,,
+cp-2,CP-2,CP,Contingency plan,NIST SP 800-53 Rev. 5.2.0,control,,"A. Develop a contingency plan for the system that
+1. identifies essential mission and business functions and associated contingency requirements
+2. provides recovery objectives, restoration priorities, and metrics
+3. addresses contingency roles, responsibilities, and assigned individuals with contact information
+4. addresses maintaining essential mission and business functions despite a system disruption, compromise, or failure
+5. addresses eventual, full system restoration without deterioration of the controls originally planned and implemented
+6. addresses the integrity of the data held within the system, including personal information
+7. addresses the impact, injury, or consequence of a system compromise, including with respect to personal information
+8. addresses the sharing of contingency information
+9. is reviewed and approved by [Assignment: organization-defined personnel or roles]
+   B. Distribute copies of the contingency plan to [Assignment: organization-defined key contingency personnel (identified by name and/or by role) and organizational elements]
+   C. Ensure individuals with responsibilities review the contingency plan and understand their roles
+   D. Coordinate contingency planning activities with incident handling activities
+   E. Review the contingency plan for the system [Assignment: organization-defined frequency]
+   F. Update the contingency plan to address changes to the organization, system, or environment of operation and problems encountered during contingency plan implementation, execution, or testing
+   G. Communicate contingency plan changes to [Assignment: organization-defined key contingency personnel (identified by name and/or by role) and organizational elements]
+   H. Incorporate lessons learned from contingency plan testing, training, or actual contingency activities into contingency testing and training
+   AA. Protect the contingency plan from unauthorized disclosure and modification",,,
+cp-2.1,CP-2(1),CP,Coordinate with related plans,NIST SP 800-53 Rev. 5.2.0,control,,Coordinate contingency plan development with organizational elements responsible for related plans.,,,
+cp-2.2,CP-2(2),CP,Capacity planning,NIST SP 800-53 Rev. 5.2.0,control,,"Conduct capacity planning so that necessary capacity for information processing, telecommunications, and environmental support exists during contingency operations.",,,
+cp-2.3,CP-2(3),CP,Resume mission and business functions,NIST SP 800-53 Rev. 5.2.0,control,,Plan for the resumption of [Selection (1): all; essential] mission and business functions within [Assignment: organization-defined time period] of contingency plan activation.,,,
+cp-2.8,CP-2(8),CP,Identify critical assets,NIST SP 800-53 Rev. 5.2.0,control,,Identify critical system assets supporting [Selection (1): all; essential] mission and business functions.,,,
+cp-3,CP-3,CP,Contingency training,NIST SP 800-53 Rev. 5.2.0,control,,"A. Provide contingency training to system users consistent with assigned roles and responsibilities
+1. within [Assignment: organization-defined time period] of assuming a contingency role or responsibility
+2. when required by system changes
+3. [Assignment: organization-defined frequency] thereafter
+   B. Review and update contingency training content [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,,
+cp-4,CP-4,CP,Contingency plan testing,NIST SP 800-53 Rev. 5.2.0,control,,"A. Test the contingency plan for the system [Assignment: organization-defined frequency] using the following tests to determine the effectiveness of the plan and the readiness to execute the plan: [Assignment: organization-defined tests]
+B. Review the contingency plan test results
+C. Initiate corrective actions, if needed",,,
+cp-4.1,CP-4(1),CP,Coordinate with related plans,NIST SP 800-53 Rev. 5.2.0,control,,Coordinate contingency plan testing with organizational elements responsible for related plans.,,,
+cp-6,CP-6,CP,Alternate storage site,NIST SP 800-53 Rev. 5.2.0,control,,"A. Establish an alternate storage site, including necessary agreements to permit the storage and retrieval of system backup information
+B. Ensure that the alternate storage site provides controls equivalent to that of the primary site",,,
+cp-6.1,CP-6(1),CP,Separation from primary site,NIST SP 800-53 Rev. 5.2.0,control,,Identify an alternate storage site that is sufficiently separated from the primary storage site to reduce susceptibility to the same threats.,,,
+cp-6.3,CP-6(3),CP,Accessibility,NIST SP 800-53 Rev. 5.2.0,control,,Identify potential accessibility problems to the alternate storage site in the event of an area-wide disruption or disaster and outline explicit mitigation actions.,,,
+cp-7,CP-7,CP,Alternate processing site,NIST SP 800-53 Rev. 5.2.0,control,,"A. Establish an alternate processing site, including necessary agreements to permit the transfer and resumption of [Assignment: organization-defined system operations] for essential mission and business functions within [Assignment: organization-defined time period consistent with recovery time and recovery point objectives] when the primary processing capabilities are unavailable
+B. Make available at the alternate processing site the equipment and supplies required to transfer and resume operations or put contracts in place to support delivery to the site within the organization-defined time period for transfer and resumption
+C. Provide controls at the alternate processing site that are equivalent to those at the primary site",,,
+cp-7.1,CP-7(1),CP,Separation from primary site,NIST SP 800-53 Rev. 5.2.0,control,,Identify an alternate processing site that is sufficiently separated from the primary processing site to reduce susceptibility to the same threats.,,,
+cp-7.2,CP-7(2),CP,Accessibility,NIST SP 800-53 Rev. 5.2.0,control,,Identify potential accessibility problems to alternate processing sites in the event of an area-wide disruption or disaster and outlines explicit mitigation actions.,,,
+cp-7.3,CP-7(3),CP,Priority of service,NIST SP 800-53 Rev. 5.2.0,control,,Develop alternate processing site agreements that contain priority of service provisions in accordance with availability requirements (including recovery time objectives).,,,
+cp-7.4,CP-7(4),CP,Preparation for use,NIST SP 800-53 Rev. 5.2.0,control,,Prepare the alternate processing site so that the site can serve as the operational site supporting essential mission and business functions.,,,
+cp-7.6,CP-7(6),CP,Inability to return to primary site,NIST SP 800-53 Rev. 5.2.0,control,,Plan and prepare for circumstances that preclude returning to the primary processing site.,,,
+cp-8,CP-8,CP,Telecommunications services,NIST SP 800-53 Rev. 5.2.0,control,,"Establish alternate telecommunications services, including necessary agreements to permit the resumption of [Assignment: organization-defined system operations] for essential mission and business functions within [Assignment: organization-defined time period] when the primary telecommunications capabilities are unavailable at either the primary or alternate processing or storage sites.",,,
+cp-8.1,CP-8(1),CP,Priority of service provisions,NIST SP 800-53 Rev. 5.2.0,control,,"a. Develop primary and alternate telecommunications service agreements that contain priority-of-service provisions in accordance with availability requirements (including recovery time objectives)
+b. Request priority access for dialing via Innovation, Science and Economic Development Canada (ISED) for all telecommunications services used for national security emergency preparedness if the primary and/or alternate telecommunications services are provided by a common carrier (see ISED’s Priority Access for Dialling telecommunications services in times of crisis)",,No longer available in Canada.,
+cp-8.2,CP-8(2),CP,Single points of failure,NIST SP 800-53 Rev. 5.2.0,control,,Obtain alternate telecommunications services to reduce the likelihood of sharing a single point of failure with primary telecommunications services.,,,
+cp-8.3,CP-8(3),CP,Separation of primary and alternate providers,NIST SP 800-53 Rev. 5.2.0,control,,Obtain alternate telecommunications services from providers that are separated from primary service providers to reduce susceptibility to the same threats.,,,
+cp-8.5,CP-8(5),CP,Alternate telecommunications service testing,NIST SP 800-53 Rev. 5.2.0,control,,Test alternate telecommunications services [Assignment: organization-defined frequency].,,,
+cp-9,CP-9,CP,System backup,NIST SP 800-53 Rev. 5.2.0,control,,"A. Conduct backups of user-level information contained in [Assignment: organization-defined system components] [Assignment: organization-defined frequency consistent with recovery time and recovery point objectives]
+B. Conduct backups of system-level information contained in the system [Assignment: organization-defined frequency consistent with recovery time and recovery point objectives]
+C. Conduct backups of system documentation, including security- and privacy-related documentation [Assignment: organization-defined frequency consistent with recovery time and recovery point objectives]
+D. Protect the confidentiality, integrity, and availability of backup information
+AA. The organization determines retention periods for essential business information and archived backup",,,
+cp-9.1,CP-9(1),CP,Testing for reliability and integrity,NIST SP 800-53 Rev. 5.2.0,control,,Test backup information [Assignment: organization-defined frequency] to verify media reliability and information integrity.,,,
+cp-9.3,CP-9(3),CP,Separate storage for critical information,NIST SP 800-53 Rev. 5.2.0,control,,Store backup copies of [Assignment: organization-defined critical system software and other security-related information] in a separate facility or in a fire rated container that is not collocated with the operational system.,,,
+cp-9.5,CP-9(5),CP,Transfer to alternate storage site,NIST SP 800-53 Rev. 5.2.0,control,,Transfer system backup information to the alternate storage site [Assignment: organization-defined time period and transfer rate consistent with the recovery time and recovery point objectives].,,,
+cp-9.7,CP-9(7),CP,Dual authorization for deletion or destruction,NIST SP 800-53 Rev. 5.2.0,control,,Enforce dual authorization for the deletion or destruction of [Assignment: organization-defined backup information].,,,
+cp-9.8,CP-9(8),CP,Cryptographic protection,NIST SP 800-53 Rev. 5.2.0,control,,Implement cryptographic mechanisms to prevent unauthorized disclosure and modification of [Assignment: organization-defined backup information].,,,
+cp-10,CP-10,CP,System recovery and reconstitution,NIST SP 800-53 Rev. 5.2.0,control,,"Provide for the recovery and reconstitution of the system to a known state within [Assignment: organization-defined time period consistent with recovery time and recovery point objectives] after a disruption, compromise, or failure.",,,
+cp-10.2,CP-10(2),CP,Transaction recovery,NIST SP 800-53 Rev. 5.2.0,control,,Implement transaction recovery for systems that are transaction-based.,,,
+cp-10.4,CP-10(4),CP,Restore within time period,NIST SP 800-53 Rev. 5.2.0,control,,"Provide the capability to restore system components within [Assignment: organization-defined restoration time periods] from configuration-controlled and integrity-protected information representing a known, operational state for the components.",,,
+cp-10.6,CP-10(6),CP,Component protection,NIST SP 800-53 Rev. 5.2.0,control,,Protect system components used for recovery and reconstitution.,,,
+ia-1,IA-1,IA,Identification and authentication policy and procedures,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]
+1. [Selection (1 or more): Organization-level; Mission/business process-level; System-level] identification and authentication (IA) policy that
+   a. addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance
+   b. is consistent with applicable laws, jurisprudence, Orders in Council, directives, regulations, policies, standards, and guidelines
+2. procedures to facilitate the implementation of the identification and authentication policy and the associated identification and authentication controls
+   B. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the identification and authentication policy and procedures
+   C. Review and update the current identification and authentication
+3. policy [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+4. procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,"Under the federal Privacy Act, individuals’ names or contact information at work is defined as personal information. For example, if non-organizational users rely on email addresses as part of their credentials, this would be a collection of personal information, with the associated controls required.",
+ia-2,IA-2,IA,Identification and authentication (organizational users),NIST SP 800-53 Rev. 5.2.0,control,,Uniquely identify and authenticate organizational users and associate that unique identification with processes acting on behalf of those users.,,Organizations can satisfy the identification and authentication requirements by complying with the requirements set by TBS.,
+ia-2.1,IA-2(1),IA,Strong MFA to privileged accounts,NIST SP 800-53 Rev. 5.2.0,control,,Implement strong MFA for access to privileged accounts.,,"In the GC, privileged users should have Level of Assurance 4 (LoA4) MFA.",
+ia-2.2,IA-2(2),IA,MFA to non-privileged accounts,NIST SP 800-53 Rev. 5.2.0,control,,Implement MFA for access to non-privileged accounts.,,"In the GC, non-privileged users should have a minimum Level of Assurance 3 (LoA3) MFA.",
+ia-2.8,IA-2(8),IA,Access to accounts — replay resistant,NIST SP 800-53 Rev. 5.2.0,control,,Implement replay-resistant authentication mechanisms for access to [Selection (1 or more): privileged accounts; non-privileged accounts].,,,
+ia-2.10,IA-2(10),IA,Single sign-on,NIST SP 800-53 Rev. 5.2.0,control,,Provide a single sign-on capability for [Assignment: organization-defined system accounts and services].,,,
+ia-2.12,IA-2(12),IA,Use of hardware token GC-issued PKI-based credentials,NIST SP 800-53 Rev. 5.2.0,control,,Accept and electronically verify GC-issued hardware token public key infrastructure (PKI)-based credentials.,,"It is recommended that GC-issued hardware token PKI-based credentials apply to organizations implementing logical access control and physical access control systems. At times, these credentials may contain personal information. Consideration of the privacy concept of necessity versus proportionality requires that organizations collect just enough personal information required to ensure accurate authentication.",
+ia-3,IA-3,IA,Device identification and authentication,NIST SP 800-53 Rev. 5.2.0,control,,Uniquely identify and authenticate [Assignment: organization-defined devices and/or types of devices] before establishing a [Selection (1 or more): local; remote; network] connection.,,,
+ia-4,IA-4,IA,Identifier management,NIST SP 800-53 Rev. 5.2.0,control,,"Manage system identifiers by:
+A. receiving authorization from [Assignment: organization-defined personnel or roles] to assign an individual, group, role, service, or device identifier
+B. selecting an identifier that identifies an individual, group, role, service, or device
+C. assigning the identifier to the intended individual, group, role, service, or device
+D. preventing reuse of identifiers for [Assignment: organization-defined time period]",,,
+ia-4.4,IA-4(4),IA,Identify user status,NIST SP 800-53 Rev. 5.2.0,control,,Manage individual identifiers by uniquely identifying each individual as [Assignment: organization-defined characteristic identifying individual status].,,"For example, it might be useful for a government employee to know that one of the individuals on an email message is a contractor. This is generally intended for use with national security systems.",
+ia-5,IA-5,IA,Authenticator management,NIST SP 800-53 Rev. 5.2.0,control,,"Manage system authenticators by:
+A. verifying, as part of the initial authenticator distribution, the identity of the individual, group, role, service, or device receiving the authenticator
+B. establishing initial authenticator content for any authenticators issued by the organization
+C. ensuring that authenticators have sufficient strength of mechanism for their intended use
+D. establishing and implementing administrative procedures for initial authenticator distribution, for lost or compromised or damaged authenticators, and for revoking authenticators
+E. changing default authenticators prior to first use
+F. changing or refreshing authenticators [Assignment: organization-defined time period by authenticator type] or when [Assignment: organization-defined events] occur
+G. protecting authenticator content from unauthorized disclosure and modification
+H. requiring individuals to take, and having devices implement, specific controls to protect authenticators
+I. changing authenticators for group or role accounts when membership to those accounts changes",,,
+ia-5.1,IA-5(1),IA,Password-based authentication,NIST SP 800-53 Rev. 5.2.0,control,,"For password-based authentication:
+a. maintain a list of commonly used, expected, or compromised passwords and update the list [Assignment: organization-defined frequency] and when organizational passwords are suspected to have been compromised directly or indirectly
+b. when users create or update passwords, verify that the passwords are not found on the list of commonly used, expected, or compromised passwords in IA-05(01)a
+c. transmit passwords only over cryptographically protected channels
+d. store passwords using an approved salted key derivation function, preferably using a keyed hash
+e. require immediate selection of a new password upon account recovery
+f. allow user selection of long passwords and passphrases, including spaces and all printable characters
+g. employ automated tools to assist the user in selecting strong password authenticators
+h. enforce the following composition and complexity rules: [Assignment: organization-defined composition and complexity rules]",,,
+ia-5.2,IA-5(2),IA,Public key-based authentication,NIST SP 800-53 Rev. 5.2.0,control,,"a. For public key-based authentication
+1) enforce authorized access to the corresponding private key
+2) map the authenticated identity to the account of the individual or group
+   b. When PKI is used
+3) validate certificates by constructing and verifying a certification path to an accepted trust anchor, including checking certificate status information
+4) implement a local cache of revocation data to support path discovery and validation",,,
+ia-5.6,IA-5(6),IA,Protection of authenticators,NIST SP 800-53 Rev. 5.2.0,control,,Protect authenticators commensurate with the security category of the information to which use of the authenticator permits access.,,,
+ia-5.7,IA-5(7),IA,No embedded unencrypted static authenticators,NIST SP 800-53 Rev. 5.2.0,control,,Ensure that unencrypted static authenticators are not embedded in applications or other forms of static storage.,,,
+ia-5.8,IA-5(8),IA,Multiple system accounts,NIST SP 800-53 Rev. 5.2.0,control,,Implement [Assignment: organization-defined security controls] to manage the risk of compromise due to individuals having accounts on multiple systems.,,,
+ia-5.9,IA-5(9),IA,Federated credential management,NIST SP 800-53 Rev. 5.2.0,control,,Use the following external organizations to federate credentials: [Assignment: organization-defined external organizations].,ia-05.09_odp = SSC,,
+ia-5.13,IA-5(13),IA,Expiration of cached authenticators,NIST SP 800-53 Rev. 5.2.0,control,,Prohibit the use of cached authenticators after [Assignment: organization-defined time period].,,,
+ia-5.14,IA-5(14),IA,Managing content of PKI trust stores,NIST SP 800-53 Rev. 5.2.0,control,,"For PKI-based authentication, employ an organization-wide methodology for managing the content of PKI trust stores installed across all platforms, including networks, operating systems, browsers, and applications.",,,
+ia-6,IA-6,IA,Authentication feedback,NIST SP 800-53 Rev. 5.2.0,control,,Obscure feedback of authentication information during the authentication process to protect the information from possible exploitation and use by unauthorized individuals.,,,
+ia-7,IA-7,IA,Cryptographic module authentication,NIST SP 800-53 Rev. 5.2.0,control,,"Implement mechanisms for authentication to a cryptographic module that meet the requirements of applicable laws, Orders in Council, directives, policies, regulations, standards, and guidelines for such authentication.",,,
+ia-8,IA-8,IA,Identification and authentication (non-organizational users),NIST SP 800-53 Rev. 5.2.0,control,,Uniquely identify and authenticate non-organizational users or processes acting on behalf of non-organizational users.,,,
+ia-8.1,IA-8(1),IA,Acceptance of PKI-based credentials from other,NIST SP 800-53 Rev. 5.2.0,control,,agencies Accept and electronically verify PKI-based credentials from other GC departments and agencies.,,Acceptance of PKI-based credentials from other GC departments and agencies applies to both logical and physical access control systems.,
+ia-8.2,IA-8(2),IA,Acceptance of external authenticators,NIST SP 800-53 Rev. 5.2.0,control,,"a. Accept only external authenticators that are compliant with ITSP.30.031-appropriate level of assurance
+b. Document and maintain a list of accepted external authenticators",,"Approved external authenticators meet or exceed the minimum GC technical, security, privacy, and organizational maturity requirements. Meeting or exceeding GC requirements allows GC relying parties to trust external authenticators in connection with an authentication transaction at a specified authenticator assurance level. Examples of this in the GC are the Sign-In Partners and GCKey programs.
+
+Sign-In Partners are private sector organizations that have partnered with SecureKey Technologies to enable their customers to use their online credentials to access GC services. GCKey is the government-branded issued credential. Both have the same authentication process and security requirements and are compliant with the Privacy Act.",
+ia-8.4,IA-8(4),IA,Use of defined profiles,NIST SP 800-53 Rev. 5.2.0,control,,Conform to the following profiles for identity management [Assignment: organization-defined identity management profiles].,,,
+ia-11,IA-11,IA,Re-authentication,NIST SP 800-53 Rev. 5.2.0,control,,Require users to re-authenticate when [Assignment: organization-defined circumstances or situations requiring re-authentication].,,,
+ia-12,IA-12,IA,Identity proofing,NIST SP 800-53 Rev. 5.2.0,control,,"A. Identity proof users that require accounts for logical access to systems based on appropriate identity assurance level requirements as specified in applicable standards and guidelines
+B. Resolve user identities to a unique individual
+C. Collect, validate, and verify identity evidence",,Standards and guidelines specifying identity assurance levels for identity proofing include Appendix A: Standard on Identity and Credential Assurance of the TBS Directive on Identity Management.,
+ia-12.2,IA-12(2),IA,Identity evidence,NIST SP 800-53 Rev. 5.2.0,control,,Require evidence of individual identification be presented to the registration authority.,,,
+ia-12.3,IA-12(3),IA,Identity evidence validation and verification,NIST SP 800-53 Rev. 5.2.0,control,,Require that the presented identity evidence be validated and verified through [Assignment: organizational defined methods of validation and verification].,,Validation and verification of identity evidence is a requirement of the Privacy Act.,
+ia-12.4,IA-12(4),IA,In-person validation and verification,NIST SP 800-53 Rev. 5.2.0,control,,Require that the validation and verification of identity evidence be conducted in person before a designated registration authority.,,,
+ia-12.5,IA-12(5),IA,Address confirmation,NIST SP 800-53 Rev. 5.2.0,control,,Require that a [Selection (1): registration code; notice of proofing] be delivered through an out-of-band channel to verify the users address (physical or digital) of record.,,,This control is recommended for users external to the organization.
+ir-1,IR-1,IR,Incident response policy and procedures,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]
+1. [Selection (1 or more): Organization-level; Mission/business process-level; System-level] incident response policy that
+   a. addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance
+   b. is consistent with applicable laws, Orders in Council, directives, regulations, policies, standards, and guidelines
+2. procedures to facilitate the implementation of the incident response policy and the associated incident response controls
+   B. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the incident response policy and procedures
+   C. Review and update the current incident response
+3. policy [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+4. procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,"GC departments’ and agencies’ incident response policy and procedures shall incorporate heightened levels of readiness during emergency and heightened cyber threat situations in accordance with the TBS Directive on Security Management, Appendix G: Mandatory Procedures for Security Event Management Control and Appendix B: Mandatory Procedures for Information Technology Security Control.",
+ir-2,IR-2,IR,Incident response training,NIST SP 800-53 Rev. 5.2.0,control,,"A. Provide incident response training to system users consistent with assigned roles and responsibilities
+1. within [Assignment: organization-defined time period] of assuming an incident response role or responsibility or acquiring system access
+2. when required by system changes
+3. [Assignment: organization-defined frequency] thereafter
+   B. Review and update incident response training content [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,Executives should engage their institution's Access to Information and Privacy (ATIP) Office or Chief Privacy Officer (CPO) to determine what training opportunities related to assessing and mitigating privacy breaches may be provided to suit their particular needs or to identify what services may be offered to support their program area.,
+ir-3,IR-3,IR,Incident response testing,NIST SP 800-53 Rev. 5.2.0,control,,Test the effectiveness of the incident response capability for the system [Assignment: organization-defined frequency] using the following tests: [Assignment: organization-defined tests].,,,
+ir-3.2,IR-3(2),IR,Coordination with related plans,NIST SP 800-53 Rev. 5.2.0,control,,Coordinate incident response testing with organizational elements responsible for related plans.,,,
+ir-4,IR-4,IR,Incident handling,NIST SP 800-53 Rev. 5.2.0,control,,"A. Implement an incident handling capability for incidents that is consistent with the incident response plan and includes preparation, detection and analysis, containment, eradication, and recovery
+B. Coordinate incident handling activities with contingency planning activities
+C. Incorporate lessons learned from ongoing incident handling activities into incident response procedures, training, and testing, and implement the resulting changes accordingly
+D. Ensure the rigour, intensity, scope, and results of incident handling activities are comparable and predictable across the organization",,"For federal departments and agencies, an incident that involves personal information is considered a privacy breach. A privacy breach results in the loss of control, compromise, unauthorized disclosure, unpermitted use, unlawful collection, improper retention or disposal, or a similar occurrence where a person other than an authorized user accesses or potentially accesses or an authorized user accesses or potentially accesses such information for other than authorized purposes.
+
+If the incident involves the breach of personal information, the response steps include preliminary assessment and containment; full assessment; notification of affected individuals; mitigation and prevention; notification to the OPC or TBS; and lessons learned.
+
+Breaches of personal information can be considered material breaches if they involve sensitive personal information, could reasonably be expected to cause serious injury or harm to the individual, or involve a large number of affected individuals. Notification procedures may be different for material breaches.",
+ir-4.3,IR-4(3),IR,Continuity of operations,NIST SP 800-53 Rev. 5.2.0,control,,Identify [Assignment: organization-defined classes of incidents] and take the following actions in response to those incidents to ensure continuation of organizational mission and business functions: [Assignment: organization-defined actions to take in response to classes of incidents].,,,
+ir-4.8,IR-4(8),IR,Correlation with external organizations,NIST SP 800-53 Rev. 5.2.0,control,,Coordinate with [Assignment: organization-defined external organizations] to correlate and share [Assignment: organization-defined incident information] to achieve a cross-organizational perspective on incident awareness and more effective incident responses.,ir-04.08_odp.01 = SSC | TBS | Cyber Centre,,
+ir-4.9,IR-4(9),IR,Dynamic response capability,NIST SP 800-53 Rev. 5.2.0,control,,Employ [Assignment: organization-defined dynamic response capabilities] to respond to incidents.,,,
+ir-5,IR-5,IR,Incident monitoring,NIST SP 800-53 Rev. 5.2.0,control,,Track and document incidents.,,,
+ir-6,IR-6,IR,Incident reporting,NIST SP 800-53 Rev. 5.2.0,control,,"A. Require personnel to report suspected incidents to the organizational incident response capability within [Assignment: organization-defined time period]
+B. Report incident information to [Assignment: organization-defined authorities]",,,
+ir-6.1,IR-6(1),IR,Automated reporting,NIST SP 800-53 Rev. 5.2.0,control,,Report incidents using [Assignment: organization-defined automated mechanisms].,,,
+ir-6.2,IR-6(2),IR,Vulnerabilities related to incidents,NIST SP 800-53 Rev. 5.2.0,control,,Report system vulnerabilities associated with reported incidents to [Assignment: organization-defined personnel or roles].,,,
+ir-6.3,IR-6(3),IR,Supply chain coordination,NIST SP 800-53 Rev. 5.2.0,control,,Provide incident information to the provider of the product or service and other organizations involved in the supply chain or supply chain governance for systems or system components related to the incident.,,,
+ir-7,IR-7,IR,Incident response assistance,NIST SP 800-53 Rev. 5.2.0,control,,"Provide an incident response support resource, integral to the organizational incident response capability, that offers advice and assistance to users of the system for the handling and reporting of incidents.",,,
+ir-7.1,IR-7(1),IR,Automation support for availability of information and support,NIST SP 800-53 Rev. 5.2.0,control,,Increase the availability of incident response information and support using [Assignment: organization-defined automated mechanisms].,,,
+ir-8,IR-8,IR,Incident response plan,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop an incident response plan that
+1. provides the organization with a roadmap for implementing its incident response capability
+2. describes the structure and organization of the incident response capability
+3. provides a high-level approach for how the incident response capability fits into the overall organization
+4. meets the unique requirements of the organization which relate to mission, size, structure, and functions
+5. defines reportable incidents
+6. provides metrics for measuring the incident response capability within the organization
+7. defines the resources and management support needed to effectively maintain and mature an incident response capability
+8. addresses the sharing of incident information
+9. is reviewed and approved by [Assignment: organization-defined personnel or roles] [Assignment: organization-defined frequency]
+10. explicitly designates responsibility for incident response to [Assignment: organization-defined entities, personnel, or roles]
+    B. Distribute copies of the incident response plan to [Assignment: organization-defined incident response personnel (identified by name and/or by role) and organizational elements]
+    C. Update the incident response plan to address system and organizational changes or problems encountered during plan implementation, execution, or testing
+    D. Communicate incident response plan changes to [Assignment: organization-defined incident response personnel (identified by name and/or by role) and organizational elements]
+    E. Protect the incident response plan from unauthorized disclosure and modification",,,
+ma-1,MA-1,MA,Maintenance policy and procedures,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]
+1. [Selection (1 or more): Organization-level; Mission/business process-level; System-level] maintenance policy that
+   a. addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance
+   b. is consistent with applicable laws, Orders in Council, directives, regulations, policies, standards, and guidelines
+2. procedures to facilitate the implementation of the maintenance policy and the associated maintenance controls
+   B. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the maintenance policy and procedures
+   C. Review and update the current maintenance
+3. policy [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+4. procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,,
+ma-2,MA-2,MA,Controlled maintenance,NIST SP 800-53 Rev. 5.2.0,control,,"A. Schedule, document, and review records of maintenance, repair, and replacement on system components in accordance with manufacturer or vendor specifications and/or organizational requirements
+B. Approve and monitor all maintenance activities, whether performed onsite or remotely and whether the system or system components are serviced onsite or removed to another location
+C. Require that [Assignment: organization-defined personnel or roles] explicitly approve the removal of the system or system components from organizational facilities for offsite maintenance, repair, or replacement
+D. Sanitize equipment to remove the following information from associated media prior to removal from organizational facilities for offsite maintenance, repair, or replacement: [Assignment: organization-defined information]
+E. Check all potentially impacted controls to verify that the controls are still functioning properly following maintenance, repair, or replacement actions
+F. Include the following information in organizational maintenance records: [Assignment: organization-defined information]",,,
+ma-3,MA-3,MA,Maintenance tools,NIST SP 800-53 Rev. 5.2.0,control,,"A. Approve, control, and monitor the use of system maintenance tools
+B. Review previously approved system maintenance tools [Assignment: organization-defined frequency]",,,
+ma-3.1,MA-3(1),MA,Inspect tools,NIST SP 800-53 Rev. 5.2.0,control,,Inspect the maintenance tools used by maintenance personnel for improper or unauthorized modifications.,,,
+ma-3.2,MA-3(2),MA,Inspect media,NIST SP 800-53 Rev. 5.2.0,control,,Check media containing diagnostic and test programs for malicious code before the media is used in the system.,,,
+ma-3.3,MA-3(3),MA,Prevent unauthorized removal,NIST SP 800-53 Rev. 5.2.0,control,,"Prevent the unauthorized removal of maintenance equipment containing organizational or personal information by:
+a. verifying that no organizational or personal information is contained on the equipment
+b. sanitizing or destroying the equipment
+c. retaining the equipment within the facility
+d. obtaining an exemption from [Assignment: organization-defined personnel or roles] explicitly authorizing removal of the equipment from the facility",,,
+ma-4,MA-4,MA,Non-local maintenance,NIST SP 800-53 Rev. 5.2.0,control,,"A. Approve and monitor non-local maintenance and diagnostic activities
+B. Allow the use of non-local maintenance and diagnostic tools only as consistent with organizational policy and documented in the security plan for the system
+C. Employ strong authentication in the establishment of non-local maintenance and diagnostic sessions
+D. Maintain records for non-local maintenance and diagnostic activities
+E. Terminate session and network connections when non-local maintenance is completed",,,
+ma-4.1,MA-4(1),MA,Logging and review,NIST SP 800-53 Rev. 5.2.0,control,,"a. Log [Assignment: organization-defined audit events] for non-local maintenance and diagnostic sessions
+b. Review the audit records of the maintenance and diagnostic sessions to detect anomalous behaviour",,,
+ma-4.3,MA-4(3),MA,Comparable security and sanitization,NIST SP 800-53 Rev. 5.2.0,control,,"a. Require that non-local maintenance and diagnostic services be performed from a system that implements a security capability comparable to the capability implemented on the system being serviced
+b. Remove the component to be serviced from the system prior to non-local maintenance or diagnostic services; sanitize the component (for organizational information); and, after the service is performed, inspect and sanitize the component (for potentially malicious software) before reconnecting the component to the system",,,
+ma-4.4,MA-4(4),MA,Authentication and separation of maintenance sessions,NIST SP 800-53 Rev. 5.2.0,control,,"Protect non-local maintenance sessions by:
+a. employing [Assignment: organization-defined authenticators that are replay resistant]
+b. separating the maintenance sessions from other network sessions with the system by either
+1) physically separated communications paths
+2) logically separated communications paths",,,
+ma-4.6,MA-4(6),MA,Cryptographic protection,NIST SP 800-53 Rev. 5.2.0,control,,Implement the following cryptographic mechanisms to protect the integrity and confidentiality of non-local maintenance and diagnostic communications: [Assignment: organization-defined cryptographic mechanisms].,,,
+ma-5,MA-5,MA,Maintenance personnel,NIST SP 800-53 Rev. 5.2.0,control,,"A. Establish a process for maintenance personnel authorization and maintain a list of authorized maintenance organizations or personnel
+B. Verify that non-escorted personnel performing maintenance on the system possess the required access authorizations
+C. Designate organizational personnel with required access authorizations and technical competence to supervise the maintenance activities of personnel who do not possess the required access authorizations",,,
+ma-5.1,MA-5(1),MA,Individuals without appropriate access,NIST SP 800-53 Rev. 5.2.0,control,,"a. Implement procedures for the use of maintenance personnel that lack appropriate security clearances, that include the following requirements
+1) maintenance personnel who do not have the needed access authorizations, clearances, or formal access approvals are escorted and supervised during the performance of maintenance and diagnostic activities on the system by approved organizational personnel who are fully cleared, have appropriate access authorizations, and are technically qualified
+2) prior to initiating maintenance or diagnostic activities by personnel who do not have the needed access authorizations, clearances, or formal access approvals, all volatile information storage components within the system are sanitized and all non-volatile storage media are removed or physically disconnected from the system and secured
+   b. Develop and implement [Assignment: organization-defined alternate controls] in the event a system component cannot be sanitized, removed, or disconnected from the system",,,
+ma-6,MA-6,MA,Timely maintenance,NIST SP 800-53 Rev. 5.2.0,control,,Obtain maintenance support and/or spare parts for [Assignment: organization-defined system components] within [Assignment: organization-defined time period] of failure.,,,
+mp-1,MP-1,MP,Media protection policy and procedures,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]
+1. [Selection (1 or more): Organization-level; Mission/business process-level; System-level] media protection policy that
+   a. addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance
+   b. is consistent with applicable laws, Orders in Council, directives, regulations, policies, standards, and guidelines
+2. procedures to facilitate the implementation of the media protection policy and the associated media protection controls
+   B. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the media protection policy and procedures
+   C. Review and update the current media protection
+3. policy [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+4. procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,,
+mp-2,MP-2,MP,Media access,NIST SP 800-53 Rev. 5.2.0,control,,Restrict access to [Assignment: organization-defined types of digital and/or non-digital media] to [Assignment: organization-defined personnel or roles].,,,
+mp-3,MP-3,MP,Media marking,NIST SP 800-53 Rev. 5.2.0,control,,"A. Mark system media indicating the distribution limitations, handling caveats, and applicable security markings (if any) of the information
+B. Exempt [Assignment: organization-defined types of system media] from marking if the media remain within [Assignment: organization-defined controlled areas]",,,
+mp-4,MP-4,MP,Media storage,NIST SP 800-53 Rev. 5.2.0,control,,"A. Physically control and securely store [Assignment: organization-defined types of digital and/or non-digital media] within [Assignment: organization-defined controlled areas]
+B. Protect system media types defined in MP-04A until the media are destroyed or sanitized using approved equipment, techniques, and procedures",,,
+mp-5,MP-5,MP,Media transport,NIST SP 800-53 Rev. 5.2.0,control,,"A. Protect and control [Assignment: organization-defined types of system media] during transport outside of controlled areas using [Assignment: organization-defined controls]
+B. Maintain accountability for system media during transport outside of controlled areas
+C. Document activities associated with the transport of system media
+D. Restrict the activities associated with the transport of system media to authorized personnel",,,
+mp-6,MP-6,MP,Media sanitization,NIST SP 800-53 Rev. 5.2.0,control,,"A. Sanitize [Assignment: organization-defined system media] prior to disposal, release out of organizational control, or release for reuse using [Assignment: organization-defined sanitization techniques and procedures]
+B. Employ sanitization mechanisms with the strength and integrity commensurate with the security category or classification of the information",,The sanitization requirements for protected and classified information are set by Cyber Centre- and RCMP-endorsed standards. Organizations can refer to the Cyber Centre guidance IT media sanitization (ITSP.40.006) and to the RCMP’s Security Equipment Guide.,
+mp-6.3,MP-6(3),MP,Non-destructive techniques,NIST SP 800-53 Rev. 5.2.0,control,,Apply non-destructive sanitization techniques to portable storage devices prior to connecting such devices to the system under the following circumstances: [Assignment: organization-defined circumstances requiring sanitization of portable storage devices].,,,
+mp-6.8,MP-6(8),MP,Remote purging or wiping of information,NIST SP 800-53 Rev. 5.2.0,control,,Provide the capability to purge or wipe information from [Assignment: organization-defined systems or system components] [Selection (1): remotely; under the following conditions: [Assignment: organization-defined conditions]].,mp-06.08_odp.03 = lost | stolen | upon termination of employment,,
+mp-7,MP-7,MP,Media use,NIST SP 800-53 Rev. 5.2.0,control,,"A. [Selection (1): Restrict; Prohibit] the use of [Assignment: organization-defined types of system media] on [Assignment: organization-defined systems or system components] using [Assignment: organization-defined controls]
+B. Prohibit the use of portable storage devices in organizational systems when such devices have no identifiable owner",,,
+mp-8,MP-8,MP,Media downgrading,NIST SP 800-53 Rev. 5.2.0,control,,"A. Establish [Assignment: organization-defined system media downgrading process] that includes employing downgrading mechanisms with strength and integrity commensurate with the security category or classification of the information
+B. Verify that the system media downgrading process is commensurate with the security category and/or classification level of the information to be removed and the access authorizations of the potential recipients of the downgraded information
+C. Identify [Assignment: organization-defined system media requiring downgrading]
+D. Downgrade the identified system media using the established process",,,
+mp-8.3,MP-8(3),MP,Protected information,NIST SP 800-53 Rev. 5.2.0,control,,Downgrade system media containing protected information prior to public release.,,"The downgrading of protected information uses approved sanitization tools, techniques, and procedures.",
+pe-1,PE-1,PE,Physical and environmental protection policy and procedures,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]
+1. [Selection (1 or more): Organization-level; Mission/business process-level; System-level] physical and environmental protection policy that
+   a. addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance
+   b. is consistent with applicable laws, Orders in Council, directives, regulations, policies, standards, and guidelines
+2. procedures to facilitate the implementation of the physical and environmental protection policy and the associated physical and environmental protection controls
+   B. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the physical and environmental protection policy and procedures
+   C. Review and update the current physical and environmental protection
+3. policy [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+4. procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,,
+pe-2,PE-2,PE,Physical access authorizations,NIST SP 800-53 Rev. 5.2.0,control,,"A. Develop, approve, and maintain a list of individuals with authorized access to the facility where the system resides
+B. Issue authorization credentials for facility access
+C. Review the access list detailing authorized facility access by individuals [Assignment: organization-defined frequency]
+D. Remove individuals from the facility access list when access is no longer required",,,
+pe-2.400,PE-2(400),PE,Identification card requirements,CCCS,control,,Ensure identification cards meet requirements prior to issuance.,,"The organization issues an identification card to all personnel, which as a minimum includes the name of the organization, the bearer’s name and photo, a unique card number, and an expiry date. Identification cards may contain personal information and should be protected accordingly.",
+pe-3,PE-3,PE,Physical access control,NIST SP 800-53 Rev. 5.2.0,control,,"A. Enforce physical access authorizations at [Assignment: organization-defined entry and exit points to the facility where the system resides] by
+1. verifying individual access authorizations before granting access to the facility
+2. controlling ingress and egress to the facility using [Selection (1 or more): [Assignment: organization-defined physical access control systems or devices]; guards]
+   B. Maintain physical access audit logs for [Assignment: organization-defined entry or exit points]
+   C. Control access to areas within the facility designated as publicly accessible by implementing the following controls: [Assignment: organization-defined physical access controls]
+   D. Escort visitors and control visitor activity [Assignment: organization-defined circumstances requiring visitor escorts and control of visitor activity]
+   E. Secure keys, access cards, combinations, safes, cipher locks, and other physical access devices
+   F. Inventory [Assignment: organization-defined physical access devices] every [Assignment: organization-defined frequency]
+   G. Change combinations and keys [Assignment: organization-defined frequency] and/or when keys are lost, or combinations are compromised, or when individuals possessing the keys or combinations are transferred or terminated
+   AA. Remove the access card identifier from the access list or database [Assignment: organization-defined frequency] when the access card is lost, misplaced, stolen, or when the individual possessing the card is transferred or terminated",,,"According to the TBS Policy on Government Security and RCMP GCPSG-006 Access Management Guide, access to sensitive information and areas must be limited. A physical Operations Zone is the minimum required where sensitive GC information is processed or stored. A TRA must be performed to ensure the appropriate level of physical security to protect Protected B information and information systems processing and storing PB data. This zone is an area where access is limited to personnel who work there and to properly-escorted visitors by an employee with a valid reliability status; it must be indicated by a recognizable perimeter and monitored periodically."
+pe-3.400,PE-3(400),PE,Security inspections,CCCS,control,,"Conduct security inspections in facilities where sensitive or valuable information or assets are handled or stored, or in facilities supporting critical services or activities.",,"Security inspections are conducted to verify compliance with departmental security practices. They must be conducted by authorized personnel and in accordance with defined processes and timelines. In emergency or heightened threat situations, the frequency or depth of security inspections is increased to achieve a higher readiness level. Non-compliance shall be reported in accordance with defined processes to enable the implementation of corrective actions and, when applicable, to report to the responsible authorities.",GC specific.
+pe-4,PE-4,PE,Access control for transmission,NIST SP 800-53 Rev. 5.2.0,control,,Control physical access to [Assignment: organization-defined system distribution and transmission lines] within organizational facilities using [Assignment: organization-defined security controls].,,,
+pe-5,PE-5,PE,Access control for output devices,NIST SP 800-53 Rev. 5.2.0,control,,Control physical access to output from [Assignment: organization-defined output devices] to prevent unauthorized individuals from obtaining the output.,,,
+pe-6,PE-6,PE,Monitoring physical access,NIST SP 800-53 Rev. 5.2.0,control,,"A. Monitor physical access to the facility where the system resides to detect and respond to physical security incidents
+B. Review physical access logs [Assignment: organization-defined frequency] and upon occurrence of [Assignment: organization-defined events or potential indications of events]
+C. Coordinate results of reviews and investigations with the organizational incident response capability",,,
+pe-6.1,PE-6(1),PE,Intrusion alarms and surveillance equipment,NIST SP 800-53 Rev. 5.2.0,control,,Monitor physical access to the facility where the system resides using physical intrusion alarms and surveillance equipment.,,,
+pe-8,PE-8,PE,Visitor access records,NIST SP 800-53 Rev. 5.2.0,control,,"A. Maintain visitor access records to the facility where the system resides for [Assignment: organization-defined time period].
+B. Review visitor access records [Assignment: organization-defined frequency].
+C. Report anomalies in visitor access records to [Assignment: organization-defined personnel].",,"Where appropriate, access records can include the entry and exit of specific facilities, zones, or sensitive areas. These activities are recorded in accordance with departmental security practices and with records retention and disposition schedules.",
+pe-9,PE-9,PE,Power equipment and cabling,NIST SP 800-53 Rev. 5.2.0,control,,Protect power equipment and power cabling for the system from damage and destruction.,,,
+pe-10,PE-10,PE,Emergency shutoff,NIST SP 800-53 Rev. 5.2.0,control,,"A. Provide the capability of shutting off power to [Assignment: organization-defined system or individual system components] in emergency situations
+B. Place emergency shutoff switches or devices in [Assignment: organization-defined location by system or system component] to facilitate access for authorized personnel
+C. Protect emergency power shutoff capability from unauthorized activation",,,
+pe-11,PE-11,PE,Emergency power,NIST SP 800-53 Rev. 5.2.0,control,,Provide an uninterruptible power supply to facilitate [Selection (1 or more): an orderly shutdown of the system; transition of the system to long-term alternate power] in the event of a primary power source loss.,,,
+pe-12,PE-12,PE,Emergency lighting,NIST SP 800-53 Rev. 5.2.0,control,,Employ and maintain automatic emergency lighting for the system that activates in the event of a power outage or disruption and that covers emergency exits and evacuation routes within the facility.,,,
+pe-13,PE-13,PE,Fire protection,NIST SP 800-53 Rev. 5.2.0,control,,Employ and maintain fire detection and suppression systems that are supported by an independent energy source.,,,
+pe-13.1,PE-13(1),PE,Detection systems — automatic activation and notification,NIST SP 800-53 Rev. 5.2.0,control,,Employ fire detection systems that activate automatically and notify [Assignment: organization-defined personnel or roles] and [Assignment: organization-defined emergency responders] in the event of a fire.,,,
+pe-13.4,PE-13(4),PE,Inspections,NIST SP 800-53 Rev. 5.2.0,control,,Ensure that the facility undergoes [Assignment: organization-defined frequency] fire protection inspections by authorized and qualified inspectors and that identified deficiencies are resolved within [Assignment: organization-defined time period].,,,
+pe-13.400,PE-13(400),PE,Emergency services,CCCS,control,,Ensure that firefighting water capacity and effective response times of emergency services are considered when developing safeguarding strategies.,,,GC specific
+pe-14,PE-14,PE,Environmental controls,NIST SP 800-53 Rev. 5.2.0,control,,"A. Maintain [Selection (1 or more): temperature; humidity; pressure; radiation; [Assignment: organization-defined environmental control]] levels within the facility where the system resides at [Assignment: organization-defined acceptable levels]
+B. Monitor environmental control levels [Assignment: organization-defined frequency]",,,
+pe-15,PE-15,PE,Water damage protection,NIST SP 800-53 Rev. 5.2.0,control,,"Protect the system from damage resulting from water leakage by providing master shutoff or isolation valves that are accessible, working properly, and known to key personnel.",,,
+pe-16,PE-16,PE,Delivery and removal,NIST SP 800-53 Rev. 5.2.0,control,,"A. Authorize and control [Assignment: organization-defined types of system components] entering and exiting the facility
+B. Maintain records of the system components",,,
+pe-17,PE-17,PE,Alternate work site,NIST SP 800-53 Rev. 5.2.0,control,,"A. Determine and document the [Assignment: organization-defined alternate work sites] allowed for use by employees
+B. Employ the following controls at alternate work sites: [Assignment: organization-defined controls]
+C. Assess the effectiveness of controls at alternate work sites
+D. Provide a means for employees to communicate with information security and privacy personnel in case of incidents",,,
+pe-400,PE-400,PE,Remote and telework environments,CCCS,control,,"A. Assess physical security of remote or telework environments
+B. Apply appropriate protection and storage requirements for information and assets
+C. Use approved security equipment and electronic devices in accordance with the categorization of material",,"Security considerations should be addressed in remote or telework locations for GC departments, agencies and employees. Remote/telework can increase the likelihood of compromise of an organization’s sensitive information. Information can be targeted by threat actors through different methods such as physical access to information and devices, theft of information or devices, eavesdropping during meetings and telephone conversations, and overviewing of information and devices.
+
+When working in a location other than the designated work site, employees should assess physical security and apply appropriate protection and storage requirements for GC information and assets. A risk assessment needs to be completed for all remote and telework situations and associated work solutions.
+
+Protected A and B material may be processed and stored at remote and telework locations outside a designated GC workplace when physical protections are employed. The processing of Secret and Top Secret (TS) information originating from allies is only permitted in the appropriate zone of a designated GC security zone. TS Sensitive compartmented information (SCI) cannot be processed, stored, or discussed in a telework environment. It is recommended to prevent or limit the use of hard-copy material as much as practicable.
+
+Employees should be provided equipment that supports and promotes secure processing, storage, and transport of GC information. Employees should complete appropriate security awareness training as a condition to being granted their remote/telework request. Appropriate security controls need to be available and in place.
+
+Tracking data for employees on remote/telework agreements should be maintained and should include the names, locations, issued equipment, and assets, as well as registries of information taken to the remote/telework location, when appropriate. Employees are responsible for understanding and implementing all remote/telework security control measures that contribute to the secure processing of GC information at their location.",GC specific.
+pe-400.1,PE-400(1),PE,Physical information and assets storage,CCCS,control,,Store physical information and assets in accordance with RCMP guidance and departmentally established security practices.,,"Effort should be made to limit the need to process or store hard-copy documents of any categorization in locations outside a GC controlled facility. The RCMP does not recommend that Confidential and Secret information or assets be processed in remote/telework environments, but in cases where it cannot be avoided, requirements set out in the RCMP G1-001 Security Equipment Guide should be followed.
+
+The processing and storage of Protected C or Top Secret information outside approved GC facilities is considered an extremely high risk and is not recommended by the RCMP. If unavoidable, departmental physical security shall perform a full site security assessment, including a complete Threat and Risk Assessment (TRA). All security controls required for High Secure Zones in GC facilities should be used as a minimum standard for location fit-up.",GC specific.
+pe-400.2,PE-400(2),PE,International remote/telework,CCCS,control,,Allow requests for remote/telework from international locations only under exceptional circumstances.,,"This enhancement does not apply to already assigned positions of employees working abroad as part of their regular operational duties, such as those attached to Canadian Embassies and High Commissions or military deployments. The RCMP does not recommend allowing remote/telework from international locations. Departments that may allow international remote/telework should develop a process with considerations given for all security controls, risk assessments, approvals, and briefings.
+
+Requests for international remote/telework should only be considered under exceptional circumstances; be limited to a specific defined period of time; require a complete TRA for the employee, country, and city of work; and require additional approval from Deputy Head, department Chief Security Officer (CSO), Chief Human Resources Officer (CHRO) and Chief Information Officer (CIO) as well as Shared Services Canada (SSC).
+
+International remote/telework carries increased security risks for the individual and the GC, since the Vienna Convention on Diplomatic Relations (1963) would not apply to those GC employees. As such, these employees are subject to all local and state laws and are not afforded diplomatic protections for information, assets, or property, including GC information and assets. Additionally, it carries increased physical security risks, and, in some countries, physical security controls may be cost prohibitive or difficult to maintain without a departmental security presence.",GC specific.
+pe-401,PE-401,PE,Security operations centre,CCCS,control,,"Establish and maintain a Security Operations Centre (SOC) to protect the organization’s people, property, assets, and information, through physical and technical surveillance and monitoring.",,,
+pl-1,PL-1,PL,Planning policy and procedures,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]
+1. [Selection (1 or more): Organization-level; Mission/business process-level; System-level] planning policy that
+   a. addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance
+   b. is consistent with applicable laws, jurisprudence, Orders in Council, directives, regulations, policies, standards, and guidelines
+2. procedures to facilitate the implementation of the planning policy and the associated planning controls
+   B. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the planning policy and procedures
+   C. Review and update the current planning
+3. policy [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+4. procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,,
+pl-2,PL-2,PL,System security and privacy plans,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop security and privacy plans for the system that
+1. are consistent with the organization’s enterprise architecture
+2. explicitly define the constituent system components
+3. describe the operational context of the system in terms of mission and business processes
+4. identify the individuals that fulfill system roles and responsibilities
+5. identify the information types processed, stored, and transmitted by the system
+6. provide the security categorization of the system, including supporting rationale
+7. describe any specific threats to the system that are of concern to the organization
+8. provide the results of a privacy risk assessment for systems handling personal information
+9. describe the operational environment for the system and any dependencies on or connections to other systems or system components
+10. provide an overview of the security and privacy requirements for the system
+11. identify any relevant control baselines or overlays, if applicable
+12. describe the controls in place or planned for meeting the security and privacy requirements, including a rationale for any tailoring decisions
+13. include risk determinations for security and privacy architecture and design decisions
+14. include security- and privacy-related activities affecting the system that require planning and coordination with [Assignment: organization-defined individuals or groups]
+15. are reviewed and approved by the authorizing official or designated representative prior to plan implementation 400. document the business purposes for the processing of personal information 401. define retention and disposition standards for personal information stored within the system
+    B. Distribute copies of the plans and communicate subsequent changes to the plans to [Assignment: organization-defined personnel or roles]
+    C. Review the plans [Assignment: organization-defined frequency]
+    D. Update the plans to address changes to the system and environment of operation or problems identified during plan implementation or control assessments
+    E. Protect the plans from unauthorized disclosure and modification",,,
+pl-4,PL-4,PL,Rules of behaviour,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Establish and provide to individuals requiring access to the system the rules that describe their responsibilities and expected behaviour for information and system usage, security, and privacy
+B. Receive a documented acknowledgment from such individuals, indicating that they have read, understand, and agree to abide by the rules of behaviour, before authorizing access to information and the system
+C. Review and update the rules of behaviour [Assignment: organization-defined frequency]
+D. Require individuals who have acknowledged a previous version of the rules of behaviour to read and re-acknowledge [Selection (1 or more): [Assignment: organization-defined frequency]; when the rules are revised or updated]",,The expectations for rules of behaviour for external system users or recipients of information contained within governmental systems can be captured in an information sharing agreement or arrangement.,
+pl-4.1,PL-4(1),PL,Social media and external site/application usage restrictions,NIST SP 800-53 Rev. 5.2.0,activity,,"Include in the rules of behaviour restrictions on:
+a. use of social media, social networking sites, and external sites/applications
+b. posting organizational information on public websites
+c. use of organization-provided identifiers (e.g., email addresses) and authentication secrets (e.g., passwords) for creating accounts on external sites/applications",,,
+pl-8,PL-8,PL,Security and privacy architecture,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop security and privacy architectures for the system that describe
+1. the requirements and approach to be taken for protecting the confidentiality, integrity, and availability of organizational information
+2. the requirements and approach to be taken for handling personal information to minimize any privacy risk to individuals
+3. how the architectures are integrated into and support the enterprise architecture
+4. any assumptions about, and dependencies on, external systems and services
+   B. Review and update the architectures [Assignment: organization-defined frequency] to reflect changes in the enterprise architecture
+   C. Reflect planned architecture changes in security and privacy plans, CONOPS, criticality analysis, organizational procedures, and procurements and acquisitions",,,
+pl-10,PL-10,PL,Baseline selection,NIST SP 800-53 Rev. 5.2.0,activity,,Select a control baseline for the system.,,"The control baselines in Security and privacy controls and assurance activities catalogue – Baseline profiles (ITSP.10.033-01) are compliant with TBS policies, directives, standards, and guidelines. For guidance on control baselines for national security systems, contact contact@cyber.gc.ca.",
+pl-11,PL-11,PL,Baseline tailoring,NIST SP 800-53 Rev. 5.2.0,activity,,Tailor the selected control baseline by applying specified tailoring actions.,,,
+ps-1,PS-1,PS,Personnel security policy and procedures,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]
+1. [Selection (1 or more): Organization-level; Mission/business process-level; System-level] personnel security policy that
+   a. addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance
+   b. is consistent with applicable laws, Orders in Council, directives, regulations, policies, standards, and guidelines
+2. procedures to facilitate the implementation of the personnel security policy and the associated personnel security controls
+   B. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the personnel security policy and procedures
+   C. Review and update the current personnel security
+3. policy [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+4. procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,,
+ps-2,PS-2,PS,Position security analysis,NIST SP 800-53 Rev. 5.2.0,control,,"A. Determine the security screening requirements of all organizational positions
+B. Establish screening criteria for individuals filling those positions
+C. Review and update position security screening requirement [Assignment: organization-defined frequency]",,,
+ps-3,PS-3,PS,Personnel screening,NIST SP 800-53 Rev. 5.2.0,control,,"A. Screen individuals prior to authorizing access to the system
+B. Rescreen individuals in accordance with [Assignment: organization-defined conditions requiring rescreening and, where rescreening is so indicated, the frequency of rescreening]",,,
+ps-4,PS-4,PS,Personnel termination,NIST SP 800-53 Rev. 5.2.0,control,,"Upon termination of individual employment:
+A. disable system access within [Assignment: organization-defined time period]
+B. terminate or revoke any authenticators and credentials associated with the individual
+C. conduct exit interviews that include a discussion of [Assignment: organization-defined information security topics]
+D. retrieve all security-related, organizational system-related property
+E. retain access to organizational information and systems formerly controlled by the terminated individual",,"Exit interviews are important for individuals with security clearances. CSOs or delegated officials, in consultation with human resources advisors, must develop procedures and ensure that debriefings and reclamations are scheduled and conducted as a component of the overall termination process. The Security Screening Certificate and Screening Form is used to record that termination procedures have been completed.",
+ps-5,PS-5,PS,Personnel transfer,NIST SP 800-53 Rev. 5.2.0,control,,"A. Review and confirm ongoing operational need for current logical and physical access authorizations to systems and facilities when individuals are reassigned or transferred to other positions within the organization
+B. Initiate [Assignment: organization-defined transfer or reassignment actions] within [Assignment: organization-defined time period following the formal transfer action]
+C. Modify access authorization as needed to correspond with any changes in operational need due to reassignment or transfer
+D. Notify [Assignment: organization-defined personnel or roles] within [Assignment: organization-defined time period]",,,
+ps-6,PS-6,PS,Access agreements,NIST SP 800-53 Rev. 5.2.0,control,,"A. Develop and document access agreements for organizational systems
+B. Review and update the access agreements [Assignment: organization-defined frequency]
+C. Verify that individuals requiring access to organizational information and systems
+1. sign appropriate access agreements prior to being granted access
+2. re-sign access agreements to maintain access to organizational systems when access agreements have been updated or [Assignment: organization-defined frequency]",,,
+ps-7,PS-7,PS,External personnel security,NIST SP 800-53 Rev. 5.2.0,control,,"A. Establish personnel security requirements, including security roles and responsibilities for external providers
+B. Require external providers to comply with personnel security policies and procedures established by the organization
+C. Document personnel security requirements
+D. Require external providers to notify [Assignment: organization-defined personnel or roles] of any personnel transfers or terminations of external personnel who possess organizational credentials and/or badges, or who have system privileges within [Assignment: organization-defined time period]
+E. Monitor provider compliance with personnel security requirements
+F. The organization ensures security screening of private-sector organizations and individuals who have access to Protected and Classified information, assets, and facilities in accordance with the TBS Standard on Security Screening
+G. The organization explicitly defines government oversight and end-user roles and responsibilities relative to third-party-provided services in accordance with the TBS Directive on Security Management: Appendix F: Mandatory Procedures for Security in Contracts and Other Arrangements Control",,,
+ps-8,PS-8,PS,Personnel sanctions,NIST SP 800-53 Rev. 5.2.0,control,,"A. Employ a formal sanctions process for individuals who fail to comply with established information security and privacy policies and procedures
+B. Notify [Assignment: organization-defined personnel or roles] within [Assignment: organization-defined time period] when a formal employee sanctions process is initiated, identifying the individual sanctioned and the reason for the sanction",,"Organizational sanctions reflect applicable laws, Orders in Council, directives, regulations, policies, standards, and guidelines. Sanctions processes are described in access agreements and can be included as part of general personnel policies for organizations and/or specified in security and privacy policies. Organizations should consult with TBS regarding matters of employee sanctions.",
+ps-9,PS-9,PS,Position descriptions,NIST SP 800-53 Rev. 5.2.0,activity,,Incorporate security and privacy roles and responsibilities into organizational position descriptions.,,,
+ra-1,RA-1,RA,Risk assessment policy and procedures,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]
+1. [Selection (1 or more): organization-level; Mission/business process-level; System-level] risk assessment policy that
+   a. addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance
+   b. is consistent with applicable laws, Orders in Council, directives, regulations, policies, standards, and guidelines
+2. procedures to facilitate the implementation of the risk assessment policy and the associated risk assessment controls
+   B. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the risk assessment policy and procedures
+   C. Review and update the current risk assessment
+3. policy [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+4. procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,,
+ra-2,RA-2,RA,Security categorization,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Categorize the system and information it processes, stores, and transmits
+B. Document the security categorization results, including supporting rationale, in the security plan for the system
+C. Verify that the authorizing official or authorizing official’s designated representative reviews and approves the security categorization decision",,"Organizations should conduct the security categorization process as an organization-wide activity with the direct involvement of chief information officers, senior officials in the department’s security governance, appropriate privacy senior officials or executives, system owners, mission and business owners, and information owners or stewards. Organizations should consider the potential adverse impacts to other organizations and injury to the national interest or outside of the national interest.",
+ra-3,RA-3,RA,Risk assessment,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Conduct a risk assessment, including
+1. identifying threats to and vulnerabilities in the system
+2. determining the likelihood and magnitude of harm from unauthorized access, use, disclosure, disruption, modification, or destruction of the system, the information it handles, stores, or transmits, and any related information
+3. determining the likelihood and impact of adverse effects on individuals arising from the handling of personal information
+   B. Integrate risk assessment results and risk management decisions from the organization and mission or business process perspectives with system-level risk assessments
+   C. Document risk assessment results in [Selection (1): security and privacy plans; risk assessment report; [Assignment: organization-defined document]]
+   D. Review risk assessment results [Assignment: organization-defined frequency]
+   E. Disseminate risk assessment results to [Assignment: organization-defined personnel or roles]
+   F. Update the risk assessment [Assignment: organization-defined frequency] or when there are significant changes to the system, its environment of operation, or other conditions that may impact the security or privacy state of the system",,,
+ra-3.1,RA-3(1),RA,Supply chain risk assessment,NIST SP 800-53 Rev. 5.2.0,control,,"a. Assess supply chain risks associated with [Assignment: organization-defined systems, system components, and system services]
+b. Update the supply chain risk assessment [Assignment: organization-defined frequency], when there are significant changes to the relevant supply chain, or when changes to the system, environments of operation, or other conditions may necessitate a change in the supply chain",,,
+ra-5,RA-5,RA,Vulnerability monitoring and scanning,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Monitor and scan for vulnerabilities in the system and hosted applications [Assignment: organization-defined frequency and/or randomly in accordance with organization-defined process] and when new vulnerabilities potentially affecting the system are identified and reported
+B. Employ vulnerability monitoring tools and techniques that facilitate interoperability among tools and automate parts of the vulnerability management process by using standards for
+1. enumerating platforms, software flaws, and improper configurations
+2. formatting checklists and test procedures
+3. measuring vulnerability impact
+   C. Analyze vulnerability scan reports and results from vulnerability monitoring
+   D. Remediate legitimate vulnerabilities [Assignment: organization-defined response times] in accordance with an organizational assessment of risk
+   E. Share information obtained from the vulnerability monitoring process and control assessments with [Assignment: organization-defined personnel or roles] to help eliminate similar vulnerabilities in other systems
+   F. Employ vulnerability monitoring tools that include the capability to readily update the vulnerabilities to be scanned",,,
+ra-5.2,RA-5(2),RA,Update vulnerabilities to be scanned,NIST SP 800-53 Rev. 5.2.0,control,,Update the system vulnerabilities to be scanned [Selection (1 or more): [Assignment: organization-defined frequency]; prior to a new scan; when new vulnerabilities are identified and reported].,,,
+ra-5.5,RA-5(5),RA,Privileged access,NIST SP 800-53 Rev. 5.2.0,control,,Implement privileged access authorization to [Assignment: organization-defined system components] for [Assignment: organization-defined vulnerability scanning activities].,,,
+ra-5.11,RA-5(11),RA,Public disclosure program,NIST SP 800-53 Rev. 5.2.0,control,,Establish a public reporting channel for receiving reports of vulnerabilities in organizational systems and system components.,,,
+ra-7,RA-7,RA,Risk response,NIST SP 800-53 Rev. 5.2.0,activity,,"Respond to findings from security and privacy assessments, monitoring, and audits in accordance with organizational risk tolerance.",,,
+ra-9,RA-9,RA,Criticality analysis,NIST SP 800-53 Rev. 5.2.0,activity,,"Identify critical system components and functions by performing a criticality analysis for [Assignment: organization-defined systems, system components, or system services] at [Assignment: organization-defined decision points in the system development lifecycle].",,,
+sa-1,SA-1,SA,System and services acquisition policy and procedures,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]
+1. [Selection (1 or more): Organization-level; Mission/business process-level; System-level] system and services acquisition policy that
+   a. addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance
+   b. is consistent with applicable laws, Orders in Council, directives, regulations, policies, standards, and guidelines
+2. procedures to facilitate the implementation of the system and services acquisition policy and the associated system and services acquisition controls
+   B. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the system and services acquisition policy and procedures
+   C. Review and update the current system and services acquisition
+3. policy [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+4. procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,,
+sa-2,SA-2,SA,Allocation of resources,NIST SP 800-53 Rev. 5.2.0,control,,"A. Determine the high-level information security and privacy requirements for the system or system service in mission and business process planning
+B. Determine, document, and allocate the resources required to protect the system or system service as part of the organizational capital planning and investment control process
+C. Establish a discrete line item for information security and privacy in organizational programming and budgeting documentation",,,
+sa-3,SA-3,SA,System development lifecycle,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Acquire, develop, and manage the system using [Assignment: organization-defined system development lifecycle] that incorporates information security and privacy considerations
+B. Define and document information security and privacy roles and responsibilities throughout the system development lifecycle
+C. Identify individuals having information security and privacy roles and responsibilities
+D. Integrate the organizational information security and privacy risk management process into system development lifecycle activities",,,
+sa-4,SA-4,SA,Acquisition process,NIST SP 800-53 Rev. 5.2.0,control,,"Include the following requirements, descriptions, and criteria, explicitly or by reference, using [Selection (1 or more): standardized contract language; [Assignment: organization-defined contract language]] in the acquisition contract for the system, system component, or system service:
+A. security and privacy functional requirements
+B. strength of mechanism requirements
+C. security and privacy assurance requirements
+D. controls needed to satisfy the security and privacy requirements
+E. security and privacy documentation requirements
+F. requirements for protecting security and privacy documentation
+G. a description of the system development environment and the environment in which the system is intended to operate
+H. the allocation of responsibility or identification of parties responsible for information security, privacy, and supply chain risk management
+I. acceptance criteria",,"Functional requirements for the protection of personal information can be found in the PSPC Supply Manual, Chapter 1, Section 1.70 – Privacy in contracting. The TBS guidance document: Taking Privacy Into Account Before Making Contracting Decisions, presents additional information on the handling of personal information. Functional requirements include the contractual obligations for ownership of personal information, the maintenance of accuracy, privacy and integrity of personal information, limitations to the secondary use or disclosure without consent, disposition of records containing personal information, including returning the records back to the GC if required, acceptance of privacy audit possibilities, privacy breach and privacy complaint mechanisms, and legal requirements to disclose personal information.",
+sa-4.1,SA-4(1),SA,Functional properties of controls,NIST SP 800-53 Rev. 5.2.0,control,,"Require the developer of the system, system component, or system service to provide a description of the functional properties of the controls to be implemented.",,,
+sa-4.9,SA-4(9),SA,"Functions, ports, protocols, and services in use",NIST SP 800-53 Rev. 5.2.0,control,,"Require the developer of the system, system component, or system service to identify the functions, ports, protocols, and services intended for organizational use.",,,
+sa-4.10,SA-4(10),SA,Use of approved digital credentials products,NIST SP 800-53 Rev. 5.2.0,control,,Employ only IT products that are recommended by the Cyber Centre for digital credentials capability implemented within organizational systems.,,,
+sa-4.12,SA-4(12),SA,Data ownership,NIST SP 800-53 Rev. 5.2.0,control,,"a. Include organizational data ownership requirements in the acquisition contract
+b. Require all data to be removed from the contractor’s system and returned to the organization within [Assignment: organization-defined time frame]",,,
+sa-5,SA-5,SA,System documentation,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Obtain or develop administrator documentation for the system, system component, or system service that describes
+1. secure configuration, installation, and operation of the system, component, or service
+2. effective use and maintenance of security and privacy functions and mechanisms
+3. known vulnerabilities regarding configuration and use of administrative or privileged functions
+   B. Obtain or develop user documentation for the system, system component, or system service that describes
+4. user-accessible security and privacy functions and mechanisms and how to effectively use those functions and mechanisms
+5. methods for user interaction, which enable individuals to use the system, component, or service in a more secure manner and protect individual privacy
+6. user responsibilities in maintaining the security of the system, component, or service and privacy of individuals
+   C. Document attempts to obtain system, system component, or system service documentation when such documentation is either unavailable or non-existent and take [Assignment: organization-defined actions] in response
+   D. Distribute documentation to [Assignment: organization-defined personnel or roles]",,,
+sa-8,SA-8,SA,Security and privacy engineering principles,NIST SP 800-53 Rev. 5.2.0,control,,"Apply the following systems security and privacy engineering principles in the specification, design, development, implementation, and modification of the system and system components: [Assignment: organization-defined systems security and privacy engineering principles].",,"There are 10 Fair Information Principles that guide privacy protections for federal programs. In general, organizations need policies that dictate privacy policies; limit the collection, use, disclosure, and retention of personal information; and ensure individuals are informed about the handling of their personal information and have the right to access their personal information.",
+sa-9,SA-9,SA,External system services,NIST SP 800-53 Rev. 5.2.0,control,,"A. Require that providers of external system services comply with organizational security and privacy requirements and employ the following controls: [Assignment: organization-defined controls]
+B. Define and document organizational oversight and user roles and responsibilities with regard to external system services
+C. Employ the following processes, methods, and techniques to monitor control compliance by external service providers on an ongoing basis: [Assignment: organization-defined processes, methods, and techniques]",,,
+sa-9.1,SA-9(1),SA,Risk assessments and organizational approvals,NIST SP 800-53 Rev. 5.2.0,control,,"a. Conduct an organizational risk assessment prior to acquiring or outsourcing information security services
+b. Verify that the acquisition or outsourcing of dedicated information security services is approved by [Assignment: organization-defined personnel or roles]",,,
+sa-9.2,SA-9(2),SA,"Identification of functions, ports, protocols, and services",NIST SP 800-53 Rev. 5.2.0,control,,"Require providers of the following external system services to identify the functions, ports, protocols, and other services required for the use of such services: [Assignment: organization-defined external system services].",,,
+sa-9.8,SA-9(8),SA,Processing and storage location—within Canada,NIST SP 800-53 Rev. 5.2.0,control,,Restrict the geographic location of information processing and data storage to facilities located within the legal jurisdictional boundary of Canada.,,,
+sa-10,SA-10,SA,Developer configuration management,NIST SP 800-53 Rev. 5.2.0,activity,,"Require the developer of the system, system component, or system service to:
+A. perform configuration management during system, component, or service [Selection (1 or more): design; development; implementation; operation; disposal]
+B. document, manage, and control the integrity of changes to [Assignment: organization-defined configuration items under configuration management]
+C. implement only organization-approved changes to the system, component, or service
+D. document approved changes to the system, component, or service and the potential security and privacy impacts of such changes
+E. track security flaws and flaw resolution within the system, component, or service and report findings to [Assignment: organization-defined personnel]",,,
+sa-10.1,SA-10(1),SA,Software and firmware integrity verification,NIST SP 800-53 Rev. 5.2.0,activity,,"Require the developer of the system, system component, or system service to enable integrity verification of software and firmware components.",,,
+sa-10.7,SA-10(7),SA,Security and privacy representatives,NIST SP 800-53 Rev. 5.2.0,activity,,Require [Assignment: organization-defined security and privacy representatives] to be included in the [Assignment: organization-defined configuration change management and control process].,"sa-10.7_prm_1 = SSC, TBS and Cyber Centre; sa-10.7_prm_2 = SSC projects and services serving multiple departments; sa-10.07_odp.01 = SSC, TBS and Cyber Centre; sa-10.07_odp.02 = SSC, TBS and Cyber Centre; sa-10.07_odp.03 = SSC projects and services serving multiple departments; sa-10.07_odp.04 = SSC projects and services serving multiple departments",,
+sa-11,SA-11,SA,Developer testing and evaluation,NIST SP 800-53 Rev. 5.2.0,activity,,"At all post-design stages of the system development lifecycle, require the developer of the system, system component, or system service to:
+A. develop and implement a plan for ongoing security and privacy control assessments
+B. perform [Selection (1 or more): unit; integration; system; regression] testing/evaluation [Assignment: organization-defined frequency] at [Assignment: organization-defined depth and coverage]
+C. produce evidence of the execution of the assessment plan and the results of the testing and evaluation
+D. implement a verifiable flaw remediation process
+E. correct flaws identified during testing and evaluation",,,
+sa-15,SA-15,SA,"Development process, standards, and tools",NIST SP 800-53 Rev. 5.2.0,activity,,"A. Require the developer of the system, system component, or system service to follow a documented development process that
+1. explicitly addresses security and privacy requirements
+2. identifies the standards and tools used in the development process
+3. documents the specific tool options and tool configurations used in the development process
+4. documents, manages, and ensures the integrity of changes to the process and/or tools used in development
+   B. Review the development process, standards, tools, tool options, and tool configurations [Assignment: organization-defined frequency] to determine if the process, standards, tools, tool options, and tool configurations selected and employed can satisfy the following security and privacy requirements: [Assignment: organization-defined security and privacy requirements]",,,
+sa-15.3,SA-15(3),SA,Criticality analysis,NIST SP 800-53 Rev. 5.2.0,activity,,"Require the developer of the system, system component, or system service to perform a criticality analysis:
+a. at the following decision points in the system development lifecycle: [Assignment: organization-defined decision points in the system development lifecycle]
+b. at the following level of rigour: [Assignment: organization-defined breadth and depth of criticality analysis]",,,
+sa-16,SA-16,SA,Developer-provided training,NIST SP 800-53 Rev. 5.2.0,control,,"Require the developer of the system, system component, or system service to provide the following training on the correct use and operation of the implemented security and privacy functions, controls, and/or mechanisms: [Assignment: organization-defined training].",,,
+sa-17,SA-17,SA,Developer security and privacy architecture and design,NIST SP 800-53 Rev. 5.2.0,activity,,"Require the developer of the system, system component, or system service to produce a design specification and security and privacy architecture that:
+A. is consistent with the organization’s security and privacy architecture that is an integral part the organization’s enterprise architecture
+B. accurately and completely describes the required security and privacy functionality and the allocation of controls among physical and logical components
+C. expresses how individual security and privacy functions, mechanisms, and services work together to provide required security and privacy capabilities and a unified approach to protection",,,
+sa-22,SA-22,SA,Unsupported system components,NIST SP 800-53 Rev. 5.2.0,control,,"A. Replace system components when support for the components is no longer available from the developer, vendor, or manufacturer
+B. Provide the following options for alternative sources for continued support for unsupported components [Selection (1 or more): in-house support; [Assignment: organization-defined support from external providers]]",,,
+sa-400,SA-400,SA,Sovereignty and jurisdiction,CCCS,control,,"Require the organizational business function to conduct a sovereignty and jurisdiction threat and risk assessment process at the [Selection (one or more): organization-level; mission/business-level; system-level] that:
+A. conducts an injury assessment to determine the maximum potential injuries that may be suffered due to external legal compulsion of the business functions or information assets by
+  1. considering the business needs for security including any laws or regulations which require that data not be disclosed or compromised
+  2. updating the security categorization of the business functions or information assets
+  3. documenting the negative consequences of legal compulsion
+B. performs jurisdiction-specific threat assessment that establishes a likelihood of being targeted
+C. undertakes a vulnerability assessment to evaluate the potential means by which the external jurisdiction could exploit the business functions or information assets
+D. completes a jurisdiction-specific risk assessment",,"The TBS Directive on Service and Digital, section 4.4.3.14 requires that sensitive information or data that is classified or categorized as Protected B or Protected C be located within Canadian jurisdiction as the principal delivery option. Canadian jurisdiction refers to the geographic boundaries of Canada or within the boundary of a diplomatic or consular mission of the GC abroad. The Cyber Centre recommends that all data and business functions of significant sensitivity be retained within Canadian jurisdictions.",
+sc-1,SC-1,SC,System and communications protection policy and procedures,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]
+1. [Selection (1 or more): Organization-level; Mission/business process-level; System-level] system and communications protection policy that
+   a. addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance
+   b. is consistent with applicable laws, Orders in Council, directives, regulations, policies, standards, and guidelines
+2. procedures to facilitate the implementation of the system and communications protection policy and the associated system and communications protection controls
+   B. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the system and communications protection policy and procedures
+   C. Review and update the current system and communications protection
+3. policy [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+4. procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,,
+sc-2,SC-2,SC,Separation of system and user functionality,NIST SP 800-53 Rev. 5.2.0,control,,"Separate user functionality, including user interface services, from system management functionality.",,,
+sc-4,SC-4,SC,Information in shared system resources,NIST SP 800-53 Rev. 5.2.0,control,,Prevent unauthorized and unintended information transfer via shared system resources.,,,
+sc-5,SC-5,SC,Denial-of-service protection,NIST SP 800-53 Rev. 5.2.0,control,,"A. [Selection (1): Protect against; Limit] the effects of the following types of denial-of-service events: [Assignment: organization-defined types of denial-of-service events]
+B. Employ the following controls to achieve the denial-of-service objective: [Assignment: organization-defined controls by type of denial-of-service event]",,,
+sc-5.2,SC-5(2),SC,"Capacity, bandwidth, and redundancy",NIST SP 800-53 Rev. 5.2.0,control,,"Manage capacity, bandwidth, or other redundancy to limit the effects of information flooding denial-of-service attacks.",,,
+sc-5.3,SC-5(3),SC,Detection and monitoring,NIST SP 800-53 Rev. 5.2.0,control,,"a. Employ the following monitoring tools to detect indicators of denial-of-service attacks against, or launched from, the system: [Assignment: organization-defined monitoring tools]
+b. Monitor the following system resources to determine if sufficient resources exist to prevent effective denial-of-service attacks: [Assignment: organization-defined system resources]",,,
+sc-7,SC-7,SC,Boundary protection,NIST SP 800-53 Rev. 5.2.0,control,,"A. Monitor and control communications at the external managed interfaces to the system and at key internal managed interfaces within the system
+B. Implement subnetworks for publicly accessible system components that are [Selection (1): physically; logically] separated from internal organizational networks
+C. Connect to external networks or systems only through managed interfaces consisting of boundary protection devices arranged in accordance with an organizational security and privacy architecture",,,
+sc-7.3,SC-7(3),SC,Access points,NIST SP 800-53 Rev. 5.2.0,control,,Limit the number of external network connections to the system.,,"The TBS Directive on Service and Digital, Appendix F: Standard on Enterprise Information Technology Usage Restrictions is an example of a federal guideline that requires limits on the number of external network connections. It requires that local Internet access services be obtained through SSC.",
+sc-7.4,SC-7(4),SC,External telecommunications services,NIST SP 800-53 Rev. 5.2.0,control,,"a. Implement a managed interface for each external telecommunication service
+b. Establish a traffic flow policy for each managed interface
+c. Protect the confidentiality and integrity of the information being transmitted across each interface
+d. Document each exception to the traffic flow policy with a supporting mission or business need and the duration of that need
+e. Review exceptions to the traffic flow policy [Assignment: organization-defined frequency] and remove exceptions that are no longer supported by an explicit mission or business need
+f. Prevent unauthorized exchange of control plane traffic with external networks
+g. Publish information to enable remote networks to detect unauthorized control plane traffic from internal networks
+h. Filter unauthorized control plane traffic from external networks",,,
+sc-7.5,SC-7(5),SC,Deny by default – allow by exception,NIST SP 800-53 Rev. 5.2.0,control,,Deny network communications traffic by default and allow network communications traffic by exception [Selection (1 or more): at managed interfaces; for [Assignment: organization-defined systems]].,,,
+sc-7.7,SC-7(7),SC,Split tunneling for remote devices,NIST SP 800-53 Rev. 5.2.0,control,,Prevent split tunneling for remote devices connecting to organizational systems unless the split tunnel is securely provisioned using [Assignment: organization-defined safeguards].,,"As per the TBS Directive on Service and Digital, Appendix G: Standard on Enterprise Information Technology Service Common Configurations – Endpoint Management Configuration Requirements, split tunneling is disabled except for domains that are included in the list approved by the GC Enterprise Architecture Review Board. All other network traffic to or from the Internet must flow through the GC-approved pathways to the Internet rather than via a direct connection to the Internet.",
+sc-7.8,SC-7(8),SC,Route traffic to authenticated proxy servers,NIST SP 800-53 Rev. 5.2.0,control,,Route [Assignment: organization-defined internal communications traffic] to [Assignment: organization-defined external networks] through authenticated proxy servers at managed interfaces.,,,
+sc-7.9,SC-7(9),SC,Restrict threatening outgoing communications traffic,NIST SP 800-53 Rev. 5.2.0,control,,"a. Detect and deny outgoing communications traffic posing a threat to external systems
+b. Audit the identity of internal users associated with denied communications",,,
+sc-7.11,SC-7(11),SC,Restrict incoming communications traffic,NIST SP 800-53 Rev. 5.2.0,control,,Only allow incoming communications from [Assignment: organization-defined authorized sources] to be routed to [Assignment: organization-defined authorized destinations].,,,
+sc-7.12,SC-7(12),SC,Host-based protection,NIST SP 800-53 Rev. 5.2.0,control,,Implement [Assignment: organization-defined host-based boundary protection mechanisms] at [Assignment: organization-defined system components].,,,
+sc-7.13,SC-7(13),SC,"Isolation of security tools, mechanisms, and support components",NIST SP 800-53 Rev. 5.2.0,control,,"Isolate [Assignment: organization-defined information security tools, mechanisms, and support components] from other internal system components by implementing physically separate subnetworks with managed interfaces to other components of the system.",,,
+sc-8,SC-8,SC,Transmission confidentiality and integrity,NIST SP 800-53 Rev. 5.2.0,control,,Protect the [Selection (1 or more): confidentiality; integrity] of transmitted information.,,,
+sc-8.1,SC-8(1),SC,Cryptographic protection,NIST SP 800-53 Rev. 5.2.0,control,,Implement cryptographic mechanisms to [Selection (1 or more): prevent unauthorized disclosure of information; detect changes to information] during transmission.,,,
+sc-10,SC-10,SC,Network disconnect,NIST SP 800-53 Rev. 5.2.0,control,,Terminate the network connection associated with a communications session at the end of the session or after [Assignment: organization-defined time period] of inactivity.,,,
+sc-12,SC-12,SC,Cryptographic key establishment and management,NIST SP 800-53 Rev. 5.2.0,control,,"Establish and manage cryptographic keys when cryptography is employed within the system in accordance with the following key management requirements: [Assignment: organization-defined requirements for key generation, distribution, storage, access, and destruction].",,The use of NIST-CSE CMVP-validated commercial cryptographic modules is recommended for all national security systems.,
+sc-12.1,SC-12(1),SC,Availability,NIST SP 800-53 Rev. 5.2.0,control,,Maintain availability of information in the event of the loss of cryptographic keys by users.,,,
+sc-13,SC-13,SC,Cryptographic protection,NIST SP 800-53 Rev. 5.2.0,control,,"A. Determine the [Assignment: organization-defined cryptographic uses]
+B. Implement the following types of cryptography required for each specified cryptographic use: [Assignment: organization-defined types of cryptography for each specified cryptographic use]",,,
+sc-15,SC-15,SC,Collaborative computing devices and applications,NIST SP 800-53 Rev. 5.2.0,control,,"A. Prohibit remote activation of collaborative computing devices and applications with the following exceptions: [Assignment: organization-defined exceptions where remote activation is to be allowed]
+B. Provide an explicit indication of use to users physically present at the devices",,,
+sc-15.3,SC-15(3),SC,Disabling and removal in secure work areas,NIST SP 800-53 Rev. 5.2.0,control,,Disable or remove collaborative computing devices and applications from [Assignment: organization-defined systems or system components] in [Assignment: organization-defined secure work areas].,,,
+sc-17,SC-17,SC,Public key infrastructure certificates,NIST SP 800-53 Rev. 5.2.0,control,,"A. Issue public key certificates under an [Assignment: organization-defined certificate policy] or obtain public key certificates from an approved service provider
+B. Include only approved trust anchors in trust stores or certificate stores managed by the organization",,,
+sc-18,SC-18,SC,Mobile code,NIST SP 800-53 Rev. 5.2.0,control,,"A. Define acceptable and unacceptable mobile code and mobile code technologies
+B. Authorize, monitor, and control the use of mobile code within the system",,,
+sc-18.1,SC-18(1),SC,Identify unacceptable code and take corrective actions,NIST SP 800-53 Rev. 5.2.0,control,,Identify [Assignment: organization-defined unacceptable mobile code] and take [Assignment: organization-defined corrective actions].,,,
+sc-18.2,SC-18(2),SC,"Acquisition, development, and use",NIST SP 800-53 Rev. 5.2.0,control,,"Verify that the acquisition, development, and use of mobile code to be deployed in the system meets [Assignment: organization-defined mobile code requirements].",,,
+sc-18.3,SC-18(3),SC,Prevent downloading and execution,NIST SP 800-53 Rev. 5.2.0,control,,Prevent the download and execution of [Assignment: organization-defined unacceptable mobile code].,,,
+sc-18.4,SC-18(4),SC,Prevent automatic execution,NIST SP 800-53 Rev. 5.2.0,control,,Prevent the automatic execution of mobile code in [Assignment: organization-defined software applications] and enforce [Assignment: organization-defined actions] prior to executing the code.,,,
+sc-18.5,SC-18(5),SC,Allow execution only in confined environments,NIST SP 800-53 Rev. 5.2.0,control,,Allow execution of permitted mobile code only in confined virtual machine environments.,,,
+sc-20,SC-20,SC,Secure name/address resolution service (authoritative source),NIST SP 800-53 Rev. 5.2.0,control,,"A. Provide additional data origin authentication and integrity verification artifacts along with the authoritative name resolution data the system returns in response to external name/address resolution queries.
+B. Provide the means to indicate the security status of child zones and (if the child supports secure resolution services) to enable verification of a chain of trust among parent and child domains, when operating as part of a distributed, hierarchical namespace.",,,
+sc-21,SC-21,SC,Secure name/address resolution service (recursive or caching resolver),NIST SP 800-53 Rev. 5.2.0,control,,Request and perform data origin authentication and data integrity verification on the name/address resolution responses the system receives from authoritative sources.,,,
+sc-22,SC-22,SC,Architecture and provisioning for name/address resolution service,NIST SP 800-53 Rev. 5.2.0,control,,Ensure the systems that collectively provide name/address resolution service for an organization are fault-tolerant and implement internal and external role separation.,,,
+sc-23,SC-23,SC,Session authenticity,NIST SP 800-53 Rev. 5.2.0,control,,Protect the authenticity of communications sessions.,,,
+sc-23.1,SC-23(1),SC,Invalidate session identifiers at logout,NIST SP 800-53 Rev. 5.2.0,control,,Invalidate session identifiers upon user logout or other session termination.,,,
+sc-23.3,SC-23(3),SC,Unique system-generated session identifiers,NIST SP 800-53 Rev. 5.2.0,control,,Generate a unique session identifier for each session with [Assignment: organization-defined randomness requirements] and recognize only session identifiers that are system-generated.,,,
+sc-28,SC-28,SC,Protection of information at rest,NIST SP 800-53 Rev. 5.2.0,control,,Protect the [Selection (1 or more): confidentiality; integrity] of the following information at rest: [Assignment: organization-defined information at rest].,,,
+sc-28.1,SC-28(1),SC,Cryptographic protection,NIST SP 800-53 Rev. 5.2.0,control,,Implement cryptographic mechanisms to prevent unauthorized disclosure and modification of the following information at rest on [Assignment: organization-defined system components or media]: [Assignment: organization-defined information].,,,
+sc-29,SC-29,SC,Heterogeneity,NIST SP 800-53 Rev. 5.2.0,control,,Employ a diverse set of information technologies for the following system components in the implementation of the system: [Assignment: organization-defined system components].,sc-29_odp = cyber security devices and tools,,"In order to protect PBMM against Td4 compromise using a single unknown system flaw (a 0-Day), disaggregate the business functions between systems that do not share a single-point-of-failure. For example, host one line-of-business database in Windows, and a different line-of-business database in Linux."
+sc-39,SC-39,SC,Process isolation,NIST SP 800-53 Rev. 5.2.0,control,,Maintain a separate execution domain for each executing system process.,,,
+sc-45,SC-45,SC,System time synchronization,NIST SP 800-53 Rev. 5.2.0,control,,Synchronize system clocks within and between systems and system components.,,,
+si-1,SI-1,SI,System and information integrity policy and procedures,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]
+1. [Selection (1 or more): Organization-level; Mission/business process-level; System-level] system and information integrity policy that
+   a. addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance
+   b. is consistent with applicable laws, Orders in Council, directives, regulations, policies, standards, and guidelines
+2. procedures to facilitate the implementation of the system and information integrity policy and the associated system and information integrity controls
+   B. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the system and information integrity policy and procedures
+   C. Review and update the current system and information integrity
+3. policy [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+4. procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,,
+si-2,SI-2,SI,Flaw remediation,NIST SP 800-53 Rev. 5.2.0,control,,"A. Identify, report, and correct system flaws
+B. Test software and firmware updates related to flaw remediation for effectiveness and potential side effects before installation
+C. Install security-relevant software and firmware updates within [Assignment: organization-defined time period] of the release of the updates
+D. Incorporate flaw remediation into the organizational configuration management process",,,
+si-2.2,SI-2(2),SI,Automated flaw remediation status,NIST SP 800-53 Rev. 5.2.0,control,,Determine if system components have applicable security-relevant software and firmware updates installed using [Assignment: organization-defined automated mechanisms] [Assignment: organization-defined frequency].,,,
+si-2.6,SI-2(6),SI,Removal of previous versions of software and firmware,NIST SP 800-53 Rev. 5.2.0,control,,Remove previous versions of [Assignment: organization-defined software and firmware components] after updated versions have been installed.,,,
+si-3,SI-3,SI,Malicious code protection,NIST SP 800-53 Rev. 5.2.0,control,,"A. Implement [Selection (1 or more): signature based; non-signature based] malicious code protection mechanisms at system entry and exit points to detect and eradicate malicious code
+B. Automatically update malicious code protection mechanisms as new releases are available in accordance with organizational configuration management policy and procedures
+C. Configure malicious code protection mechanisms to
+1. perform periodic scans of the system [Assignment: organization-defined frequency] and real-time scans of files from external sources at [Selection (1 or more): endpoint; network entry and exit points] as the files are downloaded, opened, or executed in accordance with organizational policy
+2. [Selection (1 or more): block malicious code; quarantine malicious code; take [Assignment: organization-defined action]]; and send alert to [Assignment: organization-defined personnel or roles] in response to malicious code detection
+   D. Address the receipt of false positives during malicious code detection and eradication and the resulting potential impact on the availability of the system",si-03_odp.02 = at least every 30 days; si-03_odp.04 = quarantine malicious code,,
+si-3.4,SI-3(4),SI,Updates only by privileged users,NIST SP 800-53 Rev. 5.2.0,control,,Update malicious code protection mechanisms only when directed by a privileged user.,,,
+si-4,SI-4,SI,System monitoring,NIST SP 800-53 Rev. 5.2.0,control,,"A. Monitor the system to detect
+1. attacks and indicators of potential attacks in accordance with the following monitoring objectives: [Assignment: organization-defined monitoring objectives]
+2. unauthorized local, network, and remote connections
+   B. Identify unauthorized use of the system through the following techniques and methods: [Assignment: organization-defined techniques and methods]
+   C. Invoke internal monitoring capabilities or deploy monitoring devices
+3. strategically within the system to collect organization-determined essential information
+4. at ad hoc locations within the system to track specific types of transactions of interest to the organization
+   D. Analyze detected events and anomalies
+   E. Adjust the level of system monitoring activity when there is a change in risk to organizational operations and assets, individuals, other organizations, or Canada
+   F. Obtain legal opinion regarding system monitoring activities
+   G. Provide [Assignment: organization-defined system monitoring information] to [Assignment: organization-defined personnel or roles] [Selection (1 or more): as needed; [Assignment: organization-defined frequency]]",,,
+si-4.2,SI-4(2),SI,Automated tools and mechanisms for real-time analysis,NIST SP 800-53 Rev. 5.2.0,control,,Employ automated tools and mechanisms to support near real-time analysis of events.,,,
+si-4.4,SI-4(4),SI,Inbound and outbound communications traffic,NIST SP 800-53 Rev. 5.2.0,control,,"a. Determine criteria for unusual or unauthorized activities or conditions for inbound and outbound communications traffic
+b. Monitor inbound and outbound communications traffic [Assignment: organization-defined frequency] for [Assignment: organization-defined unusual or unauthorized activities or conditions]",,,
+si-4.5,SI-4(5),SI,System-generated alerts,NIST SP 800-53 Rev. 5.2.0,control,,Alert [Assignment: organization-defined personnel or roles] when the following system-generated indications of compromise or potential compromise occur: [Assignment: organization-defined compromise indicators].,,,
+si-4.10,SI-4(10),SI,Visibility of encrypted communications,NIST SP 800-53 Rev. 5.2.0,control,,Make provisions so that [Assignment: organization-defined encrypted communications traffic] is visible to [Assignment: organization-defined system monitoring tools and mechanisms].,,,
+si-4.11,SI-4(11),SI,Analyze communications traffic anomalies,NIST SP 800-53 Rev. 5.2.0,control,,Analyze outbound communications traffic at the external interfaces to the system and selected [Assignment: organization-defined internal points within the system] to discover anomalies.,,,
+si-4.12,SI-4(12),SI,Automated organization-generated alerts,NIST SP 800-53 Rev. 5.2.0,control,,Alert [Assignment: organization-defined personnel or roles] using [Assignment: organization-defined automated mechanisms] when the following indications of inappropriate or unusual activities with security or privacy implications occur: [Assignment: organization-defined activities that trigger alerts].,,,
+si-4.13,SI-4(13),SI,Analyze traffic and event patterns,NIST SP 800-53 Rev. 5.2.0,control,,"a. Analyze communications traffic and event patterns for the system
+b. Develop profiles representing common traffic and event patterns
+c. Use the traffic and event profiles to tune system monitoring devices",,,
+si-4.14,SI-4(14),SI,Wireless intrusion detection,NIST SP 800-53 Rev. 5.2.0,control,,Employ a wireless intrusion detection system (WIDS) to identify rogue wireless devices and to detect attack attempts and potential compromises or breaches to the system.,,,
+si-4.15,SI-4(15),SI,Wireless to wireline communications,NIST SP 800-53 Rev. 5.2.0,control,,Employ an intrusion detection system to monitor wireless communications traffic as the traffic passes from wireless to wireline networks.,,,
+si-5,SI-5,SI,"Security alerts, advisories, and directives",NIST SP 800-53 Rev. 5.2.0,control,,"A. Receive system security alerts, advisories, and directives from [Assignment: organization-defined external organizations] on an ongoing basis
+B. Generate internal security alerts, advisories, and directives as necessary
+C. Disseminate security alerts, advisories, and directives to: [Selection (1 or more): [Assignment: organization-defined personnel or roles]; [Assignment: organization-defined elements within the organization]; [Assignment: organization-defined external organizations]]
+D. Implement security directives in accordance with established timeframes or notify the issuing organization of the degree of non-compliance",,,
+si-7,SI-7,SI,"Software, firmware, and information integrity",NIST SP 800-53 Rev. 5.2.0,control,,"A. Employ integrity verification tools to detect unauthorized changes to the following software, firmware, and information: [Assignment: organization-defined software, firmware, and information]
+B. Take the following actions when unauthorized changes to the software, firmware, and information are detected: [Assignment: organization-defined actions]",,,
+si-7.1,SI-7(1),SI,Integrity checks,NIST SP 800-53 Rev. 5.2.0,control,,"Perform an integrity check of [Assignment: organization-defined software, firmware, and information] [Selection (1 or more): at start-up; at [Assignment: organization-defined transitional states or security-relevant events]; [Assignment: organization-defined frequency]].",si-7.1_prm_4 = frequency at no longer than 30 days; si-07.01_odp.04 = frequency at no longer than 30 days; si-07.01_odp.08 = frequency at no longer than 30 days; si-07.01_odp.12 = frequency at no longer than 30 days,,
+si-7.2,SI-7(2),SI,Automated notifications of integrity violations,NIST SP 800-53 Rev. 5.2.0,control,,Employ automated tools that notify [Assignment: organization-defined personnel or roles] upon discovering discrepancies during integrity verification.,,,
+si-7.3,SI-7(3),SI,Centrally managed integrity tools,NIST SP 800-53 Rev. 5.2.0,control,,Employ centrally managed integrity verification tools.,,,
+si-7.7,SI-7(7),SI,Integration of detection and response,NIST SP 800-53 Rev. 5.2.0,control,,Incorporate the detection of the following unauthorized changes into the organizational incident response capability: [Assignment: organization-defined security-relevant changes to the system].,,,
+si-8,SI-8,SI,Spam protection,NIST SP 800-53 Rev. 5.2.0,control,,"A. Employ spam protection mechanisms at system entry and exit points to detect and act on unsolicited messages
+B. Update spam protection mechanisms when new releases are available in accordance with organizational configuration management policy and procedures",,,
+si-8.2,SI-8(2),SI,Automatic updates,NIST SP 800-53 Rev. 5.2.0,control,,Automatically update spam protection mechanisms [Assignment: organization-defined frequency].,,,
+si-10,SI-10,SI,Information input validation,NIST SP 800-53 Rev. 5.2.0,control,,Check the validity of the following information inputs: [Assignment: organization-defined information inputs to the system].,,,
+si-11,SI-11,SI,Error handling,NIST SP 800-53 Rev. 5.2.0,control,,"A. Generate error messages that provide information necessary for corrective actions without revealing information that could be exploited
+B. Reveal error messages only to [Assignment: organization-defined personnel or roles]",,,
+si-12,SI-12,SI,Information management and retention,NIST SP 800-53 Rev. 5.2.0,control,,"Manage and retain information within the system and information output from the system in accordance with applicable laws, Orders in Council, directives, regulations, policies, standards, guidelines, and operational requirements.",,,
+si-16,SI-16,SI,Memory protection,NIST SP 800-53 Rev. 5.2.0,control,,Implement the following controls to protect the system memory from unauthorized code execution: [Assignment: organization-defined controls].,,,
+si-400,SI-400,SI,Dedicated administration workstation,CCCS,control,,"Require any administrative or superuser actions to be performed from a physical workstation that is dedicated to those specific tasks and isolated from all other functions and networks, and especially from any form of Internet access.",,,
+sr-1,SR-1,SR,Supply chain risk management policy and procedures,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]
+1. [Selection (1 or more): Organization-level; Mission/business process-level; System-level] supply chain risk management (SCRM) policy that
+   a. addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance
+   b. is consistent with applicable laws, Orders in Council, directives, regulations, policies, standards, and guidelines
+2. procedures to facilitate the implementation of the SCRM policy and the associated SCRM controls
+   B. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the SCRM policy and procedures
+   C. Review and update the current SCRM
+3. policy [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]
+4. procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events]",,,
+sr-2,SR-2,SR,Supply chain risk management plan,NIST SP 800-53 Rev. 5.2.0,activity,,"A. Develop a plan for managing supply chain risks associated with the research and development, design, manufacturing, acquisition, delivery, integration, operations and maintenance, and disposal of the following systems, system components or system services: [Assignment: organization-defined systems, system components, or system services]
+B. Review and update the SCRM plan [Assignment: organization-defined frequency] or as required, to address threat, organizational or environmental changes
+C. Protect the SCRM plan from unauthorized disclosure and modification",,,
+sr-2.1,SR-2(1),SR,Establish a SCRM team,NIST SP 800-53 Rev. 5.2.0,activity,,"Establish a SCRM team consisting of [Assignment: organization-defined personnel, roles, and responsibilities] to lead and support the following SCRM activities: [Assignment: organization-defined SCRM activities].",,,
+sr-3,SR-3,SR,Supply chain controls and processes,NIST SP 800-53 Rev. 5.2.0,control,,"A. Establish a process or processes to identify and address weaknesses or deficiencies in the supply chain elements and processes of [Assignment: organization-defined system or system component] in coordination with [Assignment: organization-defined supply chain personnel]
+B. Employ the following controls to protect against supply chain risks to the system, system component, or system service and to limit the harm or consequences from supply chain-related events: [Assignment: organization-defined supply chain controls]
+C. Document the selected and implemented supply chain processes and controls in [Selection (1): security and privacy plans; SCRM plan; [Assignment: organization-defined document]]",,,
+sr-5,SR-5,SR,"Acquisition strategies, tools, and methods",NIST SP 800-53 Rev. 5.2.0,control,,"Employ the following acquisition strategies, contract tools, and procurement methods to protect against, identify, and mitigate supply chain risks: [Assignment: organization-defined acquisition strategies, contract tools, and procurement methods].",,,
+sr-6,SR-6,SR,Supplier assessments and reviews,NIST SP 800-53 Rev. 5.2.0,control,,"Assess and review the supply chain-related risks associated with suppliers or contractors and the system, system component, or system service they provide [Assignment: organization-defined frequency].",,,
+sr-8,SR-8,SR,Notification agreements,NIST SP 800-53 Rev. 5.2.0,control,,"Establish agreements and procedures with entities involved in the supply chain for the system, system component, or system service for the [Selection (1 or more): notification of supply chain compromises; results of assessments or audits; [Assignment: organization-defined information]].",,,
+sr-10,SR-10,SR,Inspection of systems or components,NIST SP 800-53 Rev. 5.2.0,control,,"Inspect the following systems or system components [Selection (1 or more): at random; at [Assignment: organization-defined frequency], upon [Assignment: organization-defined indications of need for inspection]] to detect tampering: [Assignment: organization-defined systems or system components].",,,
+sr-11,SR-11,SR,Component authenticity,NIST SP 800-53 Rev. 5.2.0,control,,"A. Develop and implement anti-counterfeiting policy and procedures that include the means to detect and prevent counterfeit components from entering the system
+B. Report counterfeit system components to [Selection (1 or more): source of counterfeit component; [Assignment: organization-defined external reporting organizations]; [Assignment: organization-defined personnel or roles]]",,,
+sr-11.1,SR-11(1),SR,Anti-counterfeit training,NIST SP 800-53 Rev. 5.2.0,control,,"Train [Assignment: organization-defined personnel or roles] to detect counterfeit system components (including hardware, software, and firmware).",,,
+sr-11.2,SR-11(2),SR,Configuration control for component service and repair,NIST SP 800-53 Rev. 5.2.0,control,,Maintain configuration control over the following system components awaiting service or repair and over serviced or repaired components awaiting return to service: [Assignment: organization-defined system components].,,,
+sr-12,SR-12,SR,Component disposal,NIST SP 800-53 Rev. 5.2.0,control,,"Dispose of [Assignment: organization-defined data, documentation, tools, or system components] using the following techniques and methods: [Assignment: organization-defined techniques and methods].",,,

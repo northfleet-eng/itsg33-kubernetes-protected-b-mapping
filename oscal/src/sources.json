@@ -1,0 +1,20 @@
+{
+  "itsp.10.033": {
+    "title": "Security and privacy controls and assurance activities catalogue (ITSP.10.033), March 31, 2026",
+    "url": "https://www.cyber.gc.ca/sites/default/files/itsp.10.033-e.pdf",
+    "sha256": "a63e79e9d0d072966ef06b6b0b46632d70470ff2dcc6b0e4e750b7584c5c01ab",
+    "retrieved": "2026-09-23"
+  },
+  "itsp.10.033-01": {
+    "title": "Suggested organizational security and privacy control and activity profile, Medium impact (ITSP.10.033-01), April 1, 2026",
+    "url": "https://www.cyber.gc.ca/sites/default/files/itsp.10.033-01-e.pdf",
+    "sha256": "cb150c7c7b85d72aae2c0960d73dafeb2f8929bc2a5412a51b3bd13cd70c207f",
+    "retrieved": "2026-09-23"
+  },
+  "nist_catalog": {
+    "title": "NIST SP 800-53 Rev. 5.2.0 catalog, OSCAL 1.1.3 (usnistgov/oscal-content v1.4.0)",
+    "url": "https://raw.githubusercontent.com/usnistgov/oscal-content/bc8a528770033611df899b3d52703fb3dc91a20d/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+    "sha256": "1645df6a370dcb931db2e2d5d70c2f77bc89c38499a416c23a70eb2c0e595bcc",
+    "path": "vendor/NIST_SP-800-53_rev5_catalog.json"
+  }
+}
