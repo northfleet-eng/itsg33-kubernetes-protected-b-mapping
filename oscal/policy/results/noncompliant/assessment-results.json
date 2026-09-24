@@ -1,6 +1,6 @@
 {
  "assessment-results": {
-  "uuid": "50ad7871-d5b6-5d68-b95f-8a40a7c6ea93",
+  "uuid": "a220c50f-46bc-5870-87f2-11e904bfc55a",
   "metadata": {
    "title": "Kyverno evaluation of the noncompliant samples against the ITSP.10.033-01 rules",
    "last-modified": "2026-09-24T00:00:00-04:00",
@@ -16,6 +16,218 @@
     "uuid": "1ce7c3c3-34b4-59b4-aa12-3477dfb4a567",
     "title": "Kyverno CLI 1.19.1, offline, noncompliant samples",
     "description": "Policies selected from the component definition by compliance-to-policy-go 1.0.0 and evaluated with the Kyverno CLI 1.19.1 against oscal/policy/samples/noncompliant.",
+    "findings": [
+     {
+      "uuid": "ae5e7985-d54c-5d0d-8ea2-8de9eadded00",
+      "title": "AC-6: not satisfied",
+      "description": "Kyverno rules restrict-automount-sa-token, restrict-binding-system-groups, restrict-wildcard-verbs on the noncompliant samples: not satisfied.",
+      "related-observations": [
+       {
+        "observation-uuid": "c0b81de9-c50e-59fb-95da-4a8c2ac9000b"
+       },
+       {
+        "observation-uuid": "c99786e1-6535-50f2-95cc-065b4b1a6206"
+       },
+       {
+        "observation-uuid": "87a569da-4468-59fd-b981-21a9523e048e"
+       }
+      ],
+      "target": {
+       "type": "statement-id",
+       "status": {
+        "reason": "fail",
+        "state": "not-satisfied"
+       },
+       "target-id": "ac-6_smt"
+      }
+     },
+     {
+      "uuid": "f65dd36e-76ca-5409-a180-4dd06179befe",
+      "title": "AC-17(400): not satisfied",
+      "description": "Kyverno rules restrict-clusteradmin-subjects on the noncompliant samples: not satisfied.",
+      "related-observations": [
+       {
+        "observation-uuid": "007538a8-c7b4-5fc7-8bc7-1ab3a7d7ca4c"
+       }
+      ],
+      "target": {
+       "type": "statement-id",
+       "status": {
+        "reason": "fail",
+        "state": "not-satisfied"
+       },
+       "target-id": "ac-17.400_smt"
+      }
+     },
+     {
+      "uuid": "e531c3b3-7b48-5b42-98db-bbb69435784d",
+      "title": "CM-2: not satisfied",
+      "description": "Kyverno rules disallow-latest-tag on the noncompliant samples: not satisfied.",
+      "related-observations": [
+       {
+        "observation-uuid": "e2b30bdb-99f5-5ddc-b249-49893ce90b4c"
+       }
+      ],
+      "target": {
+       "type": "statement-id",
+       "status": {
+        "reason": "fail",
+        "state": "not-satisfied"
+       },
+       "target-id": "cm-2_smt"
+      }
+     },
+     {
+      "uuid": "235eaf29-8b39-5710-9501-abffbab4c2c3",
+      "title": "CM-6: not satisfied",
+      "description": "Kyverno rules disallow-capabilities, disallow-capabilities-strict, disallow-host-namespaces, disallow-host-path, disallow-host-ports, disallow-host-process, disallow-privilege-escalation, disallow-privileged-containers, disallow-proc-mount, disallow-selinux, require-run-as-non-root-user, require-run-as-nonroot, restrict-apparmor-profiles, restrict-seccomp, restrict-seccomp-strict, restrict-sysctls, restrict-volume-types on the noncompliant samples: not satisfied.",
+      "related-observations": [
+       {
+        "observation-uuid": "d361d876-173f-5e07-b111-117865fb8755"
+       },
+       {
+        "observation-uuid": "d37809bc-27c6-5b43-bc7b-74076e4be5de"
+       },
+       {
+        "observation-uuid": "23d16232-fefd-5141-b7d3-f7c996edb6b5"
+       },
+       {
+        "observation-uuid": "60a7d283-e0d4-5b1a-86b9-e617028e375e"
+       },
+       {
+        "observation-uuid": "1788a4e3-5688-52ed-8ad1-6a95a6196805"
+       },
+       {
+        "observation-uuid": "179c0337-1b33-5307-a590-d107c3db3eac"
+       },
+       {
+        "observation-uuid": "75a0aa04-8eea-503c-9252-ca9a8434953f"
+       },
+       {
+        "observation-uuid": "e790b091-7a7d-529d-a897-2289a45cea50"
+       },
+       {
+        "observation-uuid": "3d9f71fc-df12-58fe-b217-aa6eca5c8c9f"
+       },
+       {
+        "observation-uuid": "2d4c794d-3a30-5877-9f2f-c33aab9cb287"
+       },
+       {
+        "observation-uuid": "0946b4f5-d0dd-57e6-9807-b5c063cec9be"
+       },
+       {
+        "observation-uuid": "e0f4bfd2-ebfd-50a3-9802-5e97a77ff155"
+       },
+       {
+        "observation-uuid": "7b922519-8467-5cb0-928f-af745ee2280b"
+       },
+       {
+        "observation-uuid": "2a7276dc-d75f-5deb-94e0-69be601d74a1"
+       },
+       {
+        "observation-uuid": "6b03e3cd-197a-54b6-b16e-537c1b5f787b"
+       },
+       {
+        "observation-uuid": "31280f8f-18ad-5031-9798-22f8f382c711"
+       },
+       {
+        "observation-uuid": "334ed75e-25e9-509e-a15e-e05315918241"
+       }
+      ],
+      "target": {
+       "type": "statement-id",
+       "status": {
+        "reason": "fail",
+        "state": "not-satisfied"
+       },
+       "target-id": "cm-6_smt"
+      }
+     },
+     {
+      "uuid": "ad446bdc-5ccc-5877-878f-1663efa4fdce",
+      "title": "CM-7: not satisfied",
+      "description": "Kyverno rules disallow-capabilities-strict, disallow-host-namespaces, disallow-host-path, disallow-host-ports, disallow-privileged-containers on the noncompliant samples: not satisfied.",
+      "related-observations": [
+       {
+        "observation-uuid": "d37809bc-27c6-5b43-bc7b-74076e4be5de"
+       },
+       {
+        "observation-uuid": "23d16232-fefd-5141-b7d3-f7c996edb6b5"
+       },
+       {
+        "observation-uuid": "60a7d283-e0d4-5b1a-86b9-e617028e375e"
+       },
+       {
+        "observation-uuid": "1788a4e3-5688-52ed-8ad1-6a95a6196805"
+       },
+       {
+        "observation-uuid": "e790b091-7a7d-529d-a897-2289a45cea50"
+       }
+      ],
+      "target": {
+       "type": "statement-id",
+       "status": {
+        "reason": "fail",
+        "state": "not-satisfied"
+       },
+       "target-id": "cm-7_smt"
+      }
+     },
+     {
+      "uuid": "df858277-8857-5064-b08d-aecff73faf39",
+      "title": "IA-5: not satisfied",
+      "description": "Kyverno rules restrict-automount-sa-token on the noncompliant samples: not satisfied.",
+      "related-observations": [
+       {
+        "observation-uuid": "c0b81de9-c50e-59fb-95da-4a8c2ac9000b"
+       }
+      ],
+      "target": {
+       "type": "statement-id",
+       "status": {
+        "reason": "fail",
+        "state": "not-satisfied"
+       },
+       "target-id": "ia-5_smt"
+      }
+     },
+     {
+      "uuid": "391274bf-c956-5995-bef6-bfbf11568fcb",
+      "title": "SC-2: not satisfied",
+      "description": "Kyverno rules disallow-default-namespace on the noncompliant samples: not satisfied.",
+      "related-observations": [
+       {
+        "observation-uuid": "09788efb-5539-59c3-bf83-20d0c509b941"
+       }
+      ],
+      "target": {
+       "type": "statement-id",
+       "status": {
+        "reason": "fail",
+        "state": "not-satisfied"
+       },
+       "target-id": "sc-2_smt"
+      }
+     },
+     {
+      "uuid": "3ffeb98a-30cd-589e-8146-cee1b718e33d",
+      "title": "SC-5: not satisfied",
+      "description": "Kyverno rules require-requests-limits on the noncompliant samples: not satisfied.",
+      "related-observations": [
+       {
+        "observation-uuid": "9e739789-5cf7-558c-9ad2-ecd855127870"
+       }
+      ],
+      "target": {
+       "type": "statement-id",
+       "status": {
+        "reason": "fail",
+        "state": "not-satisfied"
+       },
+       "target-id": "sc-5_smt"
+      }
+     }
+    ],
     "local-definitions": {
      "inventory-items": [
       {

@@ -101,6 +101,13 @@ class CustomPolicy(unittest.TestCase):
         self.assertEqual(results.get("sa-admin"), "fail")
         self.assertNotIn(results.get("viewers"), ("fail", "error"))
 
+    def test_binding_without_subjects_is_not_an_error(self):
+        binding = ("apiVersion: rbac.authorization.k8s.io/v1\nkind: ClusterRoleBinding\nmetadata: {name: empty}\n"
+                   "roleRef: {apiGroup: rbac.authorization.k8s.io, kind: ClusterRole, name: cluster-admin}\n")
+        results = kyverno_results(POLICIES / "restrict-clusteradmin-subjects" / "restrict-clusteradmin-subjects.yaml",
+                                  binding)
+        self.assertEqual(results.get("empty"), "pass")
+
 
 if __name__ == "__main__":
     unittest.main()

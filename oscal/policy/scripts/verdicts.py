@@ -6,7 +6,13 @@ A rule's verdict is computed from the results of every resource it evaluated:
   pass    at least one resource was evaluated and all passed
   none    nothing was evaluated (no resource matched, or every result was skip)
 "none" is never reported as a pass.
+
+A control's verdict rolls up its rules' verdicts: satisfied only if every rule passed,
+not satisfied if any failed, not evaluated if a rule evaluated nothing, error if any
+rule errored.
 """
+import re
+
 EVALUATED = ("pass", "fail", "warn", "error")
 
 
@@ -23,6 +29,22 @@ def verdict_of(results):
     if "fail" in evaluated or "warn" in evaluated:
         return "fail"
     return "pass"
+
+
+def control_verdict(verdicts):
+    if "error" in verdicts:
+        return "error"
+    if "fail" in verdicts:
+        return "not satisfied"
+    if "none" in verdicts:
+        return "not evaluated"
+    return "satisfied"
+
+
+def label(cid):
+    """ac-17.400 -> AC-17(400)"""
+    m = re.fullmatch(r"([a-z]{2})-(\d+)(?:\.(\d+))?", cid)
+    return f"{m.group(1).upper()}-{int(m.group(2))}" + (f"({int(m.group(3))})" if m.group(3) else "")
 
 
 def rule_verdicts(ar_root):

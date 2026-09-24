@@ -7,8 +7,9 @@
 #   2. the Kyverno CLI evaluates them against samples/<sample>/              (no cluster)
 #   3. report_adapter.py files the reports the way compliance-to-policy-go v1 reads them
 #   4. c2pcli writes assessment results; normalize_ar.py makes them valid and stable
-#   5. oscal-cli validates; check_verdicts.py compares with samples/expected.json
-#   6. summary.py writes results/<sample>/summary.md
+#   5. oscal-cli validates
+#   6. summary.py writes results/<sample>/summary.md; check_verdicts.py fails on any
+#      error verdict and compares with samples/expected.json
 #
 # Env: OSCAL_CLI (default oscal-cli), KYVERNO, C2PCLI (default oscal/vendor/bin/*),
 #      SAMPLES (default "compliant noncompliant").
@@ -38,6 +39,7 @@ while IFS= read -r f; do policies+=("$f"); done < <(find generated -name '*.yaml
 [ "${#policies[@]}" -gt 0 ] || fail "c2pcli selected no policies"
 
 for sample in ${SAMPLES:-compliant noncompliant}; do
+  python3 scripts/sample_guard.py "samples/$sample" || fail "samples/$sample is not rendered"
   out="$tmp/$sample.out"
   rc=0
   "$KYVERNO" apply "${policies[@]}" --resource "samples/$sample" --policy-report --output-format json \
@@ -51,8 +53,8 @@ for sample in ${SAMPLES:-compliant noncompliant}; do
     -o "$ar" >"$tmp/r2o.log" 2>&1 || fail "c2pcli result2oscal failed on $sample" "$tmp/r2o.log"
   python3 scripts/normalize_ar.py "$ar" "$sample"
   "$CLI" validate "$ar" >"$tmp/validate.log" 2>&1 || { grep -v WARNING "$tmp/validate.log" >&2; fail "invalid: $ar"; }
-  python3 scripts/check_verdicts.py samples/expected.json "$sample" "$ar"
   python3 scripts/summary.py "$ar" src/rules.csv ../component-definitions/upstream-kubernetes.json "$sample" \
     > "results/$sample/summary.md"
+  python3 scripts/check_verdicts.py samples/expected.json "$sample" "$ar"
   echo "evaluated $sample"
 done

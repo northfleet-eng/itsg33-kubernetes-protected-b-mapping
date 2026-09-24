@@ -54,6 +54,23 @@ class Render(unittest.TestCase):
         self.assertIn("SC-8, SI-10", md)
         self.assertIn("not an assessment of any system", md)
 
+    def test_satisfied_is_qualified_when_the_evidence_has_limits(self):
+        md = summary.render(ar_with(a="pass", b="pass"), RULES, COMPDEF, "compliant")
+        self.assertIn("| AC-17(400) | satisfied, with limits (see below) |", md)
+
+    def test_satisfied_without_limits_is_plain(self):
+        md = summary.render(ar_with(a="pass"), RULES[:1], COMPDEF, "compliant")
+        self.assertIn("| AC-6 | satisfied |", md)
+
+    def test_resources_are_counted_once_per_object(self):
+        # Kyverno reports one result per (object, rule inside the policy); count objects.
+        subject = {"title": "ApiVersion: v1, Kind: Pod, Namespace: d, Name: x",
+                   "props": [{"name": "result", "value": "pass"}, {"name": "reason", "value": "ok"}]}
+        ar = {"assessment-results": {"results": [{"observations": [
+            {"props": [{"name": "assessment-rule-id", "value": "a"}], "subjects": [subject, subject, subject]}]}]}}
+        md = summary.render(ar, RULES[:1], COMPDEF, "compliant")
+        self.assertIn("| `a` | AC-6 | pass | 1 |", md)
+
     def test_rule_with_no_resources_reads_not_evaluated(self):
         md = summary.render(ar_with(a="pass", b=None), RULES, COMPDEF, "compliant")
         self.assertIn("| AC-6 | not evaluated |", md)

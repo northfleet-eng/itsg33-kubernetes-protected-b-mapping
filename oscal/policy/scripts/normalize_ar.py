@@ -12,7 +12,8 @@ have no Kubernetes UID, empty subject uuids; also a zero-value "expires" on ever
 observation and null values where OSCAL allows none. This step replaces each with a value
 derived from the content, fixes every timestamp to the release date, drops the zero
 expiry and every null, and records each evaluated Kubernetes object as an inventory item
-in the result's local definitions, which its subjects reference.
+in the result's local definitions, which its subjects reference. C2P writes no findings;
+this step adds one per reviewed control with the rolled-up status (see verdicts.py).
 
 OSCAL assessment results import an assessment plan, which imports a system security
 plan, and oscal-cli loads that chain when it validates. import-ap points at the sample
@@ -29,6 +30,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
 from normalize import canonical  # noqa: E402  (oscal/scripts/normalize.py)
+from verdicts import control_verdict, label, prop, verdict_of  # noqa: E402
 
 NS = "https://northfleetsecurity.ca/ns/oscal/cccs"
 UUID_NS = uuid.UUID("6b3f6f0e-2b8e-4d55-9a4b-6b1f0b2c4a10")
@@ -83,6 +85,32 @@ def reviewed_controls(reviewed, observations):
     return {"control-selections": [{"include-controls": entries}]}
 
 
+def findings(observations, sample):
+    """One finding per reviewed control: its rolled-up verdict, targeting the control's
+    statement, linked to the observations of the rules that evidence it."""
+    by_control = {}
+    for obs in observations:
+        verdict = verdict_of([prop(s, "result") for s in obs.get("subjects", [])])
+        for p in obs.get("props", []):
+            if p["name"] == "controls":
+                for cid in filter(None, p["value"].split(",")):
+                    by_control.setdefault(cid, []).append((rule_of(obs), obs["uuid"], verdict))
+    out = []
+    for cid in sorted(by_control, key=sort_key):
+        rules = sorted(by_control[cid])
+        verdict = control_verdict([v for _, _, v in rules])
+        out.append({
+            "uuid": uid("finding", sample, cid),
+            "title": f"{label(cid)}: {verdict}",
+            "description": f"Kyverno rules {', '.join(r for r, _, _ in rules)} on the {sample} samples: {verdict}.",
+            "target": {"type": "statement-id", "target-id": f"{cid}_smt",
+                       "status": {"state": "satisfied" if verdict == "satisfied" else "not-satisfied",
+                                  "reason": {"satisfied": "pass", "not satisfied": "fail"}.get(verdict, "other")}},
+            "related-observations": [{"observation-uuid": u} for _, u, _ in rules],
+        })
+    return out
+
+
 def rule_of(obs):
     return next(p["value"] for p in obs.get("props", []) if p["name"] == "assessment-rule-id")
 
@@ -131,6 +159,7 @@ def normalize(ar_root, sample):
             observations.append(obs)
         res["observations"] = sorted(observations, key=rule_of)
         res["reviewed-controls"] = reviewed_controls(res.get("reviewed-controls", {}), observations)
+        res["findings"] = findings(res["observations"], sample)
         res.pop("local-definitions", None)
         if objects:
             res["local-definitions"] = {"inventory-items": [

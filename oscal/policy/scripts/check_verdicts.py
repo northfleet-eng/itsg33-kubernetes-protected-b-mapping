@@ -6,6 +6,7 @@ Usage: check_verdicts.py <expected.json> <sample> <assessment-results.json>
 Exits non-zero, listing every difference, if any rule's verdict is not the expected one,
 if an expected rule is missing, or if a rule appears that expected.json does not list.
 A sample expected.json has no entry for (your own manifests) is reported as not checked.
+Any rule with an error verdict fails the check for every sample, listed or not.
 """
 import json
 import sys
@@ -27,13 +28,19 @@ def compare(expected, actual):
 def main(expected_path, sample, ar_path):
     with open(expected_path) as f:
         oracle = json.load(f)
+    with open(ar_path) as f:
+        actual = rule_verdicts(json.load(f))
+    errors = sorted(rule for rule, v in actual.items() if v["verdict"] == "error")
+    if errors:
+        # An error means Kyverno could not evaluate a rule; nothing about the sample is known.
+        print(f"{sample}: rules errored: " + ", ".join(errors), file=sys.stderr)
+        sys.exit(1)
     if sample not in oracle:
         # Someone's own manifests: there is nothing to check them against.
         print(f"{sample}: no entry in expected.json; verdicts not checked")
         return
-    with open(ar_path) as f:
-        problems = compare(oracle[sample], rule_verdicts(json.load(f)))
     expected = oracle[sample]
+    problems = compare(expected, actual)
     if problems:
         print(f"{sample}: verdicts differ from expected.json", *problems, sep="\n  ", file=sys.stderr)
         sys.exit(1)

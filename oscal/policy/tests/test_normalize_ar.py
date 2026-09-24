@@ -108,6 +108,24 @@ class Normalize(unittest.TestCase):
         self.assertEqual(rules, ["alpha", "zeta"])
         self.assertNotIn("subjects", self.res["observations"][0])
 
+    def test_one_finding_per_reviewed_control(self):
+        src = c2p_like()
+        src["assessment-results"]["results"][0]["observations"].append(
+            {"uuid": "random", "description": "Observation of rule beta", "methods": ["TEST-AUTOMATED"],
+             "props": [{"name": "assessment-rule-id", "value": "beta"}, {"name": "controls", "value": "sc-5_smt"}],
+             "subjects": [{"subject-uuid": "", "title": "ApiVersion: v1, Kind: Pod, Namespace: d, Name: c",
+                           "type": "resource", "props": [{"name": "result", "value": "pass"},
+                                                         {"name": "reason", "value": "r"}]}]})
+        res = normalize(src, "compliant")["assessment-results"]["results"][0]
+        findings = {f["target"]["target-id"]: f for f in res["findings"]}
+        self.assertEqual(set(findings), {"ac-6_smt", "cm-6_smt", "sc-5_smt"})
+        self.assertEqual(findings["sc-5_smt"]["target"]["status"], {"state": "satisfied", "reason": "pass"})
+        self.assertEqual(findings["ac-6_smt"]["target"]["status"], {"state": "not-satisfied", "reason": "fail"})
+        self.assertEqual(findings["cm-6_smt"]["target"]["status"], {"state": "not-satisfied", "reason": "other"})
+        zeta = next(o["uuid"] for o in res["observations"] if o["props"][0]["value"] == "zeta")
+        self.assertEqual(findings["ac-6_smt"]["related-observations"], [{"observation-uuid": zeta}])
+        self.assertEqual(findings["ac-6_smt"]["target"]["type"], "statement-id")
+
     def test_input_is_not_mutated(self):
         src = c2p_like()
         before = copy.deepcopy(src)

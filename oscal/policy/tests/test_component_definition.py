@@ -41,6 +41,12 @@ class LoadRules(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "r: sc-13 is not claimed"):
             bcd.check_rule_controls(rules, {"ac-6"})
 
+    def test_apparmor_rule_states_what_it_does_not_check(self):
+        # Upstream checks only the beta annotation; the GA securityContext.appArmorProfile
+        # field passes unchecked, so CM-6 evidence must say so.
+        rule = next(r for r in bcd.load_rules(RULES, POLICIES) if r["id"] == "restrict-apparmor-profiles")
+        self.assertIn("appArmorProfile", rule["note"])
+
     def test_repository_rules_load(self):
         rules = bcd.load_rules(RULES, POLICIES)
         self.assertEqual(len(rules), 24)

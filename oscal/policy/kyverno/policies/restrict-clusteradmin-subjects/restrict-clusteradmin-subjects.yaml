@@ -34,6 +34,6 @@ spec:
         deny:
           conditions:
             any:
-              - key: "{{ length(request.object.subjects[?kind != 'Group' || name != 'itsp:daw-admins']) }}"
+              - key: "{{ length((request.object.subjects || `[]`)[?kind != 'Group' || name != 'itsp:daw-admins']) }}"
                 operator: GreaterThan
                 value: 0

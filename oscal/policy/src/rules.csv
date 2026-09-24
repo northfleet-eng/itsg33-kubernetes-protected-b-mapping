@@ -7,7 +7,7 @@ disallow-host-process,Windows pods do not run as HostProcess containers,cm-6,
 disallow-privileged-containers,Containers do not run privileged,cm-6 cm-7,
 disallow-proc-mount,Containers keep the default /proc mask,cm-6,
 disallow-selinux,Containers set no custom SELinux user or role and only permitted types,cm-6,
-restrict-apparmor-profiles,AppArmor profiles are runtime default or localhost only,cm-6,
+restrict-apparmor-profiles,AppArmor profiles are runtime default or localhost only,cm-6,"Checks the AppArmor annotation only. The securityContext.appArmorProfile field (Kubernetes 1.30 and later) is not checked, so a pod can set an unconfined profile there and still pass; CM-6 evidence does not cover that field."
 restrict-seccomp,Seccomp profiles are runtime default or localhost only,cm-6,
 restrict-sysctls,Pods set only the safe sysctls,cm-6,
 disallow-capabilities-strict,Containers drop ALL capabilities and add at most NET_BIND_SERVICE,cm-6 cm-7,

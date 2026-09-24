@@ -4,7 +4,7 @@ import json
 import sys
 import tempfile
 import unittest
-from contextlib import redirect_stdout
+from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
@@ -74,6 +74,18 @@ class UnknownSample(unittest.TestCase):
             with redirect_stdout(out):
                 check_verdicts.main(str(exp), "mine", str(ar))
         self.assertIn("mine: no entry in expected.json; verdicts not checked", out.getvalue())
+
+    def test_an_error_fails_even_without_expectations(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            exp = Path(tmp) / "expected.json"
+            exp.write_text(json.dumps({"compliant": {"a": "pass"}}))
+            ar = Path(tmp) / "ar.json"
+            ar.write_text(json.dumps({"assessment-results": {"results": [{"observations": [obs("a", "error")]}]}}))
+            err = io.StringIO()
+            with self.assertRaises(SystemExit) as ctx, redirect_stdout(io.StringIO()), redirect_stderr(err):
+                check_verdicts.main(str(exp), "mine", str(ar))
+        self.assertNotEqual(ctx.exception.code, 0)
+        self.assertIn("mine: rules errored: a", err.getvalue())
 
 
 if __name__ == "__main__":

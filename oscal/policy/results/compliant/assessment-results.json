@@ -1,6 +1,6 @@
 {
  "assessment-results": {
-  "uuid": "c0c0eca6-f3cb-526e-8c2b-3c2029e4bd45",
+  "uuid": "c8a7816a-2826-5243-ab22-0d951289b942",
   "metadata": {
    "title": "Kyverno evaluation of the compliant samples against the ITSP.10.033-01 rules",
    "last-modified": "2026-09-24T00:00:00-04:00",
@@ -16,6 +16,218 @@
     "uuid": "f43a263b-16e7-5363-a463-c7d48f2cf9e2",
     "title": "Kyverno CLI 1.19.1, offline, compliant samples",
     "description": "Policies selected from the component definition by compliance-to-policy-go 1.0.0 and evaluated with the Kyverno CLI 1.19.1 against oscal/policy/samples/compliant.",
+    "findings": [
+     {
+      "uuid": "3c7a98ca-3724-5450-b9a1-4c6880ca60c7",
+      "title": "AC-6: satisfied",
+      "description": "Kyverno rules restrict-automount-sa-token, restrict-binding-system-groups, restrict-wildcard-verbs on the compliant samples: satisfied.",
+      "related-observations": [
+       {
+        "observation-uuid": "7632d451-4796-57bc-9f12-a70b5b978bf5"
+       },
+       {
+        "observation-uuid": "7ccd90fa-d428-59cc-bff8-7b716bb6f18a"
+       },
+       {
+        "observation-uuid": "6c05a6e4-ed75-5dfb-89ef-8b6d53106e27"
+       }
+      ],
+      "target": {
+       "type": "statement-id",
+       "status": {
+        "reason": "pass",
+        "state": "satisfied"
+       },
+       "target-id": "ac-6_smt"
+      }
+     },
+     {
+      "uuid": "b9858219-4adb-578f-95bd-30183bcc2b44",
+      "title": "AC-17(400): satisfied",
+      "description": "Kyverno rules restrict-clusteradmin-subjects on the compliant samples: satisfied.",
+      "related-observations": [
+       {
+        "observation-uuid": "b5ba6957-f148-5859-881f-363272fbb0c9"
+       }
+      ],
+      "target": {
+       "type": "statement-id",
+       "status": {
+        "reason": "pass",
+        "state": "satisfied"
+       },
+       "target-id": "ac-17.400_smt"
+      }
+     },
+     {
+      "uuid": "cca28752-e9fc-5bd3-a0f4-8e8fc703d40e",
+      "title": "CM-2: satisfied",
+      "description": "Kyverno rules disallow-latest-tag on the compliant samples: satisfied.",
+      "related-observations": [
+       {
+        "observation-uuid": "f43e7b02-6c51-57d9-9b0d-6d07c48c051a"
+       }
+      ],
+      "target": {
+       "type": "statement-id",
+       "status": {
+        "reason": "pass",
+        "state": "satisfied"
+       },
+       "target-id": "cm-2_smt"
+      }
+     },
+     {
+      "uuid": "713885a1-a6d6-5c5b-bb23-1748cf916747",
+      "title": "CM-6: satisfied",
+      "description": "Kyverno rules disallow-capabilities, disallow-capabilities-strict, disallow-host-namespaces, disallow-host-path, disallow-host-ports, disallow-host-process, disallow-privilege-escalation, disallow-privileged-containers, disallow-proc-mount, disallow-selinux, require-run-as-non-root-user, require-run-as-nonroot, restrict-apparmor-profiles, restrict-seccomp, restrict-seccomp-strict, restrict-sysctls, restrict-volume-types on the compliant samples: satisfied.",
+      "related-observations": [
+       {
+        "observation-uuid": "7938b63c-d107-5c7e-8313-ed33fd7a82f9"
+       },
+       {
+        "observation-uuid": "d3fa24f1-bbe2-50b0-a5c3-8495892c0329"
+       },
+       {
+        "observation-uuid": "d424423f-1ae8-5a53-abd6-d21c640088a5"
+       },
+       {
+        "observation-uuid": "b49fe877-43e4-51cf-a45b-03f7db58f9df"
+       },
+       {
+        "observation-uuid": "ec55f29e-a1fa-5edf-b8f8-9cb228fa47bd"
+       },
+       {
+        "observation-uuid": "7507929b-4d33-53f0-a27c-79467dfd8103"
+       },
+       {
+        "observation-uuid": "07ceb75c-1266-5c31-a50c-628e2ee4ecc3"
+       },
+       {
+        "observation-uuid": "02ae7f33-66ce-507d-832c-d3d55a9366cd"
+       },
+       {
+        "observation-uuid": "0d8f7bf2-6652-55e8-980a-dc8d3f04959b"
+       },
+       {
+        "observation-uuid": "b7245084-6345-5c0d-9595-503dc9f72cca"
+       },
+       {
+        "observation-uuid": "d61852c1-a18e-578a-92b4-d81db1569fb1"
+       },
+       {
+        "observation-uuid": "3902a713-9284-5a97-a405-feeecddaeb6b"
+       },
+       {
+        "observation-uuid": "80525c8c-657d-5387-98c2-5bd4566c9477"
+       },
+       {
+        "observation-uuid": "43d8238f-8f3b-5373-90ee-38dd5584ec3a"
+       },
+       {
+        "observation-uuid": "8927aeb2-de92-5649-80f3-9d5868db3001"
+       },
+       {
+        "observation-uuid": "b38be507-1d71-5255-b3d0-b27aed832c16"
+       },
+       {
+        "observation-uuid": "515a7a53-9824-5918-a303-05c48cc971ac"
+       }
+      ],
+      "target": {
+       "type": "statement-id",
+       "status": {
+        "reason": "pass",
+        "state": "satisfied"
+       },
+       "target-id": "cm-6_smt"
+      }
+     },
+     {
+      "uuid": "fe41c511-694b-5b46-93da-ef33f5a63e21",
+      "title": "CM-7: satisfied",
+      "description": "Kyverno rules disallow-capabilities-strict, disallow-host-namespaces, disallow-host-path, disallow-host-ports, disallow-privileged-containers on the compliant samples: satisfied.",
+      "related-observations": [
+       {
+        "observation-uuid": "d3fa24f1-bbe2-50b0-a5c3-8495892c0329"
+       },
+       {
+        "observation-uuid": "d424423f-1ae8-5a53-abd6-d21c640088a5"
+       },
+       {
+        "observation-uuid": "b49fe877-43e4-51cf-a45b-03f7db58f9df"
+       },
+       {
+        "observation-uuid": "ec55f29e-a1fa-5edf-b8f8-9cb228fa47bd"
+       },
+       {
+        "observation-uuid": "02ae7f33-66ce-507d-832c-d3d55a9366cd"
+       }
+      ],
+      "target": {
+       "type": "statement-id",
+       "status": {
+        "reason": "pass",
+        "state": "satisfied"
+       },
+       "target-id": "cm-7_smt"
+      }
+     },
+     {
+      "uuid": "32ed24b6-1b16-5bdc-82dc-4dd40a3afa26",
+      "title": "IA-5: satisfied",
+      "description": "Kyverno rules restrict-automount-sa-token on the compliant samples: satisfied.",
+      "related-observations": [
+       {
+        "observation-uuid": "7632d451-4796-57bc-9f12-a70b5b978bf5"
+       }
+      ],
+      "target": {
+       "type": "statement-id",
+       "status": {
+        "reason": "pass",
+        "state": "satisfied"
+       },
+       "target-id": "ia-5_smt"
+      }
+     },
+     {
+      "uuid": "c9ce7361-0a33-5e83-b27f-1823e89104d8",
+      "title": "SC-2: satisfied",
+      "description": "Kyverno rules disallow-default-namespace on the compliant samples: satisfied.",
+      "related-observations": [
+       {
+        "observation-uuid": "0c914df4-1211-5c9c-af2c-042dbf8284c3"
+       }
+      ],
+      "target": {
+       "type": "statement-id",
+       "status": {
+        "reason": "pass",
+        "state": "satisfied"
+       },
+       "target-id": "sc-2_smt"
+      }
+     },
+     {
+      "uuid": "8f1207b7-6f45-5621-9e0d-71f0e1fc66fc",
+      "title": "SC-5: satisfied",
+      "description": "Kyverno rules require-requests-limits on the compliant samples: satisfied.",
+      "related-observations": [
+       {
+        "observation-uuid": "a70da7d2-ab4e-5d12-897f-219cd0e43cb5"
+       }
+      ],
+      "target": {
+       "type": "statement-id",
+       "status": {
+        "reason": "pass",
+        "state": "satisfied"
+       },
+       "target-id": "sc-5_smt"
+      }
+     }
+    ],
     "local-definitions": {
      "inventory-items": [
       {
