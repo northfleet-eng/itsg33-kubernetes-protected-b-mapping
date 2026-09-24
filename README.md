@@ -31,6 +31,8 @@ ITSG-33 is the Canadian IT security risk management framework published by the C
 
 The [`oscal/`](oscal/) directory renders the ITSP.10.033 catalogue and the ITSP.10.033-01 Medium profile in [OSCAL](https://pages.nist.gov/OSCAL/), the NIST format that compliance tooling reads, and expresses this mapping as an OSCAL component definition. CCCS publishes both documents as PDF only. The rendering is rebuilt and validated in CI on every change, and a weekly job flags any revision of the CCCS PDFs. Start with [`oscal/README.md`](oscal/README.md).
 
+Eight of the controls the component definition claims also have automated checks: Kyverno policies, selected from the component definition by compliance-to-policy and evaluated offline against sample manifests, with the verdicts published as OSCAL assessment results. See [`oscal/policy/README.md`](oscal/policy/README.md).
+
 ## Files in this repository
 
 - [`itsg33-kubernetes-mapping.md`](itsg33-kubernetes-mapping.md): the main mapping. Controls bucketed by admin / workload / external, with the Kubernetes mechanism for each, plus the ITSP.10.033-01 additions.

@@ -16,6 +16,7 @@ CCCS publishes both documents as PDF only. This directory transcribes them, vali
 | [`profiles/itsp.10.033-01-medium/profile.json`](profiles/itsp.10.033-01-medium/profile.json) | The Medium profile: selections, parameter values, notes. |
 | [`component-definitions/upstream-kubernetes.json`](component-definitions/upstream-kubernetes.json) | The repository's mapping as a component definition: what upstream Kubernetes and a containerized workload can implement against the Medium profile. |
 | [`reports/gap-upstream-kubernetes.md`](reports/gap-upstream-kubernetes.md) | Selected controls minus claimed controls, computed. |
+| [`policy/`](policy/) | Kyverno rules for eight of the controls the component definition claims, evaluated offline against sample manifests, with the verdicts as OSCAL assessment results. Start with [`policy/README.md`](policy/README.md). |
 | [`reports/diff-aws-cccs-oscal-samples.md`](reports/diff-aws-cccs-oscal-samples.md) | This rendering of the Medium profile against the other public one. |
 | [`src/`](src/) | Transcribed sources: Table 4 of ITSP.10.033-01 as CSV (every row of the 139-page table), CCCS's wording for every control, and the pinned inputs with their SHA-256. |
 | [`scripts/`](scripts/) | Extraction, build, and report tools. |
@@ -31,11 +32,13 @@ CCCS PDFs ──extract (by hand, reviewed)──▶ src/, catalogs/
 NIST 800-53 5.2.0 (pinned) ─┐
 src/, catalogs/ ────────────┴─build_profiles──▶ profiles/ ──oscal-cli resolve──▶ resolved/
 itsg33-kubernetes-mapping.csv ──▶ component-definitions/ ──gap.py──▶ reports/
+component-definitions/ ──c2pcli + Kyverno CLI (offline)──▶ policy/results/ (assessment results)
 ```
 
 - **Extraction** (`extract_table4.py`, `extract_canadian.py`, `extract_cccs_wording.py`) reads the PDFs by position and text. Its output is committed and reviewed against the PDFs; CI does not run it. Re-running it against the pinned PDFs reproduces the committed files byte for byte.
 - **Build** (`build.sh`) regenerates the profiles, resolves them with oscal-cli 3.2.0, normalizes the result, exports CSV, rebuilds the component definition and the gap report, and validates every OSCAL document. It is deterministic: CI rebuilds on every push and fails if the output differs from what is committed.
 - **Normalization** (`normalize.py`) exists because oscal-cli's as-is merge keeps each import's groups separate. It folds the Canadian controls into their families, nests each Canada-specific enhancement under its base control (AC-17(400) under AC-17), and replaces per-run identifiers and timestamps with content-derived ones.
+- **Evidence** (`policy/scripts/evaluate.sh`) selects the Kyverno policies the component definition names, evaluates them against `policy/samples/`, and writes validated assessment results. See [`policy/README.md`](policy/README.md).
 - **Pinned inputs** are in [`src/sources.json`](src/sources.json). A weekly CI job re-fetches the two CCCS PDFs and fails if either has changed, which is how a silent revision of the rulebook shows up here.
 
 Compliance Trestle 5.1 reads every file in this directory, and its independent profile resolver produces the same 384 controls as oscal-cli. Trestle resolves relative import paths against the working directory rather than the profile's location, so run it from the profile's directory.

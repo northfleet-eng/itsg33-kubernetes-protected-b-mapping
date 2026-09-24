@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-09-24
+
+- Added [`oscal/policy/`](oscal/policy/): Kyverno rules for eight controls the component definition claims (CM-6, CM-7, AC-6, AC-17(400), IA-5, SC-5, SC-2, CM-2), selected from the component definition by compliance-to-policy-go 1.0.0, evaluated offline with the Kyverno CLI 1.19.1 against compliant and non-compliant sample manifests, and published as OSCAL assessment results with a Markdown summary per sample. A minimal assessment plan and system security plan, both marked "Not a real system", complete the OSCAL import chain so the results validate.
+- The component definition now carries the rules in the OSCAL Compass convention and a Kyverno validation component. Claims are unchanged.
+- CI runs the policy unit tests and the evaluation, checks every verdict against `oscal/policy/samples/expected.json`, and fails on drift.
+- The 26 claimed controls with no offline check are listed in `oscal/policy/README.md` and in each summary.
+
 ## 2026-09-23
 
 - Added [`oscal/`](oscal/): ITSP.10.033 (1,248 controls, activities and enhancements) and the ITSP.10.033-01 Medium profile (384 selected) in OSCAL 1.1.3, built on NIST SP 800-53 Rev. 5.2.0. The 53 Canada-specific controls and enhancements are transcribed in full; every NIST-derived control carries CCCS's statement wording and GC discussion; the 13 parameter values Table 4 suggests are bound to NIST parameters. Every document validates with oscal-cli 3.2.0 and loads in Compliance Trestle 5.1.
