@@ -1,0 +1,6 @@
+compliance:
+  name: spike
+  componentDefinition:
+    url: component-definition.json
+policyResources:
+  url: policy-dirs

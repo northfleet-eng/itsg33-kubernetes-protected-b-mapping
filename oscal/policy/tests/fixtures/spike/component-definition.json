@@ -1,0 +1,35 @@
+{
+  "component-definition": {
+    "uuid": "3c0f6a9e-1111-4a55-9a4b-000000000001",
+    "metadata": {"title": "C2P spike", "last-modified": "2026-09-24T00:00:00-04:00", "version": "0", "oscal-version": "1.1.3"},
+    "components": [
+      {
+        "uuid": "3c0f6a9e-1111-4a55-9a4b-000000000002",
+        "type": "software",
+        "title": "Upstream Kubernetes",
+        "description": "Spike.",
+        "props": [
+          {"name": "Rule_Id", "ns": "https://oscal-compass.github.io/compliance-trestle/schemas/oscal/cd/kubernetes", "value": "disallow-privileged-containers", "remarks": "rule_set_00"},
+          {"name": "Rule_Description", "ns": "https://oscal-compass.github.io/compliance-trestle/schemas/oscal/cd/kubernetes", "value": "No privileged containers.", "remarks": "rule_set_00"},
+          {"name": "Rule_Id", "ns": "https://oscal-compass.github.io/compliance-trestle/schemas/oscal/cd/kubernetes", "value": "restrict-binding-system-groups", "remarks": "rule_set_01"},
+          {"name": "Rule_Description", "ns": "https://oscal-compass.github.io/compliance-trestle/schemas/oscal/cd/kubernetes", "value": "No bindings to system groups.", "remarks": "rule_set_01"}
+        ],
+        "control-implementations": [
+          {
+            "uuid": "3c0f6a9e-1111-4a55-9a4b-000000000003",
+            "source": "../../../../profiles/itsp.10.033-01-medium/profile.json",
+            "description": "Spike.",
+            "implemented-requirements": [
+              {"uuid": "3c0f6a9e-1111-4a55-9a4b-000000000004", "control-id": "cm-7", "description": "Spike.",
+               "statements": [{"statement-id": "cm-7_smt", "uuid": "3c0f6a9e-1111-4a55-9a4b-000000000005", "description": "Spike.",
+                 "props": [{"name": "Rule_Id", "ns": "https://oscal-compass.github.io/compliance-trestle/schemas/oscal/cd/kubernetes", "value": "disallow-privileged-containers"}]}]},
+              {"uuid": "3c0f6a9e-1111-4a55-9a4b-000000000006", "control-id": "ac-6", "description": "Spike.",
+               "statements": [{"statement-id": "ac-6_smt", "uuid": "3c0f6a9e-1111-4a55-9a4b-000000000007", "description": "Spike.",
+                 "props": [{"name": "Rule_Id", "ns": "https://oscal-compass.github.io/compliance-trestle/schemas/oscal/cd/kubernetes", "value": "restrict-binding-system-groups"}]}]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
