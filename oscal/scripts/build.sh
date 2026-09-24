@@ -43,7 +43,7 @@ resolve profiles/itsp.10.033-01-medium/profile.json resolved/itsp.10.033-01-medi
 validate resolved/itsp.10.033-01-medium.json
 python3 scripts/to_csv.py resolved/itsp.10.033.json resolved/itsp.10.033.csv
 python3 scripts/to_csv.py resolved/itsp.10.033-01-medium.json resolved/itsp.10.033-01-medium.csv
-python3 scripts/build_component_definition.py . ../itsg33-kubernetes-mapping.csv
+python3 scripts/build_component_definition.py . ../itsg33-kubernetes-mapping.csv policy/src/rules.csv
 validate component-definitions/upstream-kubernetes.json
 python3 scripts/gap.py resolved/itsp.10.033-01-medium.json component-definitions/upstream-kubernetes.json \
   ../itsg33-kubernetes-mapping.csv > reports/gap-upstream-kubernetes.md
