@@ -22,7 +22,8 @@ def c2p_like():
         "import-ap": {"href": "http://..."},
         "results": [{"uuid": "random", "title": "t", "description": "d", "start": "2026-09-24T11:12:13Z",
                      "local-definitions": {"inventory-items": None},
-                     "reviewed-controls": [{"control-selections": [{"include-controls": [{"control-id": "ac-6_smt"}]}]}],
+                     "reviewed-controls": [{"control-selections": [{"include-controls": [{"control-id": "sc-8"},
+                                                                                         {"control-id": "ac-6_smt"}]}]}],
                      "observations": [
                          {"uuid": "random", "description": "Observation of rule zeta", "methods": ["TEST-AUTOMATED"],
                           "expires": "0001-01-01T00:00:00Z",
@@ -89,6 +90,11 @@ class Normalize(unittest.TestCase):
     def test_reviewed_controls_array_becomes_one_object(self):
         # C2P-Go v1 writes an array; OSCAL requires a single object.
         self.assertIsInstance(self.res["reviewed-controls"], dict)
+
+    def test_reviewed_controls_are_the_controls_observed(self):
+        # C2P lists every control the component claims; only the observed ones were reviewed.
+        sel = self.res["reviewed-controls"]["control-selections"][0]["include-controls"]
+        self.assertEqual([c["control-id"] for c in sel], ["ac-6", "cm-6"])
 
     def test_statement_ids_become_control_ids(self):
         sel = self.res["reviewed-controls"]["control-selections"][0]["include-controls"][0]

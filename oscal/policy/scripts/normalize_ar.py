@@ -22,6 +22,7 @@ results/<sample>/ so every relative link in the chain resolves from either place
 import copy
 import hashlib
 import json
+import re
 import sys
 import uuid
 from pathlib import Path
@@ -53,6 +54,35 @@ def drop_nulls(x):
     return x
 
 
+def sort_key(cid):
+    m = re.fullmatch(r"([a-z]{2})-(\d+)(?:\.(\d+))?", cid)
+    return (m.group(1), int(m.group(2)), int(m.group(3) or 0)) if m else (cid, 0, 0)
+
+
+def reviewed_controls(reviewed, observations):
+    """One OSCAL reviewed-controls object naming the controls the observations cover.
+
+    C2P-Go v1 writes an array, and lists every control the component definition claims;
+    only the controls a rule observed were reviewed. Statement ids C2P used in place of
+    control ids are kept as statement-ids."""
+    if isinstance(reviewed, list):
+        reviewed = {"control-selections": [s for r in reviewed for s in r.get("control-selections", [])]}
+    statements = {}
+    for sel in reviewed.get("control-selections", []):
+        for inc in sel.get("include-controls", []):
+            if inc["control-id"] != control_id(inc["control-id"]):
+                statements.setdefault(control_id(inc["control-id"]), set()).add(inc["control-id"])
+    observed = {c for o in observations for p in o.get("props", []) if p["name"] == "controls"
+                for c in p["value"].split(",") if c}
+    entries = []
+    for cid in sorted(observed, key=sort_key):
+        entry = {"control-id": cid}
+        if cid in statements:
+            entry["statement-ids"] = sorted(statements[cid])
+        entries.append(entry)
+    return {"control-selections": [{"include-controls": entries}]}
+
+
 def rule_of(obs):
     return next(p["value"] for p in obs.get("props", []) if p["name"] == "assessment-rule-id")
 
@@ -77,19 +107,6 @@ def normalize(ar_root, sample):
         res["start"] = STAMP
         res.pop("end", None)
         objects = {}
-        reviewed = res.get("reviewed-controls", {})
-        if isinstance(reviewed, list):  # C2P-Go v1 writes an array; OSCAL requires one object
-            reviewed = {"control-selections": [s for r in reviewed for s in r.get("control-selections", [])]}
-        res["reviewed-controls"] = reviewed
-        for sel in reviewed.get("control-selections", []):
-            fixed = []
-            for inc in sel.get("include-controls", []):
-                cid = inc["control-id"]
-                entry = {"control-id": control_id(cid)}
-                if cid != entry["control-id"]:
-                    entry["statement-ids"] = [cid]
-                fixed.append(entry)
-            sel["include-controls"] = sorted(fixed, key=lambda e: e["control-id"])
         observations = []
         for obs in res.get("observations", []):
             rule = rule_of(obs)
@@ -113,6 +130,7 @@ def normalize(ar_root, sample):
                 obs.pop("subjects", None)
             observations.append(obs)
         res["observations"] = sorted(observations, key=rule_of)
+        res["reviewed-controls"] = reviewed_controls(res.get("reviewed-controls", {}), observations)
         res.pop("local-definitions", None)
         if objects:
             res["local-definitions"] = {"inventory-items": [

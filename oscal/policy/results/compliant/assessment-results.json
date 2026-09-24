@@ -1,6 +1,6 @@
 {
  "assessment-results": {
-  "uuid": "09db23bb-f271-5993-adde-e791ef71bfc0",
+  "uuid": "c0c0eca6-f3cb-526e-8c2b-3c2029e4bd45",
   "metadata": {
    "title": "Kyverno evaluation of the compliant samples against the ITSP.10.033-01 rules",
    "last-modified": "2026-09-24T00:00:00-04:00",
@@ -1132,10 +1132,10 @@
       {
        "include-controls": [
         {
-         "control-id": "ac-11"
-        },
-        {
-         "control-id": "ac-17"
+         "control-id": "ac-6",
+         "statement-ids": [
+          "ac-6_smt"
+         ]
         },
         {
          "control-id": "ac-17.400",
@@ -1144,46 +1144,10 @@
          ]
         },
         {
-         "control-id": "ac-2"
-        },
-        {
-         "control-id": "ac-3"
-        },
-        {
-         "control-id": "ac-4"
-        },
-        {
-         "control-id": "ac-5"
-        },
-        {
-         "control-id": "ac-6",
-         "statement-ids": [
-          "ac-6_smt"
-         ]
-        },
-        {
-         "control-id": "au-12"
-        },
-        {
-         "control-id": "au-2"
-        },
-        {
-         "control-id": "au-3"
-        },
-        {
-         "control-id": "au-4"
-        },
-        {
-         "control-id": "au-9"
-        },
-        {
          "control-id": "cm-2",
          "statement-ids": [
           "cm-2_smt"
          ]
-        },
-        {
-         "control-id": "cm-3"
         },
         {
          "control-id": "cm-6",
@@ -1198,25 +1162,10 @@
          ]
         },
         {
-         "control-id": "cm-8"
-        },
-        {
-         "control-id": "ia-2"
-        },
-        {
-         "control-id": "ia-3"
-        },
-        {
          "control-id": "ia-5",
          "statement-ids": [
           "ia-5_smt"
          ]
-        },
-        {
-         "control-id": "sc-12"
-        },
-        {
-         "control-id": "sc-13"
         },
         {
          "control-id": "sc-2",
@@ -1225,37 +1174,10 @@
          ]
         },
         {
-         "control-id": "sc-23"
-        },
-        {
-         "control-id": "sc-28"
-        },
-        {
          "control-id": "sc-5",
          "statement-ids": [
           "sc-5_smt"
          ]
-        },
-        {
-         "control-id": "sc-7"
-        },
-        {
-         "control-id": "sc-8"
-        },
-        {
-         "control-id": "si-10"
-        },
-        {
-         "control-id": "si-11"
-        },
-        {
-         "control-id": "si-2"
-        },
-        {
-         "control-id": "si-4"
-        },
-        {
-         "control-id": "si-400"
         }
        ]
       }
