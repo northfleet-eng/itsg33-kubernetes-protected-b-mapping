@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # Rebuild everything derived from src/ and catalogs/: both profiles, both resolved
-# catalogues, their CSV exports, and the component definition. Validates every OSCAL
-# document with oscal-cli. Deterministic, so CI runs this and fails on any diff.
+# catalogues, their CSV exports, the component definition, the gap report, and the
+# policy evidence in policy/ (unit tests, then the offline Kyverno evaluation).
+# Validates every OSCAL document with oscal-cli. Deterministic, so CI runs this and
+# fails on any diff.
 #
 # Needs: python3, Java 17+, oscal-cli (on PATH, or OSCAL_CLI=/path/to/oscal-cli).
 set -euo pipefail
@@ -48,3 +50,5 @@ validate component-definitions/upstream-kubernetes.json
 python3 scripts/gap.py resolved/itsp.10.033-01-medium.json component-definitions/upstream-kubernetes.json \
   ../itsg33-kubernetes-mapping.csv > reports/gap-upstream-kubernetes.md
 echo "wrote  reports/gap-upstream-kubernetes.md"
+python3 -W error::ResourceWarning -m unittest discover -s policy/tests -q
+OSCAL_CLI="$CLI" policy/scripts/evaluate.sh

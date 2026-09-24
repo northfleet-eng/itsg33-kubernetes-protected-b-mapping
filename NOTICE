@@ -16,3 +16,9 @@ Canadian Centre for Cyber Security.
 The resolved catalogues in oscal/resolved/ include content from NIST SP 800-53
 Rev. 5.2.0 (usnistgov/oscal-content), a work of the United States Government
 that is not subject to copyright in the United States.
+
+The Kyverno policies in oscal/policy/kyverno/policies/, except
+restrict-clusteradmin-subjects, are copied unmodified from kyverno/policies
+(https://github.com/kyverno/policies) at commit
+2716f4a26a3c27590a1d6d960dee4ce043e4fa4a, under the Apache License 2.0
+(oscal/policy/kyverno/LICENSE-kyverno-policies).

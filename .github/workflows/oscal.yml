@@ -38,6 +38,11 @@ jobs:
           echo "${OSCAL_CLI_SHA256}  $RUNNER_TEMP/oscal-cli.zip" | sha256sum -c -
           unzip -q "$RUNNER_TEMP/oscal-cli.zip" -d "$RUNNER_TEMP/oscal-cli"
           echo "$RUNNER_TEMP/oscal-cli/bin" >> "$GITHUB_PATH"
+      - uses: actions/setup-go@v6
+        with:
+          go-version: "1.24"
+      - name: Install Kyverno CLI and c2pcli
+        run: oscal/policy/scripts/install-tools.sh
       - name: Build and validate
         run: oscal/scripts/build.sh
       - name: Fail on drift
