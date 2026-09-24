@@ -1,0 +1,1268 @@
+{
+ "assessment-results": {
+  "uuid": "76a4abcb-8410-5f49-83d5-7f56fc3b1fc7",
+  "metadata": {
+   "title": "Kyverno evaluation of the noncompliant samples against the ITSP.10.033-01 rules",
+   "last-modified": "2026-09-24T00:00:00-04:00",
+   "version": "2026.09.24",
+   "oscal-version": "1.1.3",
+   "remarks": "Evidence about the sample manifests in oscal/policy/samples/noncompliant, evaluated offline. It is not an assessment of any system."
+  },
+  "import-ap": {
+   "href": "../plan/assessment-plan.json"
+  },
+  "results": [
+   {
+    "uuid": "1ce7c3c3-34b4-59b4-aa12-3477dfb4a567",
+    "title": "Kyverno CLI 1.19.1, offline, noncompliant samples",
+    "description": "Policies selected from the component definition by compliance-to-policy-go 1.0.0 and evaluated with the Kyverno CLI 1.19.1 against oscal/policy/samples/noncompliant.",
+    "local-definitions": {
+     "inventory-items": [
+      {
+       "uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83",
+       "description": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy"
+      },
+      {
+       "uuid": "4a64da92-7255-5215-aaab-fae321b3e7ac",
+       "description": "ApiVersion: rbac.authorization.k8s.io/v1, Kind: ClusterRole, Namespace: , Name: everything"
+      },
+      {
+       "uuid": "cf803ad5-45a1-5cae-bd3a-eed128c4a227",
+       "description": "ApiVersion: rbac.authorization.k8s.io/v1, Kind: ClusterRoleBinding, Namespace: , Name: legacy-admin"
+      },
+      {
+       "uuid": "50e93c98-c5a3-57f7-ad95-1d2348b544b8",
+       "description": "ApiVersion: rbac.authorization.k8s.io/v1, Kind: ClusterRoleBinding, Namespace: , Name: masters-view"
+      }
+     ]
+    },
+    "observations": [
+     {
+      "uuid": "d361d876-173f-5e07-b111-117865fb8755",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "disallow-capabilities"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "cm-6"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule disallow-capabilities",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "Any capabilities added beyond the allowed list (AUDIT_WRITE, CHOWN, DAC_OVERRIDE, FOWNER, FSETID, KILL, MKNOD, NET_BIND_SERVICE, SETFCAP, SETGID, SETPCAP, SETUID, SYS_CHROOT) are disallowed."
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "d37809bc-27c6-5b43-bc7b-74076e4be5de",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "disallow-capabilities-strict"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "cm-6,cm-7"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule disallow-capabilities-strict",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation failure: Any capabilities added other than NET_BIND_SERVICE are disallowed."
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       },
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation failure: Containers must drop `ALL` capabilities."
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "09788efb-5539-59c3-bf83-20d0c509b941",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "disallow-default-namespace"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "sc-2"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule disallow-default-namespace",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: Using 'default' namespace is not allowed for pod controllers. rule validate-podcontroller-namespace failed at path /metadata/namespace/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "23d16232-fefd-5141-b7d3-f7c996edb6b5",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "disallow-host-namespaces"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "cm-6,cm-7"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule disallow-host-namespaces",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: Sharing the host namespaces is disallowed. The fields spec.hostNetwork, spec.hostIPC, and spec.hostPID must be unset or set to `false`. rule autogen-host-namespaces failed at path /spec/template/spec/hostIPC/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "60a7d283-e0d4-5b1a-86b9-e617028e375e",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "disallow-host-path"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "cm-6,cm-7"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule disallow-host-path",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: HostPath volumes are forbidden. The field spec.volumes[*].hostPath must be unset. rule autogen-host-path failed at path /spec/template/spec/volumes/0/hostPath/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "1788a4e3-5688-52ed-8ad1-6a95a6196805",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "disallow-host-ports"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "cm-6,cm-7"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule disallow-host-ports",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: Use of host ports is disallowed. The fields spec.containers[*].ports[*].hostPort , spec.initContainers[*].ports[*].hostPort, and spec.ephemeralContainers[*].ports[*].hostPort must either be unset or set to `0`. rule autogen-host-ports-none failed at path /spec/template/spec/containers/0/ports/0/hostPort/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "179c0337-1b33-5307-a590-d107c3db3eac",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "disallow-host-process"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "cm-6"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule disallow-host-process",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: HostProcess containers are disallowed. The fields spec.securityContext.windowsOptions.hostProcess, spec.containers[*].securityContext.windowsOptions.hostProcess, spec.initContainers[*].securityContext.windowsOptions.hostProcess, and spec.ephemeralContainers[*].securityContext.windowsOptions.hostProcess must either be undefined or set to `false`. rule autogen-host-process-containers failed at path /spec/template/spec/containers/0/securityContext/windowsOptions/hostProcess/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "e2b30bdb-99f5-5ddc-b249-49893ce90b4c",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "disallow-latest-tag"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "cm-2"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule disallow-latest-tag",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation failure: validation error: Using a mutable image tag e.g. 'latest' is not allowed. rule autogen-validate-image-tag failed at path /image/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       },
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "pass"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "rule passed"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "75a0aa04-8eea-503c-9252-ca9a8434953f",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "disallow-privilege-escalation"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "cm-6"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule disallow-privilege-escalation",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: Privilege escalation is disallowed. The fields spec.containers[*].securityContext.allowPrivilegeEscalation, spec.initContainers[*].securityContext.allowPrivilegeEscalation, and spec.ephemeralContainers[*].securityContext.allowPrivilegeEscalation must be set to `false`. rule autogen-privilege-escalation failed at path /spec/template/spec/containers/0/securityContext/allowPrivilegeEscalation/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "e790b091-7a7d-529d-a897-2289a45cea50",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "disallow-privileged-containers"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "cm-6,cm-7"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule disallow-privileged-containers",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: Privileged mode is disallowed. The fields spec.containers[*].securityContext.privileged, spec.initContainers[*].securityContext.privileged, and spec.ephemeralContainers[*].securityContext.privileged must be unset or set to `false`. rule autogen-privileged-containers failed at path /spec/template/spec/containers/0/securityContext/privileged/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "3d9f71fc-df12-58fe-b217-aa6eca5c8c9f",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "disallow-proc-mount"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "cm-6"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule disallow-proc-mount",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: Changing the proc mount from the default is not allowed. The fields spec.containers[*].securityContext.procMount, spec.initContainers[*].securityContext.procMount, and spec.ephemeralContainers[*].securityContext.procMount must be unset or set to `Default`. rule autogen-check-proc-mount failed at path /spec/template/spec/containers/0/securityContext/procMount/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "2d4c794d-3a30-5877-9f2f-c33aab9cb287",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "disallow-selinux"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "cm-6"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule disallow-selinux",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: Setting the SELinux type is restricted. The fields spec.securityContext.seLinuxOptions.type, spec.containers[*].securityContext.seLinuxOptions.type, , spec.initContainers[*].securityContext.seLinuxOptions, and spec.ephemeralContainers[*].securityContext.seLinuxOptions.type must either be unset or set to one of the allowed values (container_t, container_init_t, or container_kvm_t). rule autogen-selinux-type failed at path /spec/template/spec/securityContext/seLinuxOptions/type/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       },
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: Setting the SELinux user or role is forbidden. The fields spec.securityContext.seLinuxOptions.user, spec.securityContext.seLinuxOptions.role, spec.containers[*].securityContext.seLinuxOptions.user, spec.containers[*].securityContext.seLinuxOptions.role, spec.initContainers[*].securityContext.seLinuxOptions.user, spec.initContainers[*].securityContext.seLinuxOptions.role, spec.ephemeralContainers[*].securityContext.seLinuxOptions.user, and spec.ephemeralContainers[*].securityContext.seLinuxOptions.role must be unset. rule autogen-selinux-user-role failed at path /spec/template/spec/containers/0/securityContext/seLinuxOptions/role/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "9e739789-5cf7-558c-9ad2-ecd855127870",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "require-requests-limits"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "sc-5"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule require-requests-limits",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: CPU and memory resource requests and memory limits are required for containers. rule autogen-validate-resources failed at path /spec/template/spec/containers/0/resources/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "0946b4f5-d0dd-57e6-9807-b5c063cec9be",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "require-run-as-non-root-user"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "cm-6"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule require-run-as-non-root-user",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: Running as root is not allowed. The fields spec.securityContext.runAsUser, spec.containers[*].securityContext.runAsUser, spec.initContainers[*].securityContext.runAsUser, and spec.ephemeralContainers[*].securityContext.runAsUser must be unset or set to a number greater than zero. rule autogen-run-as-non-root-user failed at path /spec/template/spec/securityContext/runAsUser/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "e0f4bfd2-ebfd-50a3-9802-5e97a77ff155",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "require-run-as-nonroot"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "cm-6"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule require-run-as-nonroot",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: Running as root is not allowed. Either the field spec.securityContext.runAsNonRoot must be set to `true`, or the fields spec.containers[*].securityContext.runAsNonRoot, spec.initContainers[*].securityContext.runAsNonRoot, and spec.ephemeralContainers[*].securityContext.runAsNonRoot must be set to `true`. rule autogen-run-as-non-root[0] failed at path /spec/template/spec/containers/0/securityContext/runAsNonRoot/ rule autogen-run-as-non-root[1] failed at path /spec/template/spec/containers/0/securityContext/runAsNonRoot/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "7b922519-8467-5cb0-928f-af745ee2280b",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "restrict-apparmor-profiles"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "cm-6"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule restrict-apparmor-profiles",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: Specifying other AppArmor profiles is disallowed. The annotation `container.apparmor.security.beta.kubernetes.io` if defined must not be set to anything other than `runtime/default` or `localhost/*`. rule autogen-app-armor failed at path /spec/template/metadata/annotations/container.apparmor.security.beta.kubernetes.io/legacy/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "c0b81de9-c50e-59fb-95da-4a8c2ac9000b",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "restrict-automount-sa-token"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "ac-6,ia-5"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule restrict-automount-sa-token",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: Auto-mounting of Service Account tokens is not allowed. rule autogen-validate-automountServiceAccountToken failed at path /spec/template/spec/automountServiceAccountToken/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "c99786e1-6535-50f2-95cc-065b4b1a6206",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "restrict-binding-system-groups"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "ac-6"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule restrict-binding-system-groups",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: rbac.authorization.k8s.io/v1, Kind: ClusterRoleBinding, Namespace: , Name: legacy-admin",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "pass"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation rule 'restrict-anonymous' passed."
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "cf803ad5-45a1-5cae-bd3a-eed128c4a227"
+       },
+       {
+        "title": "ApiVersion: rbac.authorization.k8s.io/v1, Kind: ClusterRoleBinding, Namespace: , Name: legacy-admin",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "pass"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation rule 'restrict-masters' passed."
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "cf803ad5-45a1-5cae-bd3a-eed128c4a227"
+       },
+       {
+        "title": "ApiVersion: rbac.authorization.k8s.io/v1, Kind: ClusterRoleBinding, Namespace: , Name: legacy-admin",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "pass"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation rule 'restrict-unauthenticated' passed."
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "cf803ad5-45a1-5cae-bd3a-eed128c4a227"
+       },
+       {
+        "title": "ApiVersion: rbac.authorization.k8s.io/v1, Kind: ClusterRoleBinding, Namespace: , Name: masters-view",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: Binding to system:masters is not allowed. rule restrict-masters failed at path /subjects/0/name/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "50e93c98-c5a3-57f7-ad95-1d2348b544b8"
+       },
+       {
+        "title": "ApiVersion: rbac.authorization.k8s.io/v1, Kind: ClusterRoleBinding, Namespace: , Name: masters-view",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "pass"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation rule 'restrict-anonymous' passed."
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "50e93c98-c5a3-57f7-ad95-1d2348b544b8"
+       },
+       {
+        "title": "ApiVersion: rbac.authorization.k8s.io/v1, Kind: ClusterRoleBinding, Namespace: , Name: masters-view",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "pass"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation rule 'restrict-unauthenticated' passed."
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "50e93c98-c5a3-57f7-ad95-1d2348b544b8"
+       }
+      ]
+     },
+     {
+      "uuid": "007538a8-c7b4-5fc7-8bc7-1ab3a7d7ca4c",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "restrict-clusteradmin-subjects"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "ac-17.400"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule restrict-clusteradmin-subjects",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: rbac.authorization.k8s.io/v1, Kind: ClusterRoleBinding, Namespace: , Name: legacy-admin",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "cluster-admin may be bound only to the group itsp:daw-admins."
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "cf803ad5-45a1-5cae-bd3a-eed128c4a227"
+       },
+       {
+        "title": "ApiVersion: rbac.authorization.k8s.io/v1, Kind: ClusterRoleBinding, Namespace: , Name: masters-view",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "skip"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "preconditions not met"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "50e93c98-c5a3-57f7-ad95-1d2348b544b8"
+       }
+      ]
+     },
+     {
+      "uuid": "2a7276dc-d75f-5deb-94e0-69be601d74a1",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "restrict-seccomp"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "cm-6"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule restrict-seccomp",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: Use of custom Seccomp profiles is disallowed. The fields spec.securityContext.seccompProfile.type, spec.containers[*].securityContext.seccompProfile.type, spec.initContainers[*].securityContext.seccompProfile.type, and spec.ephemeralContainers[*].securityContext.seccompProfile.type must be unset or set to `RuntimeDefault` or `Localhost`. rule autogen-check-seccomp failed at path /spec/template/spec/securityContext/seccompProfile/type/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "6b03e3cd-197a-54b6-b16e-537c1b5f787b",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "restrict-seccomp-strict"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "cm-6"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule restrict-seccomp-strict",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: Use of custom Seccomp profiles is disallowed. The fields spec.securityContext.seccompProfile.type, spec.containers[*].securityContext.seccompProfile.type, spec.initContainers[*].securityContext.seccompProfile.type, and spec.ephemeralContainers[*].securityContext.seccompProfile.type must be set to `RuntimeDefault` or `Localhost`. rule autogen-check-seccomp-strict[0] failed at path /spec/template/spec/securityContext/seccompProfile/type/ rule autogen-check-seccomp-strict[1] failed at path /spec/template/spec/containers/0/securityContext/seccompProfile/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "31280f8f-18ad-5031-9798-22f8f382c711",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "restrict-sysctls"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "cm-6"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule restrict-sysctls",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "validation error: Setting additional sysctls above the allowed type is disallowed. The field spec.securityContext.sysctls must be unset or not use any other names than kernel.shm_rmid_forced, net.ipv4.ip_local_port_range, net.ipv4.ip_unprivileged_port_start, net.ipv4.tcp_syncookies and net.ipv4.ping_group_range. rule autogen-check-sysctls failed at path /spec/template/spec/securityContext/sysctls/0/name/"
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "334ed75e-25e9-509e-a15e-e05315918241",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "restrict-volume-types"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "cm-6"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule restrict-volume-types",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: apps/v1, Kind: Deployment, Namespace: default, Name: legacy",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "Only the following types of volumes may be used: configMap, csi, downwardAPI, emptyDir, ephemeral, persistentVolumeClaim, projected, and secret."
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "6453cdfb-19d5-5228-9cfe-ea22774bdf83"
+       }
+      ]
+     },
+     {
+      "uuid": "87a569da-4468-59fd-b981-21a9523e048e",
+      "props": [
+       {
+        "name": "assessment-rule-id",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "restrict-wildcard-verbs"
+       },
+       {
+        "name": "controls",
+        "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+        "value": "ac-6"
+       }
+      ],
+      "collected": "2026-09-24T00:00:00-04:00",
+      "description": "Observation of rule restrict-wildcard-verbs",
+      "methods": [
+       "TEST"
+      ],
+      "subjects": [
+       {
+        "title": "ApiVersion: rbac.authorization.k8s.io/v1, Kind: ClusterRole, Namespace: , Name: everything",
+        "props": [
+         {
+          "name": "result",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "fail"
+         },
+         {
+          "name": "reason",
+          "ns": "https://northfleetsecurity.ca/ns/oscal/cccs",
+          "value": "Use of a wildcard ('*') in any verbs is forbidden."
+         }
+        ],
+        "type": "inventory-item",
+        "subject-uuid": "4a64da92-7255-5215-aaab-fae321b3e7ac"
+       }
+      ]
+     }
+    ],
+    "reviewed-controls": {
+     "control-selections": [
+      {
+       "include-controls": [
+        {
+         "control-id": "ac-11"
+        },
+        {
+         "control-id": "ac-17"
+        },
+        {
+         "control-id": "ac-17.400",
+         "statement-ids": [
+          "ac-17.400_smt"
+         ]
+        },
+        {
+         "control-id": "ac-2"
+        },
+        {
+         "control-id": "ac-3"
+        },
+        {
+         "control-id": "ac-4"
+        },
+        {
+         "control-id": "ac-5"
+        },
+        {
+         "control-id": "ac-6",
+         "statement-ids": [
+          "ac-6_smt"
+         ]
+        },
+        {
+         "control-id": "au-12"
+        },
+        {
+         "control-id": "au-2"
+        },
+        {
+         "control-id": "au-3"
+        },
+        {
+         "control-id": "au-4"
+        },
+        {
+         "control-id": "au-9"
+        },
+        {
+         "control-id": "cm-2",
+         "statement-ids": [
+          "cm-2_smt"
+         ]
+        },
+        {
+         "control-id": "cm-3"
+        },
+        {
+         "control-id": "cm-6",
+         "statement-ids": [
+          "cm-6_smt"
+         ]
+        },
+        {
+         "control-id": "cm-7",
+         "statement-ids": [
+          "cm-7_smt"
+         ]
+        },
+        {
+         "control-id": "cm-8"
+        },
+        {
+         "control-id": "ia-2"
+        },
+        {
+         "control-id": "ia-3"
+        },
+        {
+         "control-id": "ia-5",
+         "statement-ids": [
+          "ia-5_smt"
+         ]
+        },
+        {
+         "control-id": "sc-12"
+        },
+        {
+         "control-id": "sc-13"
+        },
+        {
+         "control-id": "sc-2",
+         "statement-ids": [
+          "sc-2_smt"
+         ]
+        },
+        {
+         "control-id": "sc-23"
+        },
+        {
+         "control-id": "sc-28"
+        },
+        {
+         "control-id": "sc-5",
+         "statement-ids": [
+          "sc-5_smt"
+         ]
+        },
+        {
+         "control-id": "sc-7"
+        },
+        {
+         "control-id": "sc-8"
+        },
+        {
+         "control-id": "si-10"
+        },
+        {
+         "control-id": "si-11"
+        },
+        {
+         "control-id": "si-2"
+        },
+        {
+         "control-id": "si-4"
+        },
+        {
+         "control-id": "si-400"
+        }
+       ]
+      }
+     ]
+    },
+    "start": "2026-09-24T00:00:00-04:00"
+   }
+  ]
+ }
+}

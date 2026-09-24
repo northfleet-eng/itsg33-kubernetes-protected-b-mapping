@@ -1,0 +1,154 @@
+{
+ "system-security-plan": {
+  "uuid": "1d3f77ab-e31d-5ce7-abeb-a8e8426837f2",
+  "metadata": {
+   "title": "Sample evaluation target: ITSP.10.033-01 policy samples",
+   "last-modified": "2026-09-24T00:00:00-04:00",
+   "version": "2026.09.24",
+   "oscal-version": "1.1.3",
+   "remarks": "Not a real system. OSCAL assessment results import an assessment plan, which imports a system security plan; this minimal pair exists so the sample evaluation's results form a valid chain. It describes the manifests in oscal/policy/samples/ and nothing else."
+  },
+  "import-profile": {
+   "href": "../../../profiles/itsp.10.033-01-medium/profile.json"
+  },
+  "system-characteristics": {
+   "system-ids": [
+    {
+     "identifier-type": "http://ietf.org/rfc/rfc4122",
+     "id": "9dede3aa-ea79-546a-909b-f8db193bc41b"
+    }
+   ],
+   "system-name": "ITSP.10.033-01 policy samples",
+   "description": "The Kubernetes manifests in oscal/policy/samples/, written to pass or to fail the rules. Not a deployed system.",
+   "system-information": {
+    "information-types": [
+     {
+      "uuid": "9ac6555e-54ea-5610-9808-0300c0081ec8",
+      "title": "Sample Kubernetes manifests",
+      "description": "Deployment, RBAC, and namespace manifests. No information is processed."
+     }
+    ]
+   },
+   "status": {
+    "state": "other",
+    "remarks": "Not a real system."
+   },
+   "authorization-boundary": {
+    "description": "The files under oscal/policy/samples/."
+   }
+  },
+  "system-implementation": {
+   "users": [
+    {
+     "uuid": "11bf3090-5857-5d74-a01a-fcc3ad586c7f",
+     "title": "Evaluator",
+     "description": "Runs oscal/policy/scripts/evaluate.sh."
+    }
+   ],
+   "components": [
+    {
+     "uuid": "aac92339-12ce-5daa-95f0-5f294bde7b70",
+     "type": "this-system",
+     "title": "Sample manifests",
+     "description": "The manifests the Kyverno CLI evaluates.",
+     "status": {
+      "state": "other"
+     }
+    }
+   ]
+  },
+  "control-implementation": {
+   "description": "Each requirement is checked offline by the Kyverno rules the component definition names.",
+   "implemented-requirements": [
+    {
+     "uuid": "97b396f2-3791-50b6-b592-8f27b9432384",
+     "control-id": "ac-6",
+     "by-components": [
+      {
+       "component-uuid": "aac92339-12ce-5daa-95f0-5f294bde7b70",
+       "uuid": "f63e3f30-bc83-5732-ac4e-a7d256bb2ed0",
+       "description": "Checked by the Kyverno rules restrict-wildcard-verbs, restrict-binding-system-groups, restrict-automount-sa-token."
+      }
+     ]
+    },
+    {
+     "uuid": "ebacee8c-21f2-5cf7-b275-187cac77b9d3",
+     "control-id": "ac-17.400",
+     "by-components": [
+      {
+       "component-uuid": "aac92339-12ce-5daa-95f0-5f294bde7b70",
+       "uuid": "5f113380-b7b7-56fb-9c42-807b682e7fbd",
+       "description": "Checked by the Kyverno rules restrict-clusteradmin-subjects."
+      }
+     ]
+    },
+    {
+     "uuid": "b5091e0e-06ba-5e2e-9f70-da89dd30c449",
+     "control-id": "cm-2",
+     "by-components": [
+      {
+       "component-uuid": "aac92339-12ce-5daa-95f0-5f294bde7b70",
+       "uuid": "b452603f-69df-55a9-8e93-7c40c8084d68",
+       "description": "Checked by the Kyverno rules disallow-latest-tag."
+      }
+     ]
+    },
+    {
+     "uuid": "e74eda24-a843-5c97-a1a4-20fd4d84a5d3",
+     "control-id": "cm-6",
+     "by-components": [
+      {
+       "component-uuid": "aac92339-12ce-5daa-95f0-5f294bde7b70",
+       "uuid": "ddf19eda-03ec-5941-bdf9-329e5e126269",
+       "description": "Checked by the Kyverno rules disallow-capabilities, disallow-host-namespaces, disallow-host-path, disallow-host-ports, disallow-host-process, disallow-privileged-containers, disallow-proc-mount, disallow-selinux, restrict-apparmor-profiles, restrict-seccomp, restrict-sysctls, disallow-capabilities-strict, disallow-privilege-escalation, require-run-as-non-root-user, require-run-as-nonroot, restrict-seccomp-strict, restrict-volume-types."
+      }
+     ]
+    },
+    {
+     "uuid": "7832e422-db96-5d98-b5d2-5a5aaf9b8ba8",
+     "control-id": "cm-7",
+     "by-components": [
+      {
+       "component-uuid": "aac92339-12ce-5daa-95f0-5f294bde7b70",
+       "uuid": "6c6bd1a4-a0e8-55f4-8538-4251cd76584e",
+       "description": "Checked by the Kyverno rules disallow-host-namespaces, disallow-host-path, disallow-host-ports, disallow-privileged-containers, disallow-capabilities-strict."
+      }
+     ]
+    },
+    {
+     "uuid": "2bf2782a-0662-5f05-859a-817955399500",
+     "control-id": "ia-5",
+     "by-components": [
+      {
+       "component-uuid": "aac92339-12ce-5daa-95f0-5f294bde7b70",
+       "uuid": "407c2c49-5931-5f51-bed6-1004452b7bf0",
+       "description": "Checked by the Kyverno rules restrict-automount-sa-token."
+      }
+     ]
+    },
+    {
+     "uuid": "61933e37-076f-5344-b087-c39c6930a695",
+     "control-id": "sc-2",
+     "by-components": [
+      {
+       "component-uuid": "aac92339-12ce-5daa-95f0-5f294bde7b70",
+       "uuid": "db7207dc-1ff0-52eb-98ff-6cfd9f61ef46",
+       "description": "Checked by the Kyverno rules disallow-default-namespace."
+      }
+     ]
+    },
+    {
+     "uuid": "230b872f-a268-58b0-8828-a74629b9312b",
+     "control-id": "sc-5",
+     "by-components": [
+      {
+       "component-uuid": "aac92339-12ce-5daa-95f0-5f294bde7b70",
+       "uuid": "66c2cac9-a8aa-5559-89a4-cc6fac2b31a6",
+       "description": "Checked by the Kyverno rules require-requests-limits."
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

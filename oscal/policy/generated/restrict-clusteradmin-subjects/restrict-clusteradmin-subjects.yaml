@@ -1,0 +1,39 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: restrict-clusteradmin-subjects
+  annotations:
+    policies.kyverno.io/title: Restrict cluster-admin to the administration group
+    policies.kyverno.io/category: ITSP.10.033-01
+    policies.kyverno.io/severity: high
+    policies.kyverno.io/subject: ClusterRoleBinding, RoleBinding
+    policies.kyverno.io/description: >-
+      AC-17(400) asks that privileged accounts be reachable remotely only from dedicated
+      management consoles, which SI-400 defines as dedicated administration workstations.
+      A policy cannot see where an identity connects from. It can make sure cluster-admin
+      is held only by the group an organization reserves for identities issued to those
+      workstations. The group name here, itsp:daw-admins, is an example; use your own.
+spec:
+  background: true
+  rules:
+    - name: cluster-admin-only-to-daw-group
+      match:
+        any:
+          - resources:
+              kinds:
+                - ClusterRoleBinding
+                - RoleBinding
+      preconditions:
+        all:
+          - key: "{{ request.object.roleRef.name }}"
+            operator: Equals
+            value: cluster-admin
+      validate:
+        failureAction: Audit
+        message: "cluster-admin may be bound only to the group itsp:daw-admins."
+        deny:
+          conditions:
+            any:
+              - key: "{{ length(request.object.subjects[?kind != 'Group' || name != 'itsp:daw-admins']) }}"
+                operator: GreaterThan
+                value: 0

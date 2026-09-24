@@ -1,0 +1,26 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: pod-reader
+  namespace: itsp-demo
+rules:
+  - apiGroups: [""]
+    resources: [pods]
+    verbs: [get, list, watch]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: pod-reader
+  namespace: itsp-demo
+roleRef: {apiGroup: rbac.authorization.k8s.io, kind: Role, name: pod-reader}
+subjects:
+  - {kind: ServiceAccount, name: web, namespace: itsp-demo}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: daw-admins
+roleRef: {apiGroup: rbac.authorization.k8s.io, kind: ClusterRole, name: cluster-admin}
+subjects:
+  - {apiGroup: rbac.authorization.k8s.io, kind: Group, name: "itsp:daw-admins"}

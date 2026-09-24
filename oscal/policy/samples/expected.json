@@ -1,0 +1,24 @@
+{
+  "compliant": {
+    "disallow-capabilities": "pass", "disallow-capabilities-strict": "pass", "disallow-default-namespace": "pass",
+    "disallow-host-namespaces": "pass", "disallow-host-path": "pass", "disallow-host-ports": "pass",
+    "disallow-host-process": "pass", "disallow-latest-tag": "pass", "disallow-privilege-escalation": "pass",
+    "disallow-privileged-containers": "pass", "disallow-proc-mount": "pass", "disallow-selinux": "pass",
+    "require-requests-limits": "pass", "require-run-as-non-root-user": "pass", "require-run-as-nonroot": "pass",
+    "restrict-apparmor-profiles": "pass", "restrict-automount-sa-token": "pass",
+    "restrict-binding-system-groups": "pass", "restrict-clusteradmin-subjects": "pass", "restrict-seccomp": "pass",
+    "restrict-seccomp-strict": "pass", "restrict-sysctls": "pass", "restrict-volume-types": "pass",
+    "restrict-wildcard-verbs": "pass"
+  },
+  "noncompliant": {
+    "disallow-capabilities": "fail", "disallow-capabilities-strict": "fail", "disallow-default-namespace": "fail",
+    "disallow-host-namespaces": "fail", "disallow-host-path": "fail", "disallow-host-ports": "fail",
+    "disallow-host-process": "fail", "disallow-latest-tag": "fail", "disallow-privilege-escalation": "fail",
+    "disallow-privileged-containers": "fail", "disallow-proc-mount": "fail", "disallow-selinux": "fail",
+    "require-requests-limits": "fail", "require-run-as-non-root-user": "fail", "require-run-as-nonroot": "fail",
+    "restrict-apparmor-profiles": "fail", "restrict-automount-sa-token": "fail",
+    "restrict-binding-system-groups": "fail", "restrict-clusteradmin-subjects": "fail", "restrict-seccomp": "fail",
+    "restrict-seccomp-strict": "fail", "restrict-sysctls": "fail", "restrict-volume-types": "fail",
+    "restrict-wildcard-verbs": "fail"
+  }
+}

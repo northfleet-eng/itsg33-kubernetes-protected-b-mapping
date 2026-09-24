@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: legacy
+  namespace: default
+spec:
+  selector:
+    matchLabels: {app: legacy}
+  template:
+    metadata:
+      labels: {app: legacy}
+      annotations:
+        container.apparmor.security.beta.kubernetes.io/legacy: unconfined
+    spec:
+      hostNetwork: true
+      hostPID: true
+      hostIPC: true
+      securityContext:
+        runAsUser: 0
+        seccompProfile: {type: Unconfined}
+        sysctls:
+          - {name: kernel.msgmax, value: "65536"}
+        seLinuxOptions: {type: spc_t}
+      containers:
+        - name: legacy
+          image: registry.example.ca/itsp/legacy:latest
+          ports:
+            - {containerPort: 80, hostPort: 80}
+          securityContext:
+            privileged: true
+            allowPrivilegeEscalation: true
+            runAsNonRoot: false
+            runAsUser: 0
+            procMount: Unmasked
+            capabilities: {add: [NET_ADMIN, SYS_ADMIN]}
+            seLinuxOptions: {user: system_u, role: sysadm_r}
+            windowsOptions: {hostProcess: true}
+          volumeMounts:
+            - {name: host, mountPath: /host}
+      volumes:
+        - name: host
+          hostPath: {path: /}

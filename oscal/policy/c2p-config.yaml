@@ -1,0 +1,6 @@
+compliance:
+  name: itsp.10.033-01-medium
+  componentDefinition:
+    url: ../component-definitions/upstream-kubernetes.json
+policyResources:
+  url: kyverno/policies

@@ -1,0 +1,47 @@
+{
+ "assessment-plan": {
+  "uuid": "3598e5fe-95f9-5710-9e84-ffd6efc69086",
+  "metadata": {
+   "title": "Sample evaluation plan: ITSP.10.033-01 policy samples",
+   "last-modified": "2026-09-24T00:00:00-04:00",
+   "version": "2026.09.24",
+   "oscal-version": "1.1.3",
+   "remarks": "Not a real system. OSCAL assessment results import an assessment plan, which imports a system security plan; this minimal pair exists so the sample evaluation's results form a valid chain. It describes the manifests in oscal/policy/samples/ and nothing else."
+  },
+  "import-ssp": {
+   "href": "../plan/ssp.json"
+  },
+  "reviewed-controls": {
+   "control-selections": [
+    {
+     "include-controls": [
+      {
+       "control-id": "ac-6"
+      },
+      {
+       "control-id": "ac-17.400"
+      },
+      {
+       "control-id": "cm-2"
+      },
+      {
+       "control-id": "cm-6"
+      },
+      {
+       "control-id": "cm-7"
+      },
+      {
+       "control-id": "ia-5"
+      },
+      {
+       "control-id": "sc-2"
+      },
+      {
+       "control-id": "sc-5"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}
