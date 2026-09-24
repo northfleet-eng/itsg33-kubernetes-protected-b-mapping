@@ -1,0 +1,25 @@
+# rule_id	source
+disallow-capabilities	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:pod-security/baseline/disallow-capabilities/disallow-capabilities.yaml
+disallow-host-namespaces	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:pod-security/baseline/disallow-host-namespaces/disallow-host-namespaces.yaml
+disallow-host-path	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:pod-security/baseline/disallow-host-path/disallow-host-path.yaml
+disallow-host-ports	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:pod-security/baseline/disallow-host-ports/disallow-host-ports.yaml
+disallow-host-process	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:pod-security/baseline/disallow-host-process/disallow-host-process.yaml
+disallow-privileged-containers	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:pod-security/baseline/disallow-privileged-containers/disallow-privileged-containers.yaml
+disallow-proc-mount	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:pod-security/baseline/disallow-proc-mount/disallow-proc-mount.yaml
+disallow-selinux	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:pod-security/baseline/disallow-selinux/disallow-selinux.yaml
+restrict-apparmor-profiles	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:pod-security/baseline/restrict-apparmor-profiles/restrict-apparmor-profiles.yaml
+restrict-seccomp	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:pod-security/baseline/restrict-seccomp/restrict-seccomp.yaml
+restrict-sysctls	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:pod-security/baseline/restrict-sysctls/restrict-sysctls.yaml
+disallow-capabilities-strict	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:pod-security/restricted/disallow-capabilities-strict/disallow-capabilities-strict.yaml
+disallow-privilege-escalation	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:pod-security/restricted/disallow-privilege-escalation/disallow-privilege-escalation.yaml
+require-run-as-non-root-user	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:pod-security/restricted/require-run-as-non-root-user/require-run-as-non-root-user.yaml
+require-run-as-nonroot	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:pod-security/restricted/require-run-as-nonroot/require-run-as-nonroot.yaml
+restrict-seccomp-strict	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:pod-security/restricted/restrict-seccomp-strict/restrict-seccomp-strict.yaml
+restrict-volume-types	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:pod-security/restricted/restrict-volume-types/restrict-volume-types.yaml
+restrict-wildcard-verbs	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:other/restrict-wildcard-verbs/restrict-wildcard-verbs.yaml
+restrict-binding-system-groups	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:other/restrict-binding-system-groups/restrict-binding-system-groups.yaml
+restrict-automount-sa-token	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:other/restrict-automount-sa-token/restrict-automount-sa-token.yaml
+require-requests-limits	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:best-practices/require-pod-requests-limits/require-pod-requests-limits.yaml
+disallow-default-namespace	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:best-practices/disallow-default-namespace/disallow-default-namespace.yaml
+disallow-latest-tag	kyverno/policies@2716f4a26a3c27590a1d6d960dee4ce043e4fa4a:best-practices/disallow-latest-tag/disallow-latest-tag.yaml
+restrict-clusteradmin-subjects	custom
