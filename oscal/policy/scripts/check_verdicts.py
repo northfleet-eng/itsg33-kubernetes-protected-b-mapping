@@ -5,6 +5,7 @@ Usage: check_verdicts.py <expected.json> <sample> <assessment-results.json>
 
 Exits non-zero, listing every difference, if any rule's verdict is not the expected one,
 if an expected rule is missing, or if a rule appears that expected.json does not list.
+A sample expected.json has no entry for (your own manifests) is reported as not checked.
 """
 import json
 import sys
@@ -24,8 +25,15 @@ def compare(expected, actual):
 
 
 def main(expected_path, sample, ar_path):
-    expected = json.load(open(expected_path))[sample]
-    problems = compare(expected, rule_verdicts(json.load(open(ar_path))))
+    with open(expected_path) as f:
+        oracle = json.load(f)
+    if sample not in oracle:
+        # Someone's own manifests: there is nothing to check them against.
+        print(f"{sample}: no entry in expected.json; verdicts not checked")
+        return
+    with open(ar_path) as f:
+        problems = compare(oracle[sample], rule_verdicts(json.load(f)))
+    expected = oracle[sample]
     if problems:
         print(f"{sample}: verdicts differ from expected.json", *problems, sep="\n  ", file=sys.stderr)
         sys.exit(1)

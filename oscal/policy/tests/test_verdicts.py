@@ -1,6 +1,10 @@
 """Rule verdicts from assessment results, and the oracle comparison."""
+import io
+import json
 import sys
+import tempfile
 import unittest
+from contextlib import redirect_stdout
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
@@ -57,6 +61,19 @@ class Compare(unittest.TestCase):
                                           {"a": {"verdict": "fail"}, "c": {"verdict": "pass"}})
         self.assertEqual(problems, ["a: expected pass, got fail", "b: expected fail, got missing",
                                     "c: not in expected.json"])
+
+
+class UnknownSample(unittest.TestCase):
+    def test_a_sample_without_expectations_is_reported_not_checked(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            exp = Path(tmp) / "expected.json"
+            exp.write_text(json.dumps({"compliant": {"a": "pass"}}))
+            ar = Path(tmp) / "ar.json"
+            ar.write_text(json.dumps({"assessment-results": {"results": [{"observations": [obs("a", "fail")]}]}}))
+            out = io.StringIO()
+            with redirect_stdout(out):
+                check_verdicts.main(str(exp), "mine", str(ar))
+        self.assertIn("mine: no entry in expected.json; verdicts not checked", out.getvalue())
 
 
 if __name__ == "__main__":
