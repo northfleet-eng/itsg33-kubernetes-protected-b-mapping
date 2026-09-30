@@ -1,4 +1,5 @@
-ITSG-33 to Kubernetes Protected B mapping
+Protected B to Kubernetes mapping (ITSP.10.033-01, formerly ITSG-33)
+Copyright 2026 Northfleet Security Ltd.
 
 This product includes text transcribed from the following Government of Canada
 publications of the Canadian Centre for Cyber Security:
@@ -18,7 +19,8 @@ Rev. 5.2.0 (usnistgov/oscal-content), a work of the United States Government
 that is not subject to copyright in the United States.
 
 The Kyverno policies in oscal/policy/kyverno/policies/, except
-restrict-clusteradmin-subjects, are copied unmodified from kyverno/policies
-(https://github.com/kyverno/policies) at commit
+restrict-clusteradmin-subjects, and their copies in oscal/policy/generated/
+and oscal/policy/tests/fixtures/spike/policy-dirs/, are copied unmodified from
+kyverno/policies (https://github.com/kyverno/policies) at commit
 2716f4a26a3c27590a1d6d960dee4ce043e4fa4a, under the Apache License 2.0
 (oscal/policy/kyverno/LICENSE-kyverno-policies).

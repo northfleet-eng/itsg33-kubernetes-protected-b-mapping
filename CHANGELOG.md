@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-09-29
+
+- README describes everything the repository ships: the mapping in Markdown and CSV, the OSCAL rendering, and the Kyverno checks with their OSCAL assessment results. The title names the profile, ITSP.10.033-01, ahead of the ITSG-33 name.
+- Corrected the mapping's size from roughly 50 to roughly 60 controls (58 selected in ITSP.10.033-01, plus four not selected that a tailored profile may add).
+- The README's open items are folded into Scope: the CCCS spreadsheet cross-check, and Secret-level profiles out of scope.
+- NOTICE names the copyright holder, Northfleet Security Ltd., and covers the copies of the Kyverno policies in `oscal/policy/generated/` and the test fixtures.
+
 ## 2026-09-24
 
 - Added [`oscal/policy/`](oscal/policy/): Kyverno rules for eight controls the component definition claims (CM-6, CM-7, AC-6, AC-17(400), IA-5, SC-5, SC-2, CM-2), selected from the component definition by compliance-to-policy-go 1.0.0, evaluated offline with the Kyverno CLI 1.19.1 against compliant and non-compliant sample manifests, and published as OSCAL assessment results with a Markdown summary per sample. A minimal assessment plan and system security plan, both marked "Not a real system", complete the OSCAL import chain so the results validate.

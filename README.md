@@ -1,4 +1,4 @@
-# ITSG-33 to Kubernetes Protected B mapping
+# Protected B to Kubernetes mapping (ITSP.10.033-01, formerly ITSG-33)
 
 An open-source mapping of the Government of Canada Protected B / Medium security control profile to the Kubernetes mechanisms that address each control.
 
@@ -6,7 +6,13 @@ The profile is CCCS **ITSP.10.033-01**, *Suggested organizational security and p
 
 ## What this is
 
-A working reference (Markdown for diff-friendliness, with a companion `.csv` for spreadsheet import) that pairs Protected B-applicable controls with the Kubernetes mechanisms that address each one. Controls are bucketed by where the mechanism lives:
+A working reference that pairs Protected B-applicable controls with the Kubernetes mechanisms that address each one, in three forms:
+
+- **The mapping**, in Markdown for reading and diffing and as CSV for spreadsheet import.
+- **OSCAL**: the ITSP.10.033 catalogue and the ITSP.10.033-01 Medium profile transcribed from the CCCS PDFs, this mapping as an OSCAL component definition, and a computed gap report (see [Machine-readable: OSCAL](#machine-readable-oscal)).
+- **Automated checks**: Kyverno policies for eight of the claimed controls, with the verdicts on sample manifests published as OSCAL assessment results.
+
+Controls are bucketed by where the mechanism lives:
 
 - **Admin-implemented**: a cluster administrator configures upstream Kubernetes primitives (RBAC, NetworkPolicy, audit policy, and so on).
 - **Workload-implemented**: the application or container image itself provides the mechanism.
@@ -37,16 +43,21 @@ Eight of the controls the component definition claims also have automated checks
 
 - [`itsg33-kubernetes-mapping.md`](itsg33-kubernetes-mapping.md): the main mapping. Controls bucketed by admin / workload / external, with the Kubernetes mechanism for each, plus the ITSP.10.033-01 additions.
 - [`itsg33-kubernetes-mapping.csv`](itsg33-kubernetes-mapping.csv): same content as CSV, one row per control and category, with an ITSP.10.033-01 status column.
-- [`oscal/`](oscal/): the catalogue, the Medium profile, and this mapping in OSCAL, with the build and report scripts.
+- [`oscal/`](oscal/): the catalogue, the Medium profile, and this mapping in OSCAL, with the build and report scripts. [`oscal/policy/`](oscal/policy/) holds the Kyverno checks, the sample manifests, and the assessment results.
 - [`SOURCES.md`](SOURCES.md): canonical CCCS source URLs for the current ITSP.10.033 series and the superseded ITSG-33 annexes, cross-reference mappings, and the NIST SP 800-53 relationship.
 - [`CHANGELOG.md`](CHANGELOG.md): what changed between releases of this mapping.
-- [`LICENSE`](LICENSE): Apache License 2.0. [`NOTICE`](NOTICE) carries the Open Government Licence – Canada attribution for the CCCS text in `oscal/`.
+- [`LICENSE`](LICENSE): Apache License 2.0.
+- [`NOTICE`](NOTICE): attribution for the CCCS text (Open Government Licence – Canada), the NIST SP 800-53 content, and the vendored Kyverno policies.
 
 ## Scope
 
-This repository covers the procurement-relevant subset of the profile: roughly 50 controls where the Kubernetes side of the mapping is non-obvious or carries a material gap. ITSP.10.033-01 selects 384 controls, activities and enhancements, one of which (AC-2(10)) is withdrawn; Annex 4A Profile 1 selected a similar number. The full enumeration, machine-readable, is [`oscal/resolved/itsp.10.033-01-medium.csv`](oscal/resolved/itsp.10.033-01-medium.csv).
+This repository covers the procurement-relevant subset of the profile: roughly 60 controls where the Kubernetes side of the mapping is non-obvious or carries a material gap. ITSP.10.033-01 selects 384 controls, activities and enhancements, one of which (AC-2(10)) is withdrawn; Annex 4A Profile 1 selected a similar number. The full enumeration, machine-readable, is [`oscal/resolved/itsp.10.033-01-medium.csv`](oscal/resolved/itsp.10.033-01-medium.csv), and [`oscal/reports/gap-upstream-kubernetes.md`](oscal/reports/gap-upstream-kubernetes.md) lists every selected control the mapping does not claim.
 
 ITSP.10.033-01 is a *suggested organizational* profile. Departments and agencies tailor it, and a tailored profile can select controls this one does not. SR-4 (Provenance) and CM-14 (Signed components) are the two most likely additions for a software supply chain. Confirm against the customer's tailored profile before relying on any selection status here.
+
+CCCS distributes a spreadsheet of the ITSP.10.033-01 selections on request from contact@cyber.gc.ca. Cross-check against it before treating this mapping as authoritative for a procurement decision.
+
+Secret-level profiles (Annex 4A Profile 3, and any successor in the ITSP.10.033 series) are out of scope.
 
 This repository is a starting point, not a substitute for a formal security control assessment. A qualified Canadian assessor performs the actual assessment against the customer's specific deployment.
 
@@ -57,6 +68,7 @@ This repository is a starting point, not a substitute for a formal security cont
 3. Walk the **Workload-implemented** table to confirm each application meets its share of the control.
 4. Walk the **External** table to identify which additional components your environment requires and which vendor is responsible for each.
 5. Walk the **New in ITSP.10.033-01** table to catch the controls that did not exist under Annex 4A Profile 1.
+6. For tooling: compare your platform's own OSCAL component definition against the Medium profile with `oscal/scripts/gap.py` ([`oscal/README.md`](oscal/README.md)), or run the Kyverno checks against your own rendered manifests ([`oscal/policy/README.md`](oscal/policy/README.md)).
 
 ## Methodology
 
@@ -66,21 +78,13 @@ This repository is a starting point, not a substitute for a formal security cont
 - **External-component examples:** listed for orientation, not endorsement. The choice of specific component (which signing infrastructure, which runtime-security tool, which SIEM) is left to the implementing organization.
 - **Control titles** follow ITSP.10.033 (Rev. 5 wording), so AC-11 reads "Device lock" rather than the Annex 3A "Session lock".
 
-## Open items
-
-- Cross-check this mapping against the CCCS spreadsheet of ITSP.10.033-01 (available on request from contact@cyber.gc.ca) before treating it as authoritative for a procurement decision.
-- Extend the New in ITSP.10.033-01 section to the full 400-series enumeration once departmental tailoring practice is visible.
-- A Secret-level companion (Annex 4A Profile 3 and whatever succeeds it in the ITSP.10.033 series) is out of scope here.
-
-Issues and pull requests welcome.
-
 ## License
 
-Apache License 2.0. See [`LICENSE`](LICENSE).
+Apache License 2.0 ([`LICENSE`](LICENSE)) for the repository's own material. The CCCS text in `oscal/` is under the Open Government Licence – Canada, the NIST SP 800-53 content is a work of the United States Government, and the vendored Kyverno policies keep their Apache License 2.0 terms; [`NOTICE`](NOTICE) carries the attributions.
 
 ## Maintained by
 
-Northfleet (`https://northfleetsecurity.ca`). Issues and pull requests welcome.
+Northfleet ([northfleetsecurity.ca](https://northfleetsecurity.ca)). Issues and pull requests welcome.
 
 ## Disclaimer
 
